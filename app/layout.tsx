@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Roboto } from 'next/font/google'
+
+const roboto = Inter({subsets:['latin']})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+      <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={roboto.className} suppressHydrationWarning={true}>{children}</body>
     </html>
   )
 }
