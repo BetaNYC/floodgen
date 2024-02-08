@@ -31,7 +31,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     return (
         <>
-            <div className='  absolute top-[calc(50%_+_1.125rem)] left-[1rem] flex items-center gap-[1rem] z-20'>
+            <div className='  absolute top-[calc(50%_+_1.125rem)] left-4 flex items-center gap-4 z-20'>
                 {/* <Image width={80} height={80} src="./icons/previous.svg" alt='previous' className='border-2 border-black' /> */}
                 <Previous />
                 <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked['Layers'] ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked[btnsData[0].title]} buttonClickHandler={() => buttonClickHandler(btnsData[0].title)} />

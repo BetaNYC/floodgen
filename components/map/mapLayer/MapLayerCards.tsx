@@ -31,8 +31,8 @@ const MapLayerCards = () => {
         <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-[1.8125rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
-                <div className='mb-[1.25rem] font-bold text-heading text-black'>Choose Map Layer</div>
-                <div className='grid grid-cols-2 lg:grid-cols-4 gap-[1rem]'>
+                <div className='mb-5 font-bold text-heading text-black'>Choose Map Layer</div>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
                     {layers.map((layer, i) => <MapLayerBtn clicked={false} image={layer.image} title={layer.title} content={layer.content} key={layer.title} />)}
                 </div>
             </div>
