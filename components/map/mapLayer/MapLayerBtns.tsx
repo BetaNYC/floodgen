@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import Image from 'next/image'
 
 import Button from '@/shared/Button'
 import Previous from '@/shared/Previous'
 import { btnsType } from './MapLayer'
+
+import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 type Props = {
     clicked: {
@@ -15,6 +17,8 @@ type Props = {
 }
 
 const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
+
+    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
 
     const btnsData: { src: string, src_selected: string, title: btnsType }[] = [
         {
@@ -31,7 +35,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     return (
         <>
-            <div className='  absolute top-[calc(50%_+_1.125rem)] left-4 flex items-center gap-4 z-20'>
+            <div className={`absolute left-4 flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(50%_+_1.125rem)]" : "top-[1.125rem]"}`}>
                 {/* <Image width={80} height={80} src="./icons/previous.svg" alt='previous' className='border-2 border-black' /> */}
                 <Previous />
                 <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked['Layers'] ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked[btnsData[0].title]} buttonClickHandler={() => buttonClickHandler(btnsData[0].title)} />
@@ -44,7 +48,8 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
 export default MapLayerBtns
 
-//top- 2.625rem
+//
+// 
 
 {/* {
                 btnsData.map(b => <Button key={b.title} title={b.title} src={b.src} clicked={clicked[b.title]} buttonClickHandler={() =>buttonClickHandler(b.title)} />)
