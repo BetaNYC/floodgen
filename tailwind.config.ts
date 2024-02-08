@@ -5,6 +5,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './shared/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -21,17 +22,18 @@ const config: Config = {
         primary_area: "#E75724",
         secondary_area: "#FFF4E6",
         highlight_area: "#FFBEAF",
-        black: "#000000",
+        title_black: "#0F1D40",
+        content_black:"#000000",
+        background_white: "#FBFBFB",
         gray:"#5A5A5A",
         button: "#FFFFFF"
       },
       fontSize: {
         title: "30px",
         heading: "18px",
-        body: "14px",
-        label_mobile:"12px",
-        label_desktop:"15px",
-        buttom_text:"10px",
+        medium: "14px",
+        small:"12px",
+        xsmall:"10px",
       }
     },
   },
