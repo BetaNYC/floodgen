@@ -6,13 +6,19 @@ import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 import MapLayer from './mapLayer/MapLayer'
 
-
+import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
 
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+
+    console.log(coastalFlooding)
+    /* @ts-ignore */
+    const coastalFloodingFeatures = (coastalFlooding).features
+
+
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -46,6 +52,14 @@ const Map = () => {
         m.on("load", () => {
             setMap(m)
 
+            m.addSource("coastal_flooding", {
+                type:'geojson',
+                data: {
+                    type: "FeatureCollection",
+                    features: coastalFloodingFeatures,
+                }
+            })
+
             m.addSource('try-out', {
                 'type': 'geojson',
                 'data': {
@@ -56,6 +70,22 @@ const Map = () => {
                             [-73.913, 40.763]
                     },
                     properties: {},
+                }
+            })
+
+            m.addLayer({
+                id:'coastal_flooding',
+                type:'fill',
+                source:'coastal_flooding',
+                paint: {
+                    "fill-color": [
+                        'case',
+                        ['all', ['==', ['get',"FLD_ZONE"], "VE"]],
+                        "#3B9CD9",
+                        ['all', ['==', ['get',"FLD_ZONE"], "AE"]],
+                        "#7FBEE6",
+                        "#3C9CD9",
+                    ]
                 }
             })
 
