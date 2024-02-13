@@ -29,8 +29,10 @@ const Map = () => {
     const [lat, setLat] = useState(40.763);
     const [zoom, setZoom] = useState(11);
 
+    console.log(process.env)
+
     useEffect(() => {
-        mapboxgl.accessToken = "pk.eyJ1IjoiYmV0YW55YyIsImEiOiJhdEk0RmZ3In0.z3ayA_ZWlFP7Co7h-T-6WQ"
+        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY as string
 
         const m = new mapboxgl.Map({
             container: mapContainer.current || "",
