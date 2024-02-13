@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import FloodingButton from './FloodingButton'
 import Previous from '@/shared/Previous'
 import Next from '@/shared/Next'
 
 import Image from 'next/image'
-
+import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 type floodingTypes = 'Street View' | 'Minor Flooding' | "Moderate Flooding" | "Major Flooding"
 
@@ -33,7 +33,7 @@ const floodingBtnsData: {
 
 
 const StreetView = () => {
-
+    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
     const [clicked, setClicked] = useState({
         "Street View": false,
         "Minor Flooding": false,
@@ -42,6 +42,7 @@ const StreetView = () => {
     })
 
     const floodingButtonClickHandler = (title: floodingTypes) => {
+
         let newClicked = { ...clicked, "Street View": true } as {
             "Street View": boolean,
             "Minor Flooding": boolean,
@@ -54,7 +55,7 @@ const StreetView = () => {
     }
 
     return (
-        <div className='absolute top-0 left-0 pt-[1.75rem] translate-y-[-100%] lg:pl-8 w-full h-[50%] bg-slate-400 z-20 '>
+        <div className={`absolute top-0 left-0 pt-[1.75rem] ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"}   lg:pl-8 w-full h-[50%] bg-slate-400 z-20 transition-all duration-[1500ms] ease-in-out`}>
             <div className='flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
                 {/* <div className='flex items-center justify-center min-w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,.65)] z-20'>
                     <Image width={18} height={12} src="./icons/hamburger.svg" alt='hamburger' className='cursor-pointer' />
