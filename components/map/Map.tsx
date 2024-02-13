@@ -7,6 +7,9 @@ import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import MapLayer from './mapLayer/MapLayer'
 
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
+import justiceArea from "../../public/data/EnvironmentalJusticeArea.geo.json"
+import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
+
 
 const Map = () => {
 
@@ -14,10 +17,12 @@ const Map = () => {
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
 
-    console.log(coastalFlooding)
     /* @ts-ignore */
     const coastalFloodingFeatures = (coastalFlooding).features
-
+    /* @ts-ignore */
+    const justiceAreaFeatures = (justiceArea).features
+    /* @ts-ignore */
+    const neightborhoodFeatures = (neightborhood).features
 
 
     const [lng, setLng] = useState(-73.913);
@@ -53,10 +58,26 @@ const Map = () => {
             setMap(m)
 
             m.addSource("coastal_flooding", {
-                type:'geojson',
+                type: 'geojson',
                 data: {
                     type: "FeatureCollection",
                     features: coastalFloodingFeatures,
+                }
+            })
+
+            m.addSource('justice_area', {
+                type: 'geojson',
+                data: {
+                    type: "FeatureCollection",
+                    features: justiceAreaFeatures,
+                }
+            })
+
+            m.addSource('neighborhood', {
+                type: 'geojson',
+                data: {
+                    type: "FeatureCollection",
+                    features: neightborhoodFeatures,
                 }
             })
 
@@ -74,30 +95,58 @@ const Map = () => {
             })
 
             m.addLayer({
-                id:'coastal_flooding',
-                type:'fill',
-                source:'coastal_flooding',
+                id: 'coastal_flooding',
+                type: 'fill',
+                source: 'coastal_flooding',
                 paint: {
                     "fill-color": [
                         'case',
-                        ['all', ['==', ['get',"FLD_ZONE"], "VE"]],
+                        ['all', ['==', ['get', "FLD_ZONE"], "VE"]],
                         "#3B9CD9",
-                        ['all', ['==', ['get',"FLD_ZONE"], "AE"]],
+                        ['all', ['==', ['get', "FLD_ZONE"], "AE"]],
                         "#7FBEE6",
                         "#3C9CD9",
                     ]
                 }
             })
 
+            // m.addLayer({
+            //     id: 'justice_area',
+            //     type: 'fill',
+            //     source: 'justice_area',
+            //     paint: {
+            //         "fill-color": [
+            //             'case',
+            //             ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
+            //             "#B9D7DA",
+            //             ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
+            //             "#D9E8EA",
+            //             'transparent'
+            //         ]
+            //     }
+            // })
+
             m.addLayer({
-                'id': 'try-out',
-                'source': 'try-out',
-                'type': 'circle',
+                'id': 'neighborhood_outline',
+                'type': 'line',
+                'source': 'neighborhood',
+                'layout': {},
                 'paint': {
-                    'circle-color': "#812948",
-                    'circle-radius': 4,
+                    'line-color': 'black',
+                    'line-width': .5,
+                    'line-opacity': .3
                 }
-            })
+            });
+
+            // m.addLayer({
+            //     'id': 'try-out',
+            //     'source': 'try-out',
+            //     'type': 'circle',
+            //     'paint': {
+            //         'circle-color': "#812948",
+            //         'circle-radius': 4,
+            //     }
+            // })
 
 
             m.on("click", 'try-out', () => {
