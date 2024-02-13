@@ -8,6 +8,7 @@ import MapLayer from './mapLayer/MapLayer'
 
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
 import justiceArea from "../../public/data/EnvironmentalJusticeArea.geo.json"
+import evacuationZone from "../../public/data/HurricaneEvacuationZones.geo.json"
 import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 
 
@@ -22,14 +23,15 @@ const Map = () => {
     /* @ts-ignore */
     const justiceAreaFeatures = (justiceArea).features
     /* @ts-ignore */
+    const evacuationZoneFeatures = evacuationZone.features
+    /* @ts-ignore */
     const neightborhoodFeatures = (neightborhood).features
-
+    console.log(evacuationZoneFeatures)
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
     const [zoom, setZoom] = useState(11);
 
-    console.log(process.env)
 
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY as string
@@ -75,6 +77,14 @@ const Map = () => {
                 }
             })
 
+            m.addSource('evaciation_zone', {
+                type: 'geojson',
+                data: {
+                    type: "FeatureCollection",
+                    features: evacuationZoneFeatures
+                }
+            })
+
             m.addSource('neighborhood', {
                 type: 'geojson',
                 data: {
@@ -112,21 +122,47 @@ const Map = () => {
                 }
             })
 
-            // m.addLayer({
-            //     id: 'justice_area',
-            //     type: 'fill',
-            //     source: 'justice_area',
-            //     paint: {
-            //         "fill-color": [
-            //             'case',
-            //             ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
-            //             "#B9D7DA",
-            //             ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
-            //             "#D9E8EA",
-            //             'transparent'
-            //         ]
-            //     }
-            // })
+            m.addLayer({
+                id: 'justice_area',
+                type: 'fill',
+                source: 'justice_area',
+                paint: {
+                    "fill-color": [
+                        'case',
+                        ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
+                        "#F7A848",
+                        ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
+                        "#FBD4A3",
+                        'transparent'
+                    ],
+                    'fill-opacity': 0
+                }
+            })
+
+            m.addLayer({
+                id: 'evacuation_zone',
+                type: 'fill',
+                source: 'evaciation_zone',
+                paint: {
+                    "fill-color": [
+                        'case',
+                        ['all', ['==', ['get', "hurricane_"], "1"]],
+                        "#2F8890",
+                        ['all', ['==', ['get', "hurricane_"], "2"]],
+                        "#529CA4",
+                        ['all', ['==', ['get', "hurricane_"], "3"]],
+                        "#74B0B5",
+                        ['all', ['==', ['get', "hurricane_"], "4"]],
+                        "#96C3C8",
+                        ['all', ['==', ['get', "hurricane_"], "5"]],
+                        "#B9D7DA",
+                        ['all', ['==', ['get', "hurricane_"], "6"]],
+                        "#D9E8EA",
+                        'transparent'
+                    ],
+                    'fill-opacity': 0
+                }
+            })
 
             m.addLayer({
                 'id': 'neighborhood_outline',
@@ -140,15 +176,15 @@ const Map = () => {
                 }
             });
 
-            // m.addLayer({
-            //     'id': 'try-out',
-            //     'source': 'try-out',
-            //     'type': 'circle',
-            //     'paint': {
-            //         'circle-color': "#812948",
-            //         'circle-radius': 4,
-            //     }
-            // })
+            m.addLayer({
+                'id': 'try-out',
+                'source': 'try-out',
+                'type': 'circle',
+                'paint': {
+                    'circle-color': "#812948",
+                    'circle-radius': 4,
+                }
+            })
 
 
             m.on("click", 'try-out', () => {
