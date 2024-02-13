@@ -26,7 +26,6 @@ const Map = () => {
     const evacuationZoneFeatures = evacuationZone.features
     /* @ts-ignore */
     const neightborhoodFeatures = (neightborhood).features
-    console.log(evacuationZoneFeatures)
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -69,7 +68,7 @@ const Map = () => {
                 }
             })
 
-            m.addSource('justice_area', {
+            m.addSource('environmental_justice_areas', {
                 type: 'geojson',
                 data: {
                     type: "FeatureCollection",
@@ -77,7 +76,15 @@ const Map = () => {
                 }
             })
 
-            m.addSource('evaciation_zone', {
+            m.addSource('hurricane_evacuation_zones', {
+                type: 'geojson',
+                data: {
+                    type: "FeatureCollection",
+                    features: evacuationZoneFeatures
+                }
+            })
+
+            m.addSource('stormwater_flooding', {
                 type: 'geojson',
                 data: {
                     type: "FeatureCollection",
@@ -118,14 +125,15 @@ const Map = () => {
                         ['all', ['==', ['get', "FLD_ZONE"], "AE"]],
                         "#7FBEE6",
                         "#3C9CD9",
-                    ]
+                    ],
+                    'fill-opacity': 1
                 }
             })
 
             m.addLayer({
-                id: 'justice_area',
+                id: 'environmental_justice_areas',
                 type: 'fill',
-                source: 'justice_area',
+                source: 'environmental_justice_areas',
                 paint: {
                     "fill-color": [
                         'case',
@@ -140,9 +148,9 @@ const Map = () => {
             })
 
             m.addLayer({
-                id: 'evacuation_zone',
+                id: 'hurricane_evacuation_zones',
                 type: 'fill',
-                source: 'evaciation_zone',
+                source: 'hurricane_evacuation_zones',
                 paint: {
                     "fill-color": [
                         'case',
@@ -158,6 +166,24 @@ const Map = () => {
                         "#B9D7DA",
                         ['all', ['==', ['get', "hurricane_"], "6"]],
                         "#D9E8EA",
+                        'transparent'
+                    ],
+                    'fill-opacity': 0
+                }
+            })
+
+
+            m.addLayer({
+                id: 'stormwater_flooding',
+                type: 'fill',
+                source: 'stormwater_flooding',
+                paint: {
+                    "fill-color": [
+                        'case',
+                        ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
+                        "#F7A848",
+                        ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
+                        "#FBD4A3",
                         'transparent'
                     ],
                     'fill-opacity': 0
