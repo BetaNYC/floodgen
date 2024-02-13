@@ -4,11 +4,7 @@ import { MapContext, MapContextType } from '../../../contexts/MapContext'
 
 import MapLayerCard from './MapLayerCard'
 
-// type FloodingTypes =
-//   | "Coastal Floodin"
-//   | "Storm Flooding"
-//   | "Environmental Justice Areas"
-//   | "Hurricane Evacuation Zone";
+
 
 
 const MapLayerCards = () => {

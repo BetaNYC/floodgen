@@ -9,10 +9,7 @@ import { btnsType } from './MapLayer'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 type Props = {
-    clicked: {
-        Layers: boolean,
-        Legend: boolean
-    },
+    clicked: btnsType
     buttonClickHandler: (title: btnsType) => void
 }
 
@@ -40,8 +37,8 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                 {
                     openStreetView && <Previous />
                 }
-                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked['Layers'] ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked[btnsData[0].title]} buttonClickHandler={() => buttonClickHandler(btnsData[0].title)} />
-                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked['Legend'] ? btnsData[1].src_selected : btnsData[1].src} clicked={clicked[btnsData[1].title]} buttonClickHandler={() => buttonClickHandler(btnsData[1].title)} />
+                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked === 'Layers'} buttonClickHandler={() => buttonClickHandler('Layers')} />
+                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked=== 'Legend'? btnsData[1].src_selected : btnsData[1].src} clicked={clicked === 'Legend'} buttonClickHandler={() => buttonClickHandler('Legend')} />
             </div>
         </>
 
