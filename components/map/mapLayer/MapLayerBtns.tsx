@@ -18,7 +18,7 @@ type Props = {
 
 const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
-    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
 
     const btnsData: { src: string, src_selected: string, title: btnsType }[] = [
         {
@@ -37,7 +37,9 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
         <>
             <div className={`absolute left-4 flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(50%_+_1.125rem)]" : "top-[1.125rem]"}`}>
                 {/* <Image width={80} height={80} src="./icons/previous.svg" alt='previous' className='border-2 border-black' /> */}
-                <Previous />
+                {
+                    openStreetView && <Previous />
+                }
                 <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked['Layers'] ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked[btnsData[0].title]} buttonClickHandler={() => buttonClickHandler(btnsData[0].title)} />
                 <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked['Legend'] ? btnsData[1].src_selected : btnsData[1].src} clicked={clicked[btnsData[1].title]} buttonClickHandler={() => buttonClickHandler(btnsData[1].title)} />
             </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
+import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 // import InfoTitle from './InfoTitle'
 import InfoAbout from './InfoAbout'
@@ -16,6 +17,8 @@ const InfoBox = () => {
 
     const [selected, setSelected] = useState<'About' | "Credit">("About")
     const [boxShown, setBoxShown] = useState(false)
+
+    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
 
 
     const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
@@ -32,7 +35,7 @@ const InfoBox = () => {
 
     return (
         <>
-            <div className={`absolute top-[36%]  lg:top-0 w-full h-[64%] lg:h-full bg-white lg:bg-secondary_blue rounded-t-[1rem] lg:rounded-none z-30 overflow-y-auto ${boxShown ? "translate-y-0 duration-700" : "translate-y-full duration-700"}`}>
+            <div className={`absolute top-[36%] lg:top-0 w-full h-[64%] lg:h-full bg-white lg:bg-secondary_blue rounded-t-[1rem] lg:rounded-none z-30 overflow-y-auto ${boxShown ? "translate-y-0 duration-700" : "translate-y-full duration-700"}`}>
                 <div className=' px-5 lg:px-16 pt-[3rem] lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
                     <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' />
                     {/* <InfoTitle /> */}
@@ -47,8 +50,8 @@ const InfoBox = () => {
                     </div>
                 </div>
             </div>
-            <div className='absolute top-7 left-4 lg:left-[calc(100%_-_4.5rem)] flex items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30' onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
-                <Image width={18} height={12} src={boxShown ? "./icons/cross.svg" : "./icons/hamburger.svg"} alt='hamburger' className='cursor-pointer' />
+            <div className={`absolute top-7 left-4 lg:left-[calc(100%_-_4.5rem)] ${openStreetView ? "flex" : "hidden"} items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
+                <Image width={18} height={12} src={boxShown ? "./icons/cross.svg" : "./icons/hamburger.svg"} alt='hamburger' className={` cursor-pointer`} />
             </div>
         </>
     )
