@@ -28,7 +28,7 @@ const MapLayerCards = () => {
     ]
 
     return (
-        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-[1.8125rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30`}>
+        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-[1.8125rem] h-[50%] lg:h-[16.375rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
                 <div className='mb-5 font-bold text-heading text-black'>Choose Map Layer</div>
