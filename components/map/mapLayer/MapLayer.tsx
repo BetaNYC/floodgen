@@ -5,20 +5,13 @@ import MapLayerCards from './MapLayerCards'
 import Legend from './Legend'
 
 
-export type btnsType = 'Layers' | 'Legend'
+export type btnsType = 'Layers' | 'Legend' | 'Close'
 
 
 const MapLayer = () => {
 
     const [clicked, setClicked] = useState<btnsType>('Legend')
-
     const buttonClickHandler = (title: btnsType) => setClicked(title)
-    // const newClicked = { ...clicked } as {
-    //     Layers: boolean,
-    //     Legend: boolean
-    // }
-
-    // (Object.keys(newClicked) as btnsType[]).forEach((c: btnsType) => c === title ? newClicked[c] = true : newClicked[c] = false)
 
 
 
@@ -26,7 +19,7 @@ const MapLayer = () => {
     return (
         <>
             <MapLayerBtns clicked={clicked} buttonClickHandler={buttonClickHandler} />
-            {clicked === 'Layers' ? <MapLayerCards /> : <Legend />}
+            {clicked === 'Layers' ? <MapLayerCards /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} /> : null}
         </>
     )
 }

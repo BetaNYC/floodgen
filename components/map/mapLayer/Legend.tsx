@@ -4,9 +4,17 @@ import Image from 'next/image'
 
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
-function Legend() {
+import { btnsType } from './MapLayer'
+
+type Props = {
+    buttonClickHandler: (btn: btnsType) => void
+}
+
+function Legend({ buttonClickHandler }: Props) {
 
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+
+
 
     return (
         <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_10.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3 min-w-[10.5rem] bg-background_white rounded-[1rem] z-20`}>
@@ -17,6 +25,8 @@ function Legend() {
                     width={15}
                     height={15}
                     alt='cross'
+                    className='cursor-pointer'
+                    onClick={() => buttonClickHandler('Close')}
                 />
             </div>
             <div className='flex flex-col gap-4'>

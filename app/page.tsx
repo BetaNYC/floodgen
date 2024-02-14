@@ -16,7 +16,7 @@ export default function Home() {
           <Map />
           <InfoPage />
           <StreetView />
-          {/* <StreetInfo /> */}
+          <StreetInfo />
         </StreetViewProvider>
       </MapProvider>
     </main>

@@ -15,7 +15,7 @@ import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
-    const { setMap } = useContext(MapContext) as MapContextType
+    const { setMap, setClickedCoord } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
 
     /* @ts-ignore */
@@ -213,15 +213,18 @@ const Map = () => {
             })
 
 
-            m.on("click", 'try-out', () => {
-                console.log('aaa')
+            m.on("click", 'try-out', (e:) => {
                 setOpenStreetView(true)
+                setClickedCoord([e.lngLat.lng, e.lngLat.lat])
                 setTimeout(() => {
                     m.flyTo({
                         center: [-73.913, 40.733],
                         duration: 1500
                     });
                 }, 1500)
+                const marker = new mapboxgl.Marker({
+                    color: 'red'
+                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m).setRotation(30)
 
             })
         })
