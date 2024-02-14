@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import mapboxgl from 'mapbox-gl'
+import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
@@ -213,7 +213,7 @@ const Map = () => {
             })
 
 
-            m.on("click", 'try-out', (e:) => {
+            m.on("click", 'try-out', (e: MapMouseEvent) => {
                 setOpenStreetView(true)
                 setClickedCoord([e.lngLat.lng, e.lngLat.lat])
                 setTimeout(() => {
