@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Geometry, GeoJsonProperties } from 'geojson'
 import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
@@ -15,17 +16,8 @@ import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
-    const { setMap, setClickedCoord } = useContext(MapContext) as MapContextType
+    const { setMap, marker } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-
-    /* @ts-ignore */
-    const coastalFloodingFeatures = (coastalFlooding).features
-    /* @ts-ignore */
-    const justiceAreaFeatures = (justiceArea).features
-    /* @ts-ignore */
-    const evacuationZoneFeatures = evacuationZone.features
-    /* @ts-ignore */
-    const neightborhoodFeatures = (neightborhood).features
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -62,42 +54,27 @@ const Map = () => {
 
             m.addSource("coastal_flooding", {
                 type: 'geojson',
-                data: {
-                    type: "FeatureCollection",
-                    features: coastalFloodingFeatures,
-                }
+                data: coastalFlooding as GeoJSON.FeatureCollection
             })
 
             m.addSource('environmental_justice_areas', {
                 type: 'geojson',
-                data: {
-                    type: "FeatureCollection",
-                    features: justiceAreaFeatures,
-                }
+                data: justiceArea as GeoJSON.FeatureCollection
             })
 
             m.addSource('hurricane_evacuation_zones', {
                 type: 'geojson',
-                data: {
-                    type: "FeatureCollection",
-                    features: evacuationZoneFeatures
-                }
+                data: evacuationZone as GeoJSON.FeatureCollection
             })
 
             m.addSource('stormwater_flooding', {
                 type: 'geojson',
-                data: {
-                    type: "FeatureCollection",
-                    features: evacuationZoneFeatures
-                }
+                data: neightborhood as GeoJSON.FeatureCollection
             })
 
             m.addSource('neighborhood', {
                 type: 'geojson',
-                data: {
-                    type: "FeatureCollection",
-                    features: neightborhoodFeatures,
-                }
+                data: neightborhood as GeoJSON.FeatureCollection
             })
 
             m.addSource('try-out', {
@@ -215,16 +192,13 @@ const Map = () => {
 
             m.on("click", 'try-out', (e: MapMouseEvent) => {
                 setOpenStreetView(true)
-                setClickedCoord([e.lngLat.lng, e.lngLat.lat])
                 setTimeout(() => {
                     m.flyTo({
                         center: [-73.913, 40.733],
                         duration: 1500
                     });
                 }, 1500)
-                const marker = new mapboxgl.Marker({
-                    color: 'red'
-                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m).setRotation(30)
+                marker.setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m).setRotation(90)
 
             })
         })
