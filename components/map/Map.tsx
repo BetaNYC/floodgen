@@ -7,6 +7,9 @@ import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 import MapLayer from './mapLayer/MapLayer'
 
+import directionSVG from "../../public/icons/direction.svg"
+import markerSVG from "../../public/icons/marker.svg"
+
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
 import justiceArea from "../../public/data/EnvironmentalJusticeArea.geo.json"
 import evacuationZone from "../../public/data/HurricaneEvacuationZones.geo.json"
@@ -185,8 +188,8 @@ const Map = () => {
                 'source': 'try-out',
                 'type': 'circle',
                 'paint': {
-                    'circle-color': "#812948",
-                    'circle-radius': 4,
+                    'circle-color': "#306DDD",
+                    'circle-radius': 6,
                 }
             })
 
@@ -199,10 +202,29 @@ const Map = () => {
                         duration: 1500
                     });
                 }, 1500)
-                const marker = new mapboxgl.Marker({
-                    color: 'blue'
+
+
+
+                let directionImg = new Image(50, 50)
+                directionImg.onload = () => m.addImage('direciton', directionImg, {
+                    sdf: true
+                })
+                directionImg.src = directionSVG.src
+
+                const direction = new mapboxgl.Marker(directionImg, {
+                    offset: [-.5, -25]
                 }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
-                setMarker(marker)
+                setMarker(direction)
+
+                let markerImg = new Image(25, 25)
+                markerImg.onload = () => m.addImage('marker', markerImg, {
+                    sdf: true
+                })
+                markerImg.src = markerSVG.src
+
+                const marker = new mapboxgl.Marker(markerImg, {
+                    offset: [0, 0]
+                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
 
             })
         })

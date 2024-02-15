@@ -33,7 +33,7 @@ const floodingBtnsData: {
 
 
 const StreetView = () => {
-    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView} = useContext(StreetViewContext) as StreetViewType
     const { marker, markerDegree, setMarkerDegree } = useContext(MarkerContext) as MarkerContextType
 
     const [clicked, setClicked] = useState({
