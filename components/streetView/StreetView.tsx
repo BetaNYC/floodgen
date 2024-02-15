@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react'
 
 import FloodingButton from './FloodingButton'
-import Previous from '@/shared/Previous'
-import Next from '@/shared/Next'
+import Order from '@/shared/Order'
 
-import Image from 'next/image'
+import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
+import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 type floodingTypes = 'Street View' | 'Minor Flooding' | "Moderate Flooding" | "Major Flooding"
 
@@ -34,6 +34,8 @@ const floodingBtnsData: {
 
 const StreetView = () => {
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { marker, markerDegree, setMarkerDegree } = useContext(MarkerContext) as MarkerContextType
+
     const [clicked, setClicked] = useState({
         "Street View": false,
         "Minor Flooding": false,
@@ -54,6 +56,20 @@ const StreetView = () => {
         setClicked(newClicked)
     }
 
+    const changeStreetViewClickHandler = (o: 'previous' | 'next') => {
+        const degree = 45
+        switch (o) {
+            case 'previous':
+                marker!.setRotation(markerDegree-degree)
+                setMarkerDegree(curr => curr - degree)
+                break
+            case 'next':
+                marker!.setRotation(markerDegree + degree)
+                setMarkerDegree(curr => curr + degree)
+                break
+        }
+    }
+
     return (
         <div className={`absolute top-0 left-0 pt-[1.75rem] ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"}   lg:pl-8 w-full h-[50%] bg-slate-400 z-20 transition-all duration-[1500ms] ease-in-out`}>
             <div className='flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
@@ -65,10 +81,10 @@ const StreetView = () => {
                 }
             </div>
             <div className='absolute top-[calc(50%_-_2.5rem)] left-4 lg:left-8 opacity-75'>
-                <Previous />
+                <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
             </div>
             <div className='absolute top-[calc(50%_-_2.5rem)] right-4 lg:right-8 opacity-75'>
-                <Next />
+                <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
             </div>
             {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
         </div>

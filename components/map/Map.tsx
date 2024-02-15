@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import { Geometry, GeoJsonProperties } from 'geojson'
 import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
+import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 import MapLayer from './mapLayer/MapLayer'
 
@@ -16,8 +16,9 @@ import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
-    const { setMap, marker } = useContext(MapContext) as MapContextType
+    const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { setMarker } = useContext(MarkerContext) as MarkerContextType
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -25,7 +26,7 @@ const Map = () => {
 
 
     useEffect(() => {
-        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY as string
+        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
 
         const m = new mapboxgl.Map({
             container: mapContainer.current || "",
@@ -198,7 +199,10 @@ const Map = () => {
                         duration: 1500
                     });
                 }, 1500)
-                marker.setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m).setRotation(90)
+                const marker = new mapboxgl.Marker({
+                    color: 'blue'
+                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
+                setMarker(marker)
 
             })
         })

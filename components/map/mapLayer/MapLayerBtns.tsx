@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import Image from 'next/image'
 
 import Button from '@/shared/Button'
-import Previous from '@/shared/Previous'
+import Previous from '@/shared/Order'
 import { btnsType } from './MapLayer'
 
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
