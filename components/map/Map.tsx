@@ -29,7 +29,7 @@ const Map = () => {
 
 
     useEffect(() => {
-        mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
+        mapboxgl.accessToken = "pk.eyJ1IjoiYmV0YW55YyIsImEiOiJhdEk0RmZ3In0.z3ayA_ZWlFP7Co7h-T-6WQ" as string
 
         const m = new mapboxgl.Map({
             container: mapContainer.current || "",
