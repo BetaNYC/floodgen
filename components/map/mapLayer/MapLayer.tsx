@@ -19,7 +19,7 @@ const MapLayer = () => {
     return (
         <>
             <MapLayerBtns clicked={clicked} buttonClickHandler={buttonClickHandler} />
-            {clicked === 'Layers' ? <MapLayerCards /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} /> : null}
+            {clicked === 'Layers' ? <MapLayerCards buttonClickHandler={buttonClickHandler} /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} /> : null}
         </>
     )
 }

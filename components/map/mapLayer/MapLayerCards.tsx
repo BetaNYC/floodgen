@@ -1,9 +1,17 @@
 import React, { useContext, useState } from 'react'
 
+import Image from 'next/image'
+
 import { MapContext, MapContextType } from '../../../contexts/MapContext'
 
 import MapLayerCard from './MapLayerCard'
 import useHoverStatus from '@/hooks/useHoverStatus'
+
+import { btnsType } from './MapLayer'
+
+type Props = {
+    buttonClickHandler: (btn: btnsType) => void
+}
 
 const layers: {
     image: string,
@@ -38,13 +46,13 @@ const layers: {
     ]
 
 
-const MapLayerCards = () => {
+const MapLayerCards = ({ buttonClickHandler }: Props) => {
 
     const { map } = useContext(MapContext) as MapContextType
 
     const [clicked, setClicked] = useState(layers.map(l => false))
 
-    const {hovered, mouseEnterHandler, mouseLeaveHandler} = useHoverStatus(layers)
+    const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(layers)
 
 
     const clickHandler = (title: floodingTypes, index: number) => {
@@ -60,11 +68,23 @@ const MapLayerCards = () => {
         })
     }
 
+
     return (
-        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-[1.8125rem] h-[50%] lg:h-[16.375rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
+        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[16.375rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
-                <div className='mb-5 font-bold text-heading text-black'>Choose Map Layer</div>
+                <div className='flex justify-between items-center mb-5 w-full'>
+                    <div className='font-bold text-heading text-black'>Choose Map Layer</div>
+                    <Image
+                        src='./icons/cross.svg'
+                        width={15}
+                        height={15}
+                        alt='cross'
+                        className='cursor-pointer'
+                        onClick={() => buttonClickHandler('Close')}
+                    />
+                </div>
+
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
                     {layers.map((layer, i) => <MapLayerCard clicked={clicked[i]} image={clicked[i] || hovered[i] ? layer.image_white : layer.image} title={layer.title} content={layer.content} key={layer.title} clickHandler={() => clickHandler(layer.title, i)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)}
                 </div>
