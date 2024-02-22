@@ -5,6 +5,10 @@ import Order from '@/shared/Order'
 
 import useHoverStatus from '@/hooks/useHoverStatus'
 
+import StreetInfo from './StreetInfo'
+
+
+
 
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
@@ -81,23 +85,26 @@ const StreetView = () => {
     }
 
     return (
-        <div className={`absolute top-0 left-0 pt-[1.75rem] ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"}   lg:pl-8 w-full h-[50%] bg-slate-400 z-20 transition-all duration-[1500ms] ease-in-out`}>
-            <div className='flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
-                {/* <div className='flex items-center justify-center min-w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,.65)] z-20'>
+        <>
+            <div className={`absolute top-0 left-0 pt-[1.75rem] ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"}   lg:pl-8 w-full h-[50%] bg-slate-400 z-20 transition-all duration-[1500ms] ease-in-out`}>
+                <div className='flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
+                    {/* <div className='flex items-center justify-center min-w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,.65)] z-20'>
                     <Image width={18} height={12} src="./icons/hamburger.svg" alt='hamburger' className='cursor-pointer' />
                 </div> */}
-                {
-                    floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
-                }
+                    {
+                        floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
+                    }
+                </div>
+                <div className='absolute top-[calc(50%_-_2.5rem)] left-4 lg:left-8 opacity-75'>
+                    <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
+                </div>
+                <div className='absolute top-[calc(50%_-_2.5rem)] right-4 lg:right-8 opacity-75'>
+                    <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
+                </div>
+                {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
             </div>
-            <div className='absolute top-[calc(50%_-_2.5rem)] left-4 lg:left-8 opacity-75'>
-                <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
-            </div>
-            <div className='absolute top-[calc(50%_-_2.5rem)] right-4 lg:right-8 opacity-75'>
-                <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
-            </div>
-            {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
-        </div>
+            <StreetInfo openStreetView={openStreetView}/>
+        </>
     )
 }
 

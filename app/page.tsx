@@ -7,7 +7,6 @@ import { MarkerProvider } from '@/contexts/MarkerContext'
 import Map from '@/components/map/Map'
 import InfoPage from '@/components/infoPage/InfoPage'
 import StreetView from '@/components/streetView/StreetView'
-import StreetInfo from '@/components/streetView/StreetInfo'
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
             <Map />
             <InfoPage />
             <StreetView />
-            {/* <StreetInfo /> */}
           </MarkerProvider>
         </StreetViewProvider>
       </MapProvider>
