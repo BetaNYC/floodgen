@@ -3,7 +3,9 @@ import React, { useState, useContext } from 'react'
 import FloodingButton from './FloodingButton'
 import Order from '@/shared/Order'
 
-import { MapContext, MapContextType } from '@/contexts/MapContext'
+import useHoverStatus from '@/hooks/useHoverStatus'
+
+
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
@@ -12,28 +14,33 @@ type floodingTypes = 'Street View' | 'Minor Flooding' | "Moderate Flooding" | "M
 const floodingBtnsData: {
     title: floodingTypes,
     src: string
+    src_white: string
 }[] = [
         {
             title: 'Street View',
             src: './icons/street.svg',
+            src_white: './icons/street_white.svg'
         },
         {
             title: 'Minor Flooding',
             src: './icons/minor.svg',
+            src_white: './icons/minor_white.svg'
         },
         {
             title: 'Moderate Flooding',
             src: './icons/minor.svg',
+            src_white: './icons/minor_white.svg'
         },
         {
             title: 'Major Flooding',
             src: './icons/minor.svg',
+            src_white: './icons/minor_white.svg'
         }
     ]
 
 
 const StreetView = () => {
-    const { openStreetView} = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
     const { marker, markerDegree, setMarkerDegree } = useContext(MarkerContext) as MarkerContextType
 
     const [clicked, setClicked] = useState({
@@ -42,6 +49,9 @@ const StreetView = () => {
         "Moderate Flooding": false,
         "Major Flooding": false,
     })
+
+    const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(floodingBtnsData)
+
 
     const floodingButtonClickHandler = (title: floodingTypes) => {
 
@@ -60,7 +70,7 @@ const StreetView = () => {
         const degree = 45
         switch (o) {
             case 'previous':
-                marker!.setRotation(markerDegree-degree)
+                marker!.setRotation(markerDegree - degree)
                 setMarkerDegree(curr => curr - degree)
                 break
             case 'next':
@@ -77,7 +87,7 @@ const StreetView = () => {
                     <Image width={18} height={12} src="./icons/hamburger.svg" alt='hamburger' className='cursor-pointer' />
                 </div> */}
                 {
-                    floodingBtnsData.map(f => <FloodingButton key={f.title} clicked={clicked[f.title]} title={f.title} src={f.src} buttonClickHandler={() => floodingButtonClickHandler(f.title)} />)
+                    floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
                 }
             </div>
             <div className='absolute top-[calc(50%_-_2.5rem)] left-4 lg:left-8 opacity-75'>

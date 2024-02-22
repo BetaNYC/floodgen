@@ -42,8 +42,8 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                 {
                     openStreetView && <Previous />
                 }
-                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' ? btnsData[0].src_white : btnsData[0].src} clicked={clicked === 'Layers'} buttonClickHandler={() => buttonClickHandler('Layers')} />
-                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked === 'Legend' ? btnsData[1].src_white : btnsData[1].src} clicked={clicked === 'Legend'} buttonClickHandler={() => buttonClickHandler('Legend')} />
+                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' || hovered[0] ? btnsData[0].src_white : btnsData[0].src} clicked={clicked === 'Layers'} hovered={hovered[0]} buttonClickHandler={() => buttonClickHandler('Layers')} mouseEnterHandler={() => mouseEnterHandler(0)} mouseLeaveHandler={mouseLeaveHandler} />
+                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked === 'Legend' || hovered[1] ? btnsData[1].src_white : btnsData[1].src} clicked={clicked === 'Legend'} hovered={hovered[1]} buttonClickHandler={() => buttonClickHandler('Legend')} mouseEnterHandler={() => mouseEnterHandler(1)} mouseLeaveHandler={mouseLeaveHandler}/>
             </div>
         </>
 
