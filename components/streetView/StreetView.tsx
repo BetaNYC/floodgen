@@ -101,9 +101,10 @@ const StreetView = () => {
                 <div className='absolute top-[calc(50%_-_2.5rem)] right-4 lg:right-8 opacity-75'>
                     <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
                 </div>
+                <StreetInfo openStreetView={openStreetView}/>
                 {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
             </div>
-            <StreetInfo openStreetView={openStreetView}/>
+
         </>
     )
 }

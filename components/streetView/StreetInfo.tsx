@@ -14,7 +14,7 @@ const StreetInfo = ({ openStreetView }: Props) => {
   return (
     <>
       {
-        openStreetView && <div className={`absolute bottom-0 lg:left-8 lg:top-7 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[50%] lg:h-[calc(50%_-_3.5rem)]" : "h-[9.375rem] lg:h-[7.75rem]"}  bg-white rounded-[1rem] z-20 `}>
+        openStreetView && <div className={`absolute bottom-[-100%] lg:left-8 lg:top-7 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[100%] lg:h-[calc(100%_-_3.5rem)]" : "h-[9.375rem] lg:h-[7.75rem]"}  bg-white rounded-[1rem] z-20 `}>
           <div className='flex justify-between items-center w-full'>
             <h2 className='font-bold text-heading text-content_black'>Rivington St & Suffolk St</h2>
 
