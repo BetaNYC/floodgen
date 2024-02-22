@@ -50,7 +50,7 @@ const InfoBox = () => {
                     </div>
                 </div>
             </div>
-            <div className={`absolute top-7 left-4 lg:left-[calc(100%_-_4.5rem)] ${openStreetView ? "flex" : "hidden"} items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
+            <div className={`absolute top-7 left-4 lg:left-[calc(100%_-_4.5rem)] ${openStreetView ? "flex" : "hidden"} items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30 shadow-2xl`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
                 <Image width={18} height={12} src={boxShown ? "./icons/cross.svg" : "./icons/hamburger.svg"} alt='hamburger' className={` cursor-pointer`} />
             </div>
         </>

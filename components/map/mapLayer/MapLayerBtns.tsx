@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import useHoverStatus from '@/hooks/useHoverStatus'
 
 import Image from 'next/image'
 
@@ -17,18 +18,22 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
 
-    const btnsData: { src: string, src_selected: string, title: btnsType }[] = [
+    const btnsData: { src: string, src_white: string, title: btnsType }[] = [
         {
             src: "./icons/layers.svg",
-            src_selected: "./icons/layers_white.svg",
+            src_white: "./icons/layers_white.svg",
             title: "Layers"
         },
         {
             src: "./icons/legend.svg",
-            src_selected: "./icons/legend_white.svg",
+            src_white: "./icons/legend_white.svg",
             title: "Legend"
         }
     ]
+
+    const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(btnsData)
+
+
 
     return (
         <>
@@ -37,8 +42,8 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                 {
                     openStreetView && <Previous />
                 }
-                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' ? btnsData[0].src_selected : btnsData[0].src} clicked={clicked === 'Layers'} buttonClickHandler={() => buttonClickHandler('Layers')} />
-                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked=== 'Legend'? btnsData[1].src_selected : btnsData[1].src} clicked={clicked === 'Legend'} buttonClickHandler={() => buttonClickHandler('Legend')} />
+                <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' ? btnsData[0].src_white : btnsData[0].src} clicked={clicked === 'Layers'} buttonClickHandler={() => buttonClickHandler('Layers')} />
+                <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked === 'Legend' ? btnsData[1].src_white : btnsData[1].src} clicked={clicked === 'Legend'} buttonClickHandler={() => buttonClickHandler('Legend')} />
             </div>
         </>
 

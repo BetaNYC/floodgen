@@ -17,7 +17,7 @@ function Legend({ buttonClickHandler }: Props) {
 
 
     return (
-        <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_10.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3 min-w-[10.5rem] bg-background_white rounded-[1rem] z-20`}>
+        <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_10.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3 min-w-[10.5rem] bg-background_white rounded-[1rem] z-20 shadow-2xl`}>
             <div className='mb-4 w-full flex justify-between items-start '>
                 <div className='font-bold text-small lg:text-heading text-black'>Legend</div>
                 <Image
