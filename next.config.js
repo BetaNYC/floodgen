@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
+    target: 'experimental-serverless-trace',
     // env: {
     //     BASE_URL: process.env.NEXT_PUBLIC_MAPBOX_API_KEY,
     // }
