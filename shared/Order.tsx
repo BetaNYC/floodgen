@@ -1,5 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
+
+
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid'
 
 type Props = {
   order: 'previous' | 'next'
@@ -9,7 +11,11 @@ type Props = {
 const Order = ({ order, clickHandler }: Props) => {
   return (
     <div className='flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={clickHandler}>
-      <Image width={24} height={24} src={`${order === 'previous' ? "./icons/previous.svg" : "./icons/next.svg" }`} alt='order' />
+      {
+        order === 'previous' ?
+        <ChevronLeftIcon className='w-6 h-6 text-black' /> :
+        <ChevronRightIcon className='w-6 h-6 text-black' /> 
+      }
     </div>
   )
 }

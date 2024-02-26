@@ -6,6 +6,8 @@ import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
 import { btnsType } from './MapLayer'
 
+import { XMarkIcon } from '@heroicons/react/16/solid'
+
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
 }
@@ -20,14 +22,7 @@ function Legend({ buttonClickHandler }: Props) {
         <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_10.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3 min-w-[10.5rem] bg-background_white rounded-[1rem] z-20 shadow-2xl`}>
             <div className='flex justify-between items-start mb-4 w-full'>
                 <div className='font-bold text-small lg:text-heading text-black'>Legend</div>
-                <Image
-                    src="./icons/cross.svg"
-                    width={15}
-                    height={15}
-                    alt='cross'
-                    className='cursor-pointer'
-                    onClick={() => buttonClickHandler('Close')}
-                />
+                <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')}/>
             </div>
             <div className='flex flex-col gap-4'>
                 <div className='flex items-center gap-3'>

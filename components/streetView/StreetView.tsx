@@ -8,10 +8,10 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 import StreetInfo from './StreetInfo'
 
 
-
-
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
+
+import { ArrowsPointingOutIcon } from '@heroicons/react/20/solid'
 
 type floodingTypes = 'Street View' | 'Minor Flooding' | "Moderate Flooding" | "Major Flooding"
 
@@ -44,7 +44,7 @@ const floodingBtnsData: {
 
 
 const StreetView = () => {
-    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
     const { marker, markerDegree, setMarkerDegree } = useContext(MarkerContext) as MarkerContextType
 
     const [clicked, setClicked] = useState({
@@ -84,6 +84,11 @@ const StreetView = () => {
         }
     }
 
+    const closeStreetViewClickHandler = () => {
+        setOpenStreetView(false)
+        marker?.remove()
+    }
+
     return (
         <>
             <div className={`absolute top-0 left-0 pt-[1.75rem] ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"}   lg:pl-8 w-full h-[50%] bg-slate-400 z-20 transition-all duration-[1500ms] ease-in-out`}>
@@ -101,7 +106,11 @@ const StreetView = () => {
                 <div className='absolute top-[calc(50%_-_2.5rem)] right-4 lg:right-8 opacity-75'>
                     <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
                 </div>
-                <StreetInfo openStreetView={openStreetView}/>
+                <StreetInfo openStreetView={openStreetView} />
+                <div className='absolute right-4 lg:right-8 bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={closeStreetViewClickHandler}>
+                    <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
+                </div>
+
                 {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
             </div>
 
