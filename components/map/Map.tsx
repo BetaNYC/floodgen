@@ -21,7 +21,7 @@ const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-    const { setMarker } = useContext(MarkerContext) as MarkerContextType
+    const { setDirection, setMarker } = useContext(MarkerContext) as MarkerContextType
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -89,6 +89,20 @@ const Map = () => {
                         type: 'Point',
                         coordinates:
                             [-73.913, 40.763]
+                    },
+                    properties: {},
+                }
+            })
+
+
+            m.addSource('try-second', {
+                'type': 'geojson',
+                'data': {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates:
+                            [-73.815, 40.763]
                     },
                     properties: {},
                 }
@@ -193,6 +207,16 @@ const Map = () => {
                 }
             })
 
+            m.addLayer({
+                'id': 'try-second',
+                'source': 'try-second',
+                'type': 'circle',
+                'paint': {
+                    'circle-color': "#306DDD",
+                    'circle-radius': 6,
+                }
+            })
+
 
             m.on("click", 'try-out', (e: MapMouseEvent) => {
                 setOpenStreetView(true)
@@ -214,7 +238,7 @@ const Map = () => {
                 const direction = new mapboxgl.Marker(directionImg, {
                     offset: [-.5, -25]
                 }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
-                setMarker(direction)
+                setDirection(direction)
 
                 let markerImg = new Image(25, 25)
                 markerImg.onload = () => m.addImage('marker', markerImg, {
@@ -225,8 +249,12 @@ const Map = () => {
                 const marker = new mapboxgl.Marker(markerImg, {
                     offset: [0, 0]
                 }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
+                setMarker(marker)
 
             })
+
+
+
         })
     }, [])
 

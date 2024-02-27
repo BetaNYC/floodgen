@@ -9,6 +9,8 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 
 import { btnsType } from './MapLayer'
 
+import { XMarkIcon } from '@heroicons/react/16/solid'
+
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
 }
@@ -75,14 +77,7 @@ const MapLayerCards = ({ buttonClickHandler }: Props) => {
             <div>
                 <div className='flex justify-between items-center mb-5 w-full'>
                     <div className='font-bold text-heading text-black'>Choose Map Layer</div>
-                    <Image
-                        src='./icons/cross.svg'
-                        width={15}
-                        height={15}
-                        alt='cross'
-                        className='cursor-pointer'
-                        onClick={() => buttonClickHandler('Close')}
-                    />
+                    <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')} />
                 </div>
 
                 <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>

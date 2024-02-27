@@ -3,8 +3,10 @@ import { createContext, useState, Dispatch, SetStateAction, ReactNode } from "re
 export type MarkerContextType = {
     marker: mapboxgl.Marker | null,
     setMarker: Dispatch<SetStateAction<mapboxgl.Marker | null>>
-    markerDegree: number
-    setMarkerDegree: Dispatch<SetStateAction<number>>
+    direction: mapboxgl.Marker | null,
+    setDirection: Dispatch<SetStateAction<mapboxgl.Marker | null>>
+    directionDegree: number
+    setDirectionDegree: Dispatch<SetStateAction<number>>
 }
 
 
@@ -16,12 +18,13 @@ const MarkerContext = createContext<MarkerContextType | null>(null)
 
 const MarkerProvider = ({ children }: Props) => {
     const [marker, setMarker] = useState<mapboxgl.Marker | null>(null)
-    const [markerDegree, setMarkerDegree] = useState(0)
+    const [direction, setDirection] = useState<mapboxgl.Marker | null>(null)
+    const [directionDegree, setDirectionDegree] = useState(0)
 
-    return <MarkerContext.Provider value={{ marker, setMarker, markerDegree, setMarkerDegree }} >
+    return <MarkerContext.Provider value={{ marker, setMarker, direction, setDirection,directionDegree, setDirectionDegree }} >
         {children}
     </MarkerContext.Provider>
 }
 
 
-export {MarkerContext, MarkerProvider}
+export { MarkerContext, MarkerProvider }

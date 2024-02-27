@@ -45,7 +45,7 @@ const floodingBtnsData: {
 
 const StreetView = () => {
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-    const { marker, markerDegree, setMarkerDegree } = useContext(MarkerContext) as MarkerContextType
+    const { marker, direction, directionDegree, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
     const [clicked, setClicked] = useState({
         "Street View": false,
@@ -74,12 +74,12 @@ const StreetView = () => {
         const degree = 45
         switch (o) {
             case 'previous':
-                marker!.setRotation(markerDegree - degree)
-                setMarkerDegree(curr => curr - degree)
+                marker!.setRotation(directionDegree - degree)
+                setDirectionDegree(curr => curr - degree)
                 break
             case 'next':
-                marker!.setRotation(markerDegree + degree)
-                setMarkerDegree(curr => curr + degree)
+                marker!.setRotation(directionDegree + degree)
+                setDirectionDegree(curr => curr + degree)
                 break
         }
     }
@@ -87,6 +87,7 @@ const StreetView = () => {
     const closeStreetViewClickHandler = () => {
         setOpenStreetView(false)
         marker?.remove()
+        direction?.remove()
     }
 
     return (
