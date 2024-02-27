@@ -74,11 +74,11 @@ const StreetView = () => {
         const degree = 45
         switch (o) {
             case 'previous':
-                marker!.setRotation(directionDegree - degree)
+                direction!.setRotation(directionDegree - degree)
                 setDirectionDegree(curr => curr - degree)
                 break
             case 'next':
-                marker!.setRotation(directionDegree + degree)
+                direction!.setRotation(directionDegree + degree)
                 setDirectionDegree(curr => curr + degree)
                 break
         }
@@ -86,8 +86,10 @@ const StreetView = () => {
 
     const closeStreetViewClickHandler = () => {
         setOpenStreetView(false)
+        setDirectionDegree(0)
         marker?.remove()
         direction?.remove()
+
     }
 
     return (

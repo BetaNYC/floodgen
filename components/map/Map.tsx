@@ -3,9 +3,11 @@ import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
+import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 import MapLayer from './mapLayer/MapLayer'
-import useCreateMarker from '@/hooks/useCreateMarker'
+import { markerCreator } from '@/utils/markerCreator'
+
 
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
 import justiceArea from "../../public/data/EnvironmentalJusticeArea.geo.json"
@@ -13,12 +15,16 @@ import evacuationZone from "../../public/data/HurricaneEvacuationZones.geo.json"
 import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 import sites from "../../public/data/floodgen_sites.geo.json"
 
+import directionSVG from "../../public/icons/direction.svg"
+import markerSVG from "../../public/icons/marker.svg"
+
 
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -82,6 +88,20 @@ const Map = () => {
                 type: 'geojson',
                 data: sites as GeoJSON.FeatureCollection
             })
+
+            let directionImg = new Image(50, 50)
+            let markerImg = new Image(25, 25)
+
+            directionImg.onload = () => m?.addImage('direcitonImg', directionImg, {
+                sdf: true
+            })
+            directionImg.src = directionSVG.src
+
+            markerImg.onload = () => m?.addImage('markerImg', markerImg, {
+                sdf: true
+            })
+            markerImg.src = markerSVG.src
+
 
             m.addLayer({
                 id: 'coastal_flooding',
@@ -192,8 +212,10 @@ const Map = () => {
                     });
                 }, 1500)
 
-                useCreateMarker(e, m)
-
+                const { direction, marker } = markerCreator(e, m, directionImg, markerImg)
+                setDirectionDegree(0)
+                setDirection(direction),
+                setMarker(marker)
             })
 
 
