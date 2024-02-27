@@ -3,10 +3,10 @@ import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
-import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
+
+import useOnClickSites from '@/hooks/useOnClickSites'
 
 import MapLayer from './mapLayer/MapLayer'
-import { markerCreator } from '@/utils/markerCreator'
 
 
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
@@ -15,24 +15,20 @@ import evacuationZone from "../../public/data/HurricaneEvacuationZones.geo.json"
 import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
 import sites from "../../public/data/floodgen_sites.geo.json"
 
-import directionSVG from "../../public/icons/direction.svg"
-import markerSVG from "../../public/icons/marker.svg"
+
 
 
 const Map = () => {
 
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
-    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-    const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
-
-    const [lng, setLng] = useState(-73.913);
-    const [lat, setLat] = useState(40.763);
-    const [zoom, setZoom] = useState(11);
-
+    const { openStreetView} = useContext(StreetViewContext) as StreetViewType
 
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
+        const lng = -73.913;
+        const lat = 40.763;
+        const zoom = 11;
 
         const m = new mapboxgl.Map({
             container: mapContainer.current || "",
@@ -49,12 +45,6 @@ const Map = () => {
         m.touchZoomRotate.disableRotation();
 
         m.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
-
-        m.on("move", () => {
-            setLng(Number(m.getCenter().lng.toFixed(4)));
-            setLat(Number(m.getCenter().lat.toFixed(4)));
-            setZoom(Number(m.getZoom()));
-        });
 
         m.on("load", () => {
             setMap(m)
@@ -88,19 +78,6 @@ const Map = () => {
                 type: 'geojson',
                 data: sites as GeoJSON.FeatureCollection
             })
-
-            let directionImg = new Image(50, 50)
-            let markerImg = new Image(25, 25)
-
-            directionImg.onload = () => m?.addImage('direcitonImg', directionImg, {
-                sdf: true
-            })
-            directionImg.src = directionSVG.src
-
-            markerImg.onload = () => m?.addImage('markerImg', markerImg, {
-                sdf: true
-            })
-            markerImg.src = markerSVG.src
 
 
             m.addLayer({
@@ -201,27 +178,13 @@ const Map = () => {
                     'circle-radius': 6,
                 }
             })
-
-
-            m.on("click", 'sites', (e: MapMouseEvent) => {
-                setOpenStreetView(true)
-                setTimeout(() => {
-                    m.flyTo({
-                        center: [-73.913, 40.733],
-                        duration: 1500
-                    });
-                }, 1500)
-
-                const { direction, marker } = markerCreator(e, m, directionImg, markerImg)
-                setDirectionDegree(0)
-                setDirection(direction),
-                setMarker(marker)
-            })
-
-
-
         })
+
     }, [])
+
+    useOnClickSites()
+
+
 
 
     return (

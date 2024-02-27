@@ -1,8 +1,5 @@
 import mapboxgl, { MapMouseEvent } from "mapbox-gl";
 
-import directionSVG from "../public/icons/direction.svg"
-import markerSVG from "../public/icons/marker.svg"
-
 export const markerCreator = (e: MapMouseEvent, m: mapboxgl.Map, directionImg:HTMLElement, markerImg:HTMLElement) => {
 
     const direction = new mapboxgl.Marker(directionImg, {
