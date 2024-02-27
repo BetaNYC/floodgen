@@ -1,0 +1,490 @@
+{
+  "type": "FeatureCollection",
+  "name": "floodgen_sites",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 1,
+        "Borough": "Manhattan",
+        "Case Study": "East Harlem",
+        "Place": "2nd Avenue & East 125th Street",
+        "Lat": 40.80276,
+        "Lon": -73.93358,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Transit Hub for Buses (La Guardia shuttle line https://www.nyc.gov/html/brt/html/routes/125th-laguardia.shtml)",
+        "Yaw": 36.298486233566891
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.93358, 40.80276] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 2,
+        "Borough": "Manhattan",
+        "Case Study": "East Harlem",
+        "Place": "East 110th Street & Lexington Avenue",
+        "Lat": 40.79488,
+        "Lon": -73.94461,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Transit Throughway, NYCHA Clinton",
+        "Yaw": 112.10103146104225
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.94461, 40.79488] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 3,
+        "Borough": "Manhattan",
+        "Case Study": "East Harlem",
+        "Place": "East River Plaza",
+        "Lat": 40.79475,
+        "Lon": -73.93209,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Major shopping plaza, Manhattan Center for Science and Mathematics",
+        "Yaw": 112.98661161728381
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.93209, 40.79475] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 4,
+        "Borough": "Manhattan",
+        "Case Study": "Lower East Side",
+        "Place": "East Houston Street & Avenue D",
+        "Lat": 40.72001,
+        "Lon": -73.97925,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Hamiltion Fish Park Library, New Explorations into Science Technology and Math High School, nearby Lilian Wald Public Housing (mentioned in \"Save East River Park\" campaign)",
+        "Yaw": 106.82065682591879
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.97925, 40.72001] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 5,
+        "Borough": "Manhattan",
+        "Case Study": "Lower East Side",
+        "Place": "Madison Street & Jefferson St",
+        "Lat": 40.71281,
+        "Lon": -73.98806,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "NYC Health + Hospitals/Gotham Health infrastructure, La Guardia public housing",
+        "Yaw": 85.096015264923921
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.98806, 40.71281] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 6,
+        "Borough": "Manhattan",
+        "Case Study": "Lower East Side",
+        "Place": "Catherine Street & Madison Street",
+        "Lat": 40.7117,
+        "Lon": -73.99688,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "St. Joseph's Church/School, Hamilton Madison NYCHA, storefronts",
+        "Yaw": 166.87993257776648
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.99688, 40.7117] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 7,
+        "Borough": "Brooklyn",
+        "Case Study": "Coney Island",
+        "Place": "West 8th Street & Surf Avenue",
+        "Lat": 40.57535,
+        "Lon": -73.97652,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "cultural landmarks: Luna Park and aquarium, transit throughway: F and Q trains",
+        "Yaw": 184.38569036860403
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.97652, 40.57535] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 8,
+        "Borough": "Brooklyn",
+        "Case Study": "Coney Island",
+        "Place": "Neptune Avenue & Highland Avenue",
+        "Lat": 40.57646,
+        "Lon": -74.00703,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Seagate residental community, Neptune is residential traffice throughway (2-way street)",
+        "Yaw": 263.7016284713049
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.00703, 40.57646] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 9,
+        "Borough": "Brooklyn",
+        "Case Study": "Coney Island",
+        "Place": "Brighton Beach Avenue & Coney Island Avenue",
+        "Lat": 40.57795,
+        "Lon": -73.95958,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml), B and Q trains, market",
+        "Yaw": 175.72208123597588
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.95958, 40.57795] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 10,
+        "Borough": "Brooklyn",
+        "Case Study": "Flatbush",
+        "Place": "Linden Boulevard & Flatbush Avenue",
+        "Lat": 40.65219,
+        "Lon": -73.95824,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Flatbush library, residential; Flatbush Ave (Concord - Hendrickson) arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml)",
+        "Yaw": 86.868909851943073
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.95824, 40.65219] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 11,
+        "Borough": "Brooklyn",
+        "Case Study": "Flatbush",
+        "Place": "Church Avenue & East 18th Street",
+        "Lat": 40.64945,
+        "Lon": -73.96306,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Transit hub: B & Q trains, Citi bike, bus through way, commercial area",
+        "Yaw": 169.18467473097769
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.96306, 40.64945] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 12,
+        "Borough": "Brooklyn",
+        "Case Study": "Flatbush",
+        "Place": "Bedford Avenue & Glenwood Road",
+        "Lat": 40.63274,
+        "Lon": -73.95286,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Midwood High School (infrastructure), park",
+        "Yaw": 169.21033981105634
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.95286, 40.63274] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 13,
+        "Borough": "Queens",
+        "Case Study": "Hollis",
+        "Place": "Jamaica Avenue & 198th Place",
+        "Lat": 40.71343,
+        "Lon": -73.76201,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "arterial road, grocery store, residential aprtments",
+        "Yaw": 87.820605128870113
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.76201, 40.71343] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 14,
+        "Borough": "Queens",
+        "Case Study": "Hollis",
+        "Place": "109th Avenue & 203rd Street",
+        "Lat": 40.70804,
+        "Lon": -73.75507,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "PS 134 Langston Hughes School (infrastructure), residential homes",
+        "Yaw": 76.548612134540321
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.75507, 40.70804] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 15,
+        "Borough": "Queens",
+        "Case Study": "Hollis",
+        "Place": "Farmers Boulevard & 99th Avenue",
+        "Lat": 40.70886,
+        "Lon": -73.76803,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "residential, adjacent to transit (LIRR, traffic throughway, bus route via https://new.mta.info/document/115926)",
+        "Yaw": 161.77198612893676
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.76803, 40.70886] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 16,
+        "Borough": "Queens",
+        "Case Study": "Jackson Heights",
+        "Place": "30th Avenue & 92nd Street",
+        "Lat": 40.76162,
+        "Lon": -73.87699,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "transit hub (bus, E, F, M, R trains), commercial hub",
+        "Yaw": 169.71141888854484
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.87699, 40.76162] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 17,
+        "Borough": "Queens",
+        "Case Study": "Jackson Heights",
+        "Place": "82nd Street & 37th Avenue",
+        "Lat": 40.74949,
+        "Lon": -73.88427,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "Business Improvement District and commercial corridor (https://www.nyc.gov/assets/sbs/downloads/pdf/neighborhoods/avenyc-cdna-jackson-heights.pdf)",
+        "Yaw": 169.95028336445287
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.88427, 40.74949] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 18,
+        "Borough": "Queens",
+        "Case Study": "Jackson Heights",
+        "Place": "31st Avenue & 72nd Street",
+        "Lat": 40.75822,
+        "Lon": -73.89554,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "residential (multi-family homes), busy intersection, Monsignor McClancy Memorial High School (infrastructure)",
+        "Yaw": 84.047208439773073
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.89554, 40.75822] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 19,
+        "Borough": "Bronx",
+        "Case Study": "Hunts Point",
+        "Place": "Bronx Charter School for the Arts",
+        "Lat": 40.82167,
+        "Lon": -73.88671,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "school infrastructure",
+        "Yaw": 321.82667330770744
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.88671, 40.82167] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 20,
+        "Borough": "Bronx",
+        "Case Study": "Hunts Point",
+        "Place": "Randall Avenue & Tiffany Street",
+        "Lat": 40.81157,
+        "Lon": -73.89016,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "restaurant (commercial), aerterial road and traffic, industrial",
+        "Yaw": 81.309838304215276
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.89016, 40.81157] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 21,
+        "Borough": "Bronx",
+        "Case Study": "Hunts Point",
+        "Place": "Hunts Point Avenue & Halleck Street",
+        "Lat": 40.80969,
+        "Lon": -73.88082,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "commercial area (coffee shop, restaurants), arterial road, bus stops",
+        "Yaw": 313.76172071190859
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.88082, 40.80969] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 22,
+        "Borough": "Bronx",
+        "Case Study": "Mott Haven",
+        "Place": "Grand Concourse & East 149th Street",
+        "Lat": 40.81827,
+        "Lon": -73.92747,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "transit hub (2/4/5 trains), Hostos Community College, library, and arts center, USPS (infrastructure)",
+        "Yaw": 23.955202341437705
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.92747, 40.81827] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 23,
+        "Borough": "Bronx",
+        "Case Study": "Mott Haven",
+        "Place": "Alexander Avenue & East 137th Street",
+        "Lat": 40.80938,
+        "Lon": -73.92561,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "NYCHA, apartments, Brilla College Prep Charter Middle School",
+        "Yaw": 37.079759749817413
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.92561, 40.80938] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 24,
+        "Borough": "Bronx",
+        "Case Study": "Mott Haven",
+        "Place": "East 142nd Street & Jackson Avenue",
+        "Lat": 40.80818,
+        "Lon": -73.91155,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "residential, NYC homeless shelter, location exposed to extreme stormwater flood with 2080 sea levels",
+        "Yaw": 106.64529028692255
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.91155, 40.80818] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 25,
+        "Borough": "Bronx",
+        "Case Study": "Castle Hill",
+        "Place": "Castle Hill Avenue & Barrett Avenue",
+        "Lat": 40.81258,
+        "Lon": -73.84649,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "YMCA, PS X721 (infrastructure), single family homes",
+        "Yaw": 346.89693938066114
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.84649, 40.81258] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 26,
+        "Borough": "Bronx",
+        "Case Study": "Castle Hill",
+        "Place": "Randall Avenue & Olmstead Avenue",
+        "Lat": 40.81881,
+        "Lon": -73.84954,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "arterial road, NYCHA, playground",
+        "Yaw": 82.504974922119615
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.84954, 40.81881] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 27,
+        "Borough": "Bronx",
+        "Case Study": "Castle Hill",
+        "Place": "Castle Hill Avenue & Bruckner Boulevard",
+        "Lat": 40.82656,
+        "Lon": -73.84979,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "transit hub (expressway and bus stop), library, residential, commercial",
+        "Yaw": 346.94857067986476
+      },
+      "geometry": { "type": "Point", "coordinates": [-73.84979, 40.82656] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 28,
+        "Borough": "Staten Island",
+        "Case Study": "North Shore",
+        "Place": "Cedar Street & Broad Street",
+        "Lat": 40.6243,
+        "Lon": -74.08056,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "commercial, arterial road; pharmacy and grocery store (infrastructure)",
+        "Yaw": 252.33206268750899
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.08056, 40.6243] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 29,
+        "Borough": "Staten Island",
+        "Case Study": "North Shore",
+        "Place": "Broadway & Henderson Avenue",
+        "Lat": 40.63667,
+        "Lon": -74.11755,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "P.S. 018 John G. Whittier, NYCHA, bus stops, arterial road",
+        "Yaw": 175.69441213095678
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.11755, 40.63667] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 30,
+        "Borough": "Staten Island",
+        "Case Study": "North Shore",
+        "Place": "Harbor Road & Richmond Terrace",
+        "Lat": 40.63529,
+        "Lon": -74.16026,
+        "Area Case": null,
+        "Location D": null,
+        "Areas of I": "FDNY, residential",
+        "Yaw": 182.52018697086876
+      },
+      "geometry": { "type": "Point", "coordinates": [-74.16026, 40.63529] }
+    }
+  ]
+}

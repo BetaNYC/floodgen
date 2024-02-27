@@ -3,17 +3,15 @@ import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
-import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 import MapLayer from './mapLayer/MapLayer'
-
-import directionSVG from "../../public/icons/direction.svg"
-import markerSVG from "../../public/icons/marker.svg"
+import useCreateMarker from '@/hooks/useCreateMarker'
 
 import coastalFlooding from "../../public/data/CoastalFlood.geo.json"
 import justiceArea from "../../public/data/EnvironmentalJusticeArea.geo.json"
 import evacuationZone from "../../public/data/HurricaneEvacuationZones.geo.json"
 import neightborhood from "../../public/data/2020_nys_neigborhood.geo.json"
+import sites from "../../public/data/floodgen_sites.geo.json"
 
 
 const Map = () => {
@@ -21,7 +19,6 @@ const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-    const { setDirection, setMarker } = useContext(MarkerContext) as MarkerContextType
 
     const [lng, setLng] = useState(-73.913);
     const [lat, setLat] = useState(40.763);
@@ -81,31 +78,9 @@ const Map = () => {
                 data: neightborhood as GeoJSON.FeatureCollection
             })
 
-            m.addSource('try-out', {
-                'type': 'geojson',
-                'data': {
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates:
-                            [-73.913, 40.763]
-                    },
-                    properties: {},
-                }
-            })
-
-
-            m.addSource('try-second', {
-                'type': 'geojson',
-                'data': {
-                    type: 'Feature',
-                    geometry: {
-                        type: 'Point',
-                        coordinates:
-                            [-73.815, 40.763]
-                    },
-                    properties: {},
-                }
+            m.addSource('sites', {
+                type: 'geojson',
+                data: sites as GeoJSON.FeatureCollection
             })
 
             m.addLayer({
@@ -198,18 +173,8 @@ const Map = () => {
             });
 
             m.addLayer({
-                'id': 'try-out',
-                'source': 'try-out',
-                'type': 'circle',
-                'paint': {
-                    'circle-color': "#306DDD",
-                    'circle-radius': 6,
-                }
-            })
-
-            m.addLayer({
-                'id': 'try-second',
-                'source': 'try-second',
+                'id': 'sites',
+                'source': 'sites',
                 'type': 'circle',
                 'paint': {
                     'circle-color': "#306DDD",
@@ -218,7 +183,7 @@ const Map = () => {
             })
 
 
-            m.on("click", 'try-out', (e: MapMouseEvent) => {
+            m.on("click", 'sites', (e: MapMouseEvent) => {
                 setOpenStreetView(true)
                 setTimeout(() => {
                     m.flyTo({
@@ -227,29 +192,7 @@ const Map = () => {
                     });
                 }, 1500)
 
-
-
-                let directionImg = new Image(50, 50)
-                directionImg.onload = () => m.addImage('direciton', directionImg, {
-                    sdf: true
-                })
-                directionImg.src = directionSVG.src
-
-                const direction = new mapboxgl.Marker(directionImg, {
-                    offset: [-.5, -25]
-                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
-                setDirection(direction)
-
-                let markerImg = new Image(25, 25)
-                markerImg.onload = () => m.addImage('marker', markerImg, {
-                    sdf: true
-                })
-                markerImg.src = markerSVG.src
-
-                const marker = new mapboxgl.Marker(markerImg, {
-                    offset: [0, 0]
-                }).setLngLat([e.lngLat.lng, e.lngLat.lat]).addTo(m)
-                setMarker(marker)
+                useCreateMarker(e, m)
 
             })
 

@@ -40,7 +40,7 @@ const InfoBox = () => {
             <div className={`absolute top-[36%] lg:top-0 w-full h-[64%] lg:h-full bg-white lg:bg-secondary_blue rounded-t-[1rem] lg:rounded-none z-30 overflow-y-auto ${boxShown ? "translate-y-0 duration-700" : "translate-y-full duration-700"}`}>
                 <div className=' px-5 lg:px-16 pt-[3rem] lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
                     <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' />
-                    {/* <InfoTitle /> */}Ｆ
+                    {/* <InfoTitle /> */}
                     <div className='lg:flex lg:mt-8'>
                         <div className='flex lg:flex-col gap-3 lg:gap-5 lg:mr-[8.25rem] w-full lg:w-[12.68rem]'>
                             <div className={`w-[50%] text-heading lg:text-[1.625rem] text-title_black cursor-pointer ${selected === "About" && "pb-[0.05rem] font-bold border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("About")}>About</div>
