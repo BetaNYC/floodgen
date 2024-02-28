@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useMemo } from 'react'
+import React, { useEffect, useContext } from 'react'
 import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
@@ -7,8 +7,7 @@ import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
 import { markerCreator } from '@/utils/markerCreator'
 
-import directionSVG from "../public/icons/direction.svg"
-import markerSVG from "../public/icons/marker.svg"
+
 
 const useOnClickSites = () => {
 
@@ -16,25 +15,10 @@ const useOnClickSites = () => {
   const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
   const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
-  // let directionImg = new Image(50, 50)
-  // let markerImg = new Image(25, 25)
-  // useMemo(() => {
-  //   directionImg.onload = () => map?.addImage('direcitonImg', directionImg, {
-  //     sdf: true
-  //   })
-  //   directionImg.src = directionSVG.src
-
-  //   markerImg.onload = () => map?.addImage('markerImg', markerImg, {
-  //     sdf: true
-  //   })
-  //   markerImg.src = markerSVG.src
-  // }, [])
-
-
-
   useEffect(() => {
-    console.log(openStreetView);
+
     map?.on("click", 'sites', (e: MapMouseEvent) => {
+      console.log('aaa')
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
@@ -48,13 +32,16 @@ const useOnClickSites = () => {
           return true;
         });
       }
+
+
+      const { direction, marker } = markerCreator(e, map)
+      setDirectionDegree(0)
+      setDirection(direction)
+      setMarker(marker)
     });
 
 
-    // const { direction, marker } = markerCreator(e, map, directionImg, markerImg)
-    // setDirectionDegree(0)
-    // setDirection(direction)
-    // setMarker(marker)
+
 
   }, [map, openStreetView]);
 
