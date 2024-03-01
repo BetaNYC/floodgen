@@ -18,9 +18,6 @@ const useOnClickSites = () => {
 
   useEffect(() => {
 
-
-  
-  
     map?.on("click", 'sites', (e: MapMouseEvent) => {
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
