@@ -16,7 +16,7 @@ const useOnClickSites = () => {
   const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
   useEffect(() => {
-
+  
     map?.on("click", 'sites', (e: MapMouseEvent) => {
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
