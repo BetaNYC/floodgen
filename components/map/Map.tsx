@@ -23,10 +23,6 @@ const Map = () => {
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView } = useContext(StreetViewContext) as StreetViewType
 
-
-    let directionImg = new Image(50, 50)
-    let markerImg = new Image(25, 25)
-
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
         const lng = -73.913;

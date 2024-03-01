@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useContext } from 'react'
 import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
@@ -16,6 +17,9 @@ const useOnClickSites = () => {
   const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
   useEffect(() => {
+
+
+  
   
     map?.on("click", 'sites', (e: MapMouseEvent) => {
       if (!openStreetView) {

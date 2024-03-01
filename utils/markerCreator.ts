@@ -4,8 +4,8 @@ import directionSVG from "../public/icons/direction.svg";
 import markerSVG from "../public/icons/marker.svg";
 export const markerCreator = (e: MapMouseEvent, m: mapboxgl.Map) => {
 
-    let directionImg: HTMLImageElement | undefined;
-    let markerImg: HTMLImageElement | undefined;
+  let directionImg: HTMLImageElement | undefined;
+  let markerImg: HTMLImageElement | undefined;
 
     if (typeof window !== 'undefined') { // Check if window object is available (i.e., if code is executing in a browser environment)
       directionImg = new Image(50, 50);
