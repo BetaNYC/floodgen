@@ -18,7 +18,6 @@ const useOnClickSites = () => {
   useEffect(() => {
 
     map?.on("click", 'sites', (e: MapMouseEvent) => {
-      console.log('aaa')
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
@@ -34,10 +33,17 @@ const useOnClickSites = () => {
       }
 
 
+
       const { direction, marker } = markerCreator(e, map)
       setDirectionDegree(0)
-      setDirection(direction)
-      setMarker(marker)
+      setDirection(prevdirection => {
+        prevdirection?.remove()
+        return direction
+      })
+      setMarker(prevmarker => {
+        prevmarker?.remove()
+        return marker
+      })
     });
 
 
