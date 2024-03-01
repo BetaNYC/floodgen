@@ -1,3 +1,4 @@
+"use client"
 import mapboxgl, { MapMouseEvent } from "mapbox-gl";
 
 import directionSVG from "../public/icons/direction.svg";
