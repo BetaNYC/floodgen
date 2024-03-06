@@ -7,7 +7,7 @@ export const markerCreator = (e: MapMouseEvent, m: mapboxgl.Map) => {
   let directionImg: HTMLImageElement | undefined;
   let markerImg: HTMLImageElement | undefined;
 
-    if (typeof window !== 'undefined') { // Check if window object is available (i.e., if code is executing in a browser environment)
+    if (typeof window !== 'undefined') { 
       directionImg = new Image(50, 50);
       markerImg = new Image(25, 25);
   
@@ -20,7 +20,6 @@ export const markerCreator = (e: MapMouseEvent, m: mapboxgl.Map) => {
           sdf: true,
         });
   
-      // Set the src attribute after attaching onload event handler
       directionImg.src = directionSVG.src;
       markerImg.src = markerSVG.src;
   
