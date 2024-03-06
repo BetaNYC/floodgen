@@ -13,7 +13,6 @@ import InfoCredit from './InfoCredit'
 import Image from 'next/image'
 
 
-
 const InfoBox = () => {
 
 
@@ -34,12 +33,11 @@ const InfoBox = () => {
         setBoxShown(b)
     }
 
-
     return (
         <>
             <div className={`absolute top-[36%] lg:top-0 w-full h-[64%] lg:h-full bg-white lg:bg-secondary_blue rounded-t-[1rem] lg:rounded-none z-30 overflow-y-auto ${boxShown ? "translate-y-0 duration-700" : "translate-y-full duration-700"}`}>
-                <div className=' px-5 lg:px-16 pt-[3rem] lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
-                    <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' />
+                <div className=' px-5 lg:px-16 pt-8 lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
+                    <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' className='mb-2'/>
                     {/* <InfoTitle /> */}
                     <div className='lg:flex lg:mt-8'>
                         <div className='flex lg:flex-col gap-3 lg:gap-5 lg:mr-[8.25rem] w-full lg:w-[12.68rem]'>
@@ -52,7 +50,7 @@ const InfoBox = () => {
                     </div>
                 </div>
             </div>
-            <div className={`absolute top-7 left-4 lg:left-[calc(100%_-_4.5rem)] flex items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30 shadow-2xl`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
+            <div className={`absolute top-[1.125rem] left-4 lg:left-[calc(100%_-_4.5rem)] flex items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-30 shadow-2xl`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
                 {
                     boxShown ? <XMarkIcon className='w-6 h-6 text-black' /> : <Bars3Icon className='w-5 h-5 text-black' />
                 }
