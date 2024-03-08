@@ -3,10 +3,8 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 
 import Button from '@/shared/Button'
 import { btnsType } from './MapLayer'
-
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
-import { useMediaQuery } from 'react-responsive'
 
 type Props = {
     clicked: btnsType
@@ -16,8 +14,6 @@ type Props = {
 const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     const { openStreetView } = useContext(StreetViewContext) as StreetViewType
-
-    const isDesktop = useMediaQuery({ query: "(min-width : 1024px)" })
 
     const btnsData: { src: string, src_white: string, title: btnsType }[] = [
         {
@@ -38,7 +34,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     return (
         <>
-            <div className={`absolute ${isDesktop ? "left-4" : "left-20"}  flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(50%_+_1.125rem)]" : "top-[1.125rem]"}`}>
+            <div className={`absolute left-20 lg:left-4  flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(50%_+_1.125rem)]" : "top-[1.125rem]"}`}>
                 {/* <Image width={80} height={80} src="./icons/previous.svg" alt='previous' className='border-2 border-black' /> */}
                 {/* {
                     openStreetView && <Previous />

@@ -64,7 +64,7 @@ const Map = () => {
 
                 m.addSource('stormwater_flooding', {
                     type: 'geojson',
-                    data: mapLayerData.neighborhood! as GeoJSON.FeatureCollection
+                    data: mapLayerData.stormwaterFlooding! as GeoJSON.FeatureCollection
                 })
 
                 m.addSource('neighborhood', {
@@ -143,15 +143,8 @@ const Map = () => {
                     type: 'fill',
                     source: 'stormwater_flooding',
                     paint: {
-                        "fill-color": [
-                            'case',
-                            ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
-                            "#F7A848",
-                            ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
-                            "#FBD4A3",
-                            'transparent'
-                        ],
-                        'fill-opacity': 0
+                        "fill-color": "#0100FF",
+                        "fill-opacity": 0
                     }
                 })
 

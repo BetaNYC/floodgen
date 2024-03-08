@@ -18,7 +18,7 @@ const useFetchMapLayerData = () => {
             const resJusticeArea = await axios.get("./data/EnvironmentalJusticeArea.geo.json")
             const resEvacuationZone = await axios.get("./data/HurricaneEvacuationZones.geo.json")
             const resNeighborhood = await axios.get("./data/2020_nys_neigborhood.geo.json")
-            const resStormwaterFlooding = await axios.get("./data/2020_nys_neigborhood.geo.json")
+            const resStormwaterFlooding = await axios.get("./data/StormwaterFlooding_Moderate2050.geo.json")
             const resSites = await axios.get("./data/floodgen_sites.geo.json")
 
             setMapLayerData({
