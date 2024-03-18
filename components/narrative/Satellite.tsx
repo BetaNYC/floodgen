@@ -19,13 +19,6 @@ const Satellite = () => {
                 layout="fill"
                 alt="two"
             />
-            <Image
-                src="/logos/floodgen_logo_white.png"
-                width={155}
-                height={38.75}
-                alt="logos_white"
-                className="absolute left-8 top-12"
-            />
             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                 <Step data={1}>
                     <div className="absolute right-12 bottom-16 px-5 py-7 w-[36rem] bg-black bg-opacity-[.65] rounded-lg">

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: "export",
-    // basePath: '/floodgen',
+    basePath: 'https://floodgen.beta.nyc/',
     // reactStrictMode: true,
     trailingSlash: true,
     env: {

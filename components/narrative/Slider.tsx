@@ -63,13 +63,6 @@ const Slider = () => {
 
                     </div>
                 </div>
-                <Image
-                    src="/logos/floodgen_logo_white.png"
-                    width={155}
-                    height={38.75}
-                    alt="logos_white"
-                    className="absolute left-8 top-12"
-                />
             </div>
         </div>
     );
