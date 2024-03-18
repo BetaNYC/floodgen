@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: true,
     output: "export",
+    basePath: '/',
+    // reactStrictMode: true,
+    trailingSlash: true,
     env: {
         BASE_URL: process.env.NEXT_PUBLIC_MAPBOX_API_KEY,
     }
