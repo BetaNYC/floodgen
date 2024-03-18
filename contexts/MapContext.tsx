@@ -11,6 +11,8 @@ export type MapContextType = {
     setMap: Dispatch<SetStateAction<mapboxgl.Map | null>>
 }
 
+const aa = []
+
 type Props = {
     children: ReactNode
 }
