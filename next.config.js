@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: "export",
-    basePath: '/',
+    basePath: '/docs',
     // reactStrictMode: true,
     trailingSlash: true,
     env: {
