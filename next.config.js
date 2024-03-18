@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
-    basePath: 'https://floodgen.beta.nyc/',
-    // reactStrictMode: true,
     trailingSlash: true,
+    output: "export",
     env: {
         BASE_URL: process.env.NEXT_PUBLIC_MAPBOX_API_KEY,
     }
