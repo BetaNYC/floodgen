@@ -7,6 +7,7 @@ import { MarkerProvider } from '@/contexts/MarkerContext'
 import Map from '@/components/map/Map'
 import InfoPage from '@/components/infoPage/InfoPage'
 import StreetView from '@/components/streetView/StreetView'
+import Narrative from '@/components/narrative/Narrative'
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
       <MapProvider>
         <StreetViewProvider>
           <MarkerProvider>
-            <Map />
+            {/* <Map />
             <InfoPage />
-            <StreetView />
+            <StreetView /> */}
+            <Narrative />
           </MarkerProvider>
         </StreetViewProvider>
       </MapProvider>
