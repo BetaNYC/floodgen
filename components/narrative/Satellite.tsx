@@ -14,11 +14,6 @@ const Satellite = () => {
     }
     return (
         <div className="relative w-full h-full">
-            {/* <Image
-                src="/imgs/narrative_two.png"
-                layout="fill"
-                alt="two"
-            /> */}
             <img src="/imgs/narrative_two.png" className='w-full h-full' alt="" />
             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                 <Step data={1}>
