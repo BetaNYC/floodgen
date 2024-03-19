@@ -25,11 +25,7 @@ const Narrative = () => {
             </div>
             <Satellite />
             <div className="relative w-full h-full">
-                <Image
-                    src="imgs/narrative_four.png"
-                    layout="fill"
-                    alt="two"
-                />
+                <img src="/imgs/narrative_four.png" alt="" className="w-full h-full" />
                 <Image
                     src="/logos/floodgen_logo_white.png"
                     width={155}
