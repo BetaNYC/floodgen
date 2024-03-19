@@ -33,23 +33,24 @@ const Slider = () => {
                 onMouseMove={handleMove}
                 onMouseDown={handleMouseDown}
             >
-                <Image
+                {/* <Image
                     alt=""
                     fill
                     priority
                     src="/imgs/narrative_six.png"
-                />
-
+                /> */}
+                <img src="/imgs/narrative_six.png" className="w-full h-full" alt="" />
                 <div
                     className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden select-none"
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                    <Image
+                    {/* <Image
                         fill
                         priority
                         alt=""
                         src="/imgs/narrative_four.png"
-                    />
+                    /> */}
+                    <img src="/imgs/narrative_four.png" className="w-full h-full" alt="" />
                 </div>
                 <div
                     className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"

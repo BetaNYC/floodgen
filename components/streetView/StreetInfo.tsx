@@ -25,7 +25,8 @@ const StreetInfo = ({ openStreetView }: Props) => {
           <div className='my-[0.6875rem] w-full h-[1px] bg-[#C9C9C9]'></div>
           <div className='flex justify-between mb-4'>
             <h2 className='font-bold text-heading text-gray'>Lower East Side</h2>
-            <Image width={24} height={24} src="./icons/info.svg" alt='info' />
+            {/* <Image width={24} height={24} src="./icons/info.svg" alt='info' /> */}
+            <img src="/icons/info.svg" alt="" className='w-6 h-6' />
           </div>
           <p className={`${expanded ? "visible" : "hidden"} text-medium text-black leading-normal`}>
             Explain why the project focuses on these areas.

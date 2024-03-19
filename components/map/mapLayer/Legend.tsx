@@ -34,7 +34,8 @@ function Legend({ buttonClickHandler }: Props) {
                     <div className='text-small lg:text-medium text-black'>Stormwater Flooding</div>
                 </div>
                 <div className='flex items-center gap-3'>
-                    <Image width={20} height={20} src="./icons/area.svg" alt='area of interest' />
+                    {/* <Image width={20} height={20} src="./icons/area.svg" alt='area of interest' /> */}
+                    <img src="/icons/area.svg" className='w-5 h-5' alt="" />
                     <div className='text-small lg:text-medium text-black'>Area of Interest</div>
                 </div>
             </div>

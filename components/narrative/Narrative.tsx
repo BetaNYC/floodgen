@@ -10,11 +10,12 @@ import Satellite from "./Satellite";
 const Narrative = () => {
     return (
         <div className="w-full h-[100vh] overflow-y-auto">
-            <Image
+            {/* <Image
                 src="/imgs/narrative_one.png"
                 layout="fill"
                 alt="one"
-            />
+            /> */}
+            <img src="/imgs/narrative_one.png" className="w-full h-full" />
             <div className="relative w-full h-full">
 
                 <div className="absolute right-12 bottom-16 px-5 py-7 w-[36rem] bg-black bg-opacity-[.65] rounded-lg">
@@ -26,13 +27,14 @@ const Narrative = () => {
             <Satellite />
             <div className="relative w-full h-full">
                 <img src="/imgs/narrative_four.png" alt="" className="w-full h-full" />
-                <Image
+                {/* <Image
                     src="/logos/floodgen_logo_white.png"
                     width={155}
                     height={38.75}
                     alt="logos_white"
                     className="absolute left-8 top-12"
-                />
+                /> */}
+                <img src="/logos/floodgen_logo_white.png" className="absolute left-8 top-12 w-[155px] h-[38.75px]" alt="logos_white" />
             </div>
             <Slider />
 

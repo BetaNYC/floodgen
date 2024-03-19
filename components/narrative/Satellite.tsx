@@ -14,11 +14,12 @@ const Satellite = () => {
     }
     return (
         <div className="relative w-full h-full">
-            <Image
+            {/* <Image
                 src="/imgs/narrative_two.png"
                 layout="fill"
                 alt="two"
-            />
+            /> */}
+            <img src="/imgs/narrative_two.png" className='w-full h-full' alt="" />
             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                 <Step data={1}>
                     <div className="absolute right-12 bottom-16 px-5 py-7 w-[36rem] bg-black bg-opacity-[.65] rounded-lg">
@@ -29,12 +30,13 @@ const Satellite = () => {
                     <>
                         <div className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-40"></div>
                         <div className="absolute left-8 bottom-28 p-5 w-[52.75rem] bg-black bg-opacity-[.65] rounded-lg">
-                            <Image
+                            {/* <Image
                                 src="/imgs/narrative_six.png"
                                 width={804}
                                 height={423.24}
                                 alt="narrative_six"
-                            />
+                            /> */}
+                            <img src="/imgs/narrative_six.png" className='w-[804px] h-[423.24px]' alt="" />
                             <p className="mt-2 font-semibold text-[2rem]">If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
                         </div>
                     </>
