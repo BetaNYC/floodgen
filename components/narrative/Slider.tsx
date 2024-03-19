@@ -33,27 +33,17 @@ const Slider = () => {
                 onMouseMove={handleMove}
                 onMouseDown={handleMouseDown}
             >
-                {/* <Image
-                    alt=""
-                    fill
-                    priority
-                    src="/imgs/narrative_six.png"
-                /> */}
                 <img src="/imgs/narrative_six.png" className="w-full h-full" alt="" />
+                <div className="absolute right-8 bottom-24 p-5 font-semibold text-[2rem] bg-black bg-opacity-70 rounded-lg">AI generated</div>
                 <div
-                    className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden select-none"
+                    className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden select-none z-30"
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                    {/* <Image
-                        fill
-                        priority
-                        alt=""
-                        src="/imgs/narrative_four.png"
-                    /> */}
+                    <div className="absolute left-8 bottom-24 p-5 font-semibold text-[2rem] bg-black bg-opacity-70 rounded-lg">Street view</div>
                     <img src="/imgs/narrative_four.png" className="w-full h-full" alt="" />
                 </div>
                 <div
-                    className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+                    className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-40"
                     style={{
                         left: `calc(${sliderPosition}% - 1px)`,
                     }}
@@ -61,10 +51,10 @@ const Slider = () => {
                     <div className="bg-white absolute rounded-full w-14 h-14 -left-[calc(50%_+_24px)] top-[calc(50%_-_5px)]">
                         <ChevronRightIcon width={24} height={24} className="absolute right-0 top-[calc(50%_-_12px)] text-black" />
                         <ChevronLeftIcon width={24} height={24} className="absolute left-0 top-[calc(50%_-_12px)] text-black" />
-
                     </div>
                 </div>
             </div>
+            <img src='/logos/fg_logo_white_sm.png' className='absolute right-6 bottom-4 z-30 w-8 h-8' />
         </div>
     );
 };

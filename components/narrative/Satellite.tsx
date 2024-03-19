@@ -7,13 +7,12 @@ import { Scrollama, Step } from "react-scrollama";
 
 
 const Satellite = () => {
-
     const [_currentStepIndex, setCurrentStepIndex] = useState<number>(0);
-    const onStepEnter = (data: number) => {
+    const onStepEnter = (data:number) => {
         setCurrentStepIndex(data)
     }
     return (
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full overflow-y-scroll">
             <img src="/imgs/narrative_two.png" className='w-full h-full' alt="" />
             <Scrollama offset={0.5} onStepEnter={onStepEnter}>
                 <Step data={1}>
@@ -25,18 +24,11 @@ const Satellite = () => {
                     <>
                         <div className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-40"></div>
                         <div className="absolute left-8 bottom-28 p-5 w-[52.75rem] bg-black bg-opacity-[.65] rounded-lg">
-                            {/* <Image
-                                src="/imgs/narrative_six.png"
-                                width={804}
-                                height={423.24}
-                                alt="narrative_six"
-                            /> */}
                             <img src="/imgs/narrative_six.png" className='w-[804px] h-[423.24px]' alt="" />
                             <p className="mt-2 font-semibold text-[2rem]">If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
                         </div>
                     </>
                 </Step>
-
             </Scrollama>
         </div>
 
