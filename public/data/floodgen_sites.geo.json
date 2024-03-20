@@ -15,10 +15,63 @@
         "Place": "2nd Avenue & East 125th Street",
         "Lat": 40.80276,
         "Lon": -73.93358,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Transit Hub for Buses (La Guardia shuttle line https://www.nyc.gov/html/brt/html/routes/125th-laguardia.shtml)",
-        "Yaw": 36.298486233566891
+        "Yaw": 36.29848623,
+        "Minor": -27.52,
+        "Moderate": -26.82,
+        "Major": -25.5,
+        "Description": "As a low-lying, coastal floodplain bordering the Harlem River, East Harlem is highly susceptible to the impacts of rising sea levels and storm surges. While mitigation plans have been initiated, including a community board request to evaluate public locations for projects, residents fear timelines need to move faster. In 2023, the community's NYCHA Clinton Houses received an $8.3 million Federal Emergency Agency grant for stormwater resiliency, which advocates hope will stimulate efforts.",
+        "Nearby Impact": "M60 SBS to LGA bus stop (7,591 daily riders)",
+        "Areas of Interest & Rationale Notes": "Transit Hub for Buses (La Guardia shuttle line https://www.nyc.gov/html/brt/html/routes/125th-laguardia.shtml)",
+        "images": {
+          "1": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V1.png?token=GHSAT0AAAAAACED3PLFMLDBM27YFPHVDLZUZP2K5RQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V1.png?token=GHSAT0AAAAAACED3PLFBYHWBAE66UUYIORQZP2LLIQ",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V1.png?token=GHSAT0AAAAAACED3PLFP4P36AYDJHVKW5XKZP2LQLQ",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V1.png?token=GHSAT0AAAAAACED3PLFCRX5IPC7BXUV65V6ZP2LTXQ"
+          },
+          "2": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V2.png?token=GHSAT0AAAAAACED3PLF5PIDPMWA44RLOJO6ZP2KHGQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V2.png?token=GHSAT0AAAAAACED3PLFJJQG7YFPESSPGNWKZP2LLRQ",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V2.png?token=GHSAT0AAAAAACED3PLEOKIJ6P5VAPPGBWK2ZP2LQYQ",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V2.png?token=GHSAT0AAAAAACED3PLFJIZF4FHZGDMZGPOCZP2LUDA"
+          },
+          "3": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V3.png?token=GHSAT0AAAAAACED3PLEK55ZCJDVLU2EHHECZP2KM7Q",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V3.png?token=GHSAT0AAAAAACED3PLF2SHB4QYBG35DKTBQZP2LMEA",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V3.png?token=GHSAT0AAAAAACED3PLFXHAR3LSJN62J3DB2ZP2LRWA",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V3.png?token=GHSAT0AAAAAACED3PLE7O7FAMVMHU7NNYAOZP2LUJQ"
+          },
+          "4": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V4.png?token=GHSAT0AAAAAACED3PLEO5BOU7C6W4R3BAIWZP2KOWA",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V4.png?token=GHSAT0AAAAAACED3PLFFST27ELQMNG4UKMUZP2LMQQ",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V4.png?token=GHSAT0AAAAAACED3PLFCI5SC4X4ZNLZDRV2ZP2LR5A",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V4.png?token=GHSAT0AAAAAACED3PLFZDO6NOSQ6NTXKC46ZP2LUSA"
+          },
+          "5": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V5.png?token=GHSAT0AAAAAACED3PLFSWG4TTQI34SBIG3EZP2KPCQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V5.png?token=GHSAT0AAAAAACED3PLFVCXS5M3RX6UX3LYEZP2LN2A",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V5.png?token=GHSAT0AAAAAACED3PLFW47O6XACWNIB3NIAZP2LSFQ",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V5.png?token=GHSAT0AAAAAACED3PLFTCBH4SOYXGGTQGTSZP2LU2Q"
+          },
+          "6": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V6.png?token=GHSAT0AAAAAACED3PLESZHWMTFOBRRRLAO6ZP2K4GQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V6.png?token=GHSAT0AAAAAACED3PLEABMHMX2HSXVA2HGSZP2LNSQ",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V6.png?token=GHSAT0AAAAAACED3PLFIEVIGVPPFOFGQI5GZP2LSNQ",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V6.png?token=GHSAT0AAAAAACED3PLEGVGVJNQSM5XZD7OIZP2LVCA"
+          },
+          "7": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V7.png?token=GHSAT0AAAAAACED3PLEDOJT7AZOHDQSPQ4GZP2K4TQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V7.png?token=GHSAT0AAAAAACED3PLEIMUS32P5ZOK24CPWZP2LNIA",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V7.png?token=GHSAT0AAAAAACED3PLFG7D6KSFQFRKP5INOZP2LS5A",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V7.png?token=GHSAT0AAAAAACED3PLELURWX4KTNC3KIM2UZP2LVJQ"
+          },
+          "8": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V8.png?token=GHSAT0AAAAAACED3PLEDZR6COLLNSORSNS2ZP2LKDQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F1_V8.png?token=GHSAT0AAAAAACED3PLFDXWNTRXVW3VXX73SZP2LOKQ",
+            "moderate": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F2_V8.png?token=GHSAT0AAAAAACED3PLFXJBVCCYP4EGMN7N6ZP2LTGA",
+            "major": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F3_V8.png?token=GHSAT0AAAAAACED3PLF44XXNSFQWEQV7Z7IZP2LVQA"
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.93358, 40.80276] }
     },
@@ -31,10 +84,63 @@
         "Place": "East 110th Street & Lexington Avenue",
         "Lat": 40.79488,
         "Lon": -73.94461,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Transit Throughway, NYCHA Clinton",
-        "Yaw": 112.10103146104225
+        "Yaw": 112.1010315,
+        "Minor": -27.02,
+        "Moderate": -26.82,
+        "Major": -26.62,
+        "Description": "As a low-lying, coastal floodplain bordering the Harlem River, East Harlem is highly susceptible to the impacts of rising sea levels and storm surges. While mitigation plans have been initiated, including a community board request to evaluate public locations for projects, residents fear timelines need to move faster. In 2023, the community's NYCHA Clinton Houses received an $8.3 million Federal Emergency Agency grant for stormwater resiliency, which advocates hope will stimulate efforts.",
+        "Nearby Impact": "6 train station, M101/M102/M103 bus stops (28,872 daily riders), NYCHA Clinton Houses (1,621 residents)",
+        "Areas of Interest & Rationale Notes": "Transit Throughway, NYCHA Clinton",
+        "images": {
+          "1": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V1.png?token=GHSAT0AAAAAACED3PLENQUN4B6GMLDN3QTSZP2L7QA",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F1_V1.png?token=GHSAT0AAAAAACED3PLEA6PFYZL2EFC46Q26ZP2MGGQ",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V2.png?token=GHSAT0AAAAAACED3PLERX4223DTW4AUHFRCZP2L7WQ",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F1_V2.png?token=GHSAT0AAAAAACED3PLFTWCTZ2AX6L5CPLBAZP2MGMQ",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V3.png?token=GHSAT0AAAAAACED3PLEAYCO5UUOBA6B73DCZP2MDOA",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F1_V3.png?token=GHSAT0AAAAAACED3PLEF5PP25H5QVDVYDBAZP2MGWA",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V4.png?token=GHSAT0AAAAAACED3PLEVBOACA4MMCG5L4U4ZP2MD7A",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F1_V4.png?token=GHSAT0AAAAAACED3PLEQSJWLTL3G7ZKGX7UZP2MIFQ",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V5.png?token=GHSAT0AAAAAACED3PLE5B3PSNW7ABXPJL32ZP2MEJA",
+            "minor":"https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F1_V5.png?token=GHSAT0AAAAAACED3PLEARFZP77WC26FSNI4ZP2MIRQ",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V6.png?token=GHSAT0AAAAAACED3PLFHISRYYXRCPM2XGCMZP2MERA",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V7.png?token=GHSAT0AAAAAACED3PLFLLF3QO3HNXFSYF4AZP2MFAQ",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/02_F0_V8.png?token=GHSAT0AAAAAACED3PLEHSZ5LPS45FWT53ZGZP2MFIA",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.94461, 40.79488] }
     },
@@ -47,10 +153,63 @@
         "Place": "East River Plaza",
         "Lat": 40.79475,
         "Lon": -73.93209,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Major shopping plaza, Manhattan Center for Science and Mathematics",
-        "Yaw": 112.98661161728381
+        "Yaw": 112.9866116,
+        "Minor": -27.91,
+        "Moderate": -27.66,
+        "Major": -27.46,
+        "Description": "As a low-lying, coastal floodplain bordering the Harlem River, East Harlem is highly susceptible to the impacts of rising sea levels and storm surges. While mitigation plans have been initiated, including a community board request to evaluate public locations for projects, residents fear timelines need to move faster. In 2023, the community's NYCHA Clinton Houses received an $8.3 million Federal Emergency Agency grant for stormwater resiliency, which advocates hope will stimulate efforts.",
+        "Nearby Impact": "East River Plaza, Manhattan Center for Science and Mathematics (1,549 students); 115,921 vulnerable East Harlem residents",
+        "Areas of Interest & Rationale Notes": "Major shopping plaza, Manhattan Center for Science and Mathematics",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.93209, 40.79475] }
     },
@@ -63,10 +222,63 @@
         "Place": "East Houston Street & Avenue D",
         "Lat": 40.72001,
         "Lon": -73.97925,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Hamiltion Fish Park Library, New Explorations into Science Technology and Math High School, nearby Lilian Wald Public Housing (mentioned in \"Save East River Park\" campaign)",
-        "Yaw": 106.82065682591879
+        "Yaw": 106.8206568,
+        "Minor": -28.17,
+        "Moderate": -27.92,
+        "Major": -27.72,
+        "Description": "Home to countless multifamily buildings, the Lower East Side faces the unique challenge of retrofitting buildings for flood resilience while preserving the affordable housing stock. The ongoing East Side Coastal Resiliency Project aims to elevate and reconstruct East River Park. However, advocates are concerned about the abandonment of the community-backed \"BIG U\" plan, which they claim better addressed root-cause climate change issues by converting FDR into a public transit corridor.",
+        "Nearby Impact": "arterial road, Hamilton Fish Park Library, New Explorations into Science Technology and Math (1,639 students), NYCHA Lilian Wald Houses (3,757 residents)",
+        "Areas of Interest & Rationale Notes": "Hamiltion Fish Park Library, New Explorations into Science Technology and Math High School, nearby Lilian Wald Public Housing (mentioned in \"Save East River Park\" campaign)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.97925, 40.72001] }
     },
@@ -79,10 +291,63 @@
         "Place": "Madison Street & Jefferson St",
         "Lat": 40.71281,
         "Lon": -73.98806,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "NYC Health + Hospitals/Gotham Health infrastructure, La Guardia public housing",
-        "Yaw": 85.096015264923921
+        "Yaw": 85.09601526,
+        "Minor": -25.8,
+        "Moderate": -25.45,
+        "Major": -25.3,
+        "Description": "Home to countless multifamily buildings, the Lower East Side faces the unique challenge of retrofitting buildings for flood resilience while preserving the affordable housing stock. The ongoing East Side Coastal Resiliency Project aims to elevate and reconstruct East River Park. However, advocates are concerned about the abandonment of the community-backed \"BIG U\" plan, which they claim better addressed root-cause climate change issues by converting FDR into a public transit corridor.",
+        "Nearby Impact": "NYC Health + Hospitals/Gouverneur, NYCHA LaGuardia Houses (2,277 residents), Manhattan Charter School II (114 students)",
+        "Areas of Interest & Rationale Notes": "NYC Health + Hospitals/Gotham Health infrastructure, La Guardia public housing",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.98806, 40.71281] }
     },
@@ -95,10 +360,63 @@
         "Place": "Catherine Street & Madison Street",
         "Lat": 40.7117,
         "Lon": -73.99688,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "St. Joseph's Church/School, Hamilton Madison NYCHA, storefronts",
-        "Yaw": 166.87993257776648
+        "Yaw": 166.8799326,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Home to countless multifamily buildings, the Lower East Side faces the unique challenge of retrofitting buildings for flood resilience while preserving the affordable housing stock. The ongoing East Side Coastal Resiliency Project aims to elevate and reconstruct East River Park. However, advocates are concerned about the abandonment of the community-backed \"BIG U\" plan, which they claim better addressed root-cause climate change issues by converting FDR into a public transit corridor.",
+        "Nearby Impact": "NYCHA Hamilton-Madison House (3,900 residents), St. Joseph's Church, commercial area; 72,957 vulnerable Lower East Side residents",
+        "Areas of Interest & Rationale Notes": "St. Joseph's Church/School, Hamilton Madison NYCHA, storefronts",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.99688, 40.7117] }
     },
@@ -111,10 +429,63 @@
         "Place": "West 8th Street & Surf Avenue",
         "Lat": 40.57535,
         "Lon": -73.97652,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "cultural landmarks: Luna Park and aquarium, transit throughway: F and Q trains",
-        "Yaw": 184.38569036860403
+        "Yaw": 184.3856904,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "As a low-lying shoreline and peninsula community, Coney Island is incredibly vulnerable to the impacts of storm surges and rising sea levels. In 2016, the Mayor's Office of Recovery & Resiliency conducted a resiliency study of Coney Island Creek, but project progress must be clarified. Meanwhile, the adjacent Sheepshead Bay community has a comprehensive resiliency proposal from the Department of City Planning, including public space regulation and design updates to promote continued vitality.",
+        "Nearby Impact": "arterial roads, F/Q train stations, Luna Park, New York Aquarium",
+        "Areas of Interest & Rationale Notes": "cultural landmarks: Luna Park and aquarium, transit throughway: F and Q trains",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.97652, 40.57535] }
     },
@@ -127,10 +498,63 @@
         "Place": "Neptune Avenue & Highland Avenue",
         "Lat": 40.57646,
         "Lon": -74.00703,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Seagate residental community, Neptune is residential traffice throughway (2-way street)",
-        "Yaw": 263.7016284713049
+        "Yaw": 263.7016285,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "As a low-lying shoreline and peninsula community, Coney Island is incredibly vulnerable to the impacts of storm surges and rising sea levels. In 2016, the Mayor's Office of Recovery & Resiliency conducted a resiliency study of Coney Island Creek, but project progress must be clarified. Meanwhile, the adjacent Sheepshead Bay community has a comprehensive resiliency proposal from the Department of City Planning, including public space regulation and design updates to promote continued vitality.",
+        "Nearby Impact": "34,267 vulnerable Coney Island residents",
+        "Areas of Interest & Rationale Notes": "Seagate residental community, Neptune is residential traffice throughway (2-way street)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-74.00703, 40.57646] }
     },
@@ -143,10 +567,63 @@
         "Place": "Brighton Beach Avenue & Coney Island Avenue",
         "Lat": 40.57795,
         "Lon": -73.95958,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml), B and Q trains, market",
-        "Yaw": 175.72208123597588
+        "Yaw": 175.7220812,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "As a low-lying shoreline and peninsula community, Coney Island is incredibly vulnerable to the impacts of storm surges and rising sea levels. In 2016, the Mayor's Office of Recovery & Resiliency conducted a resiliency study of Coney Island Creek, but project progress must be clarified. Meanwhile, the adjacent Sheepshead Bay community has a comprehensive resiliency proposal from the Department of City Planning, including public space regulation and design updates to promote continued vitality.",
+        "Nearby Impact": "arterial road, B/Q train stations, B1/B68 bus stops (20,380 daily riders), commercial area",
+        "Areas of Interest & Rationale Notes": "arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml), B and Q trains, market",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.95958, 40.57795] }
     },
@@ -159,10 +636,63 @@
         "Place": "Linden Boulevard & Flatbush Avenue",
         "Lat": 40.65219,
         "Lon": -73.95824,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Flatbush library, residential; Flatbush Ave (Concord - Hendrickson) arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml)",
-        "Yaw": 86.868909851943073
+        "Yaw": 86.86890985,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "With increasingly severe weather patterns and storm surges, Flatbush has experienced dangerous flash flood episodes. When heavy rainfall overwhelms stormwater drainage and sewer infrastructure, excess runoff floods communities, jeopardizing lives and property. During recent storms, Flatbush has seen an excess of emergency rescue calls from stranded vehicles and ailing basement apartments, as well as widespread livelihood disruptions via public transit suspension and extended business closures.",
+        "Nearby Impact": "Brooklyn Public Library Flatbush Branch; 105,804 vulnerable Flatbush residents",
+        "Areas of Interest & Rationale Notes": "Flatbush library, residential; Flatbush Ave (Concord - Hendrickson) arterial road (https://www.nyc.gov/html/dot/html/pr2014/pr14-066.shtml)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.95824, 40.65219] }
     },
@@ -175,10 +705,63 @@
         "Place": "Church Avenue & East 18th Street",
         "Lat": 40.64945,
         "Lon": -73.96306,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Transit hub: B & Q trains, Citi bike, bus through way, commercial area",
-        "Yaw": 169.18467473097769
+        "Yaw": 169.1846747,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "With increasingly severe weather patterns and storm surges, Flatbush has experienced dangerous flash flood episodes. When heavy rainfall overwhelms stormwater drainage and sewer infrastructure, excess runoff floods communities, jeopardizing lives and property. During recent storms, Flatbush has seen an excess of emergency rescue calls from stranded vehicles and ailing basement apartments, as well as widespread livelihood disruptions via public transit suspension and extended business closures.",
+        "Nearby Impact": "B/Q train stations, Citi Bike hub, B35 bus stop (15,368 daily riders), commercial area",
+        "Areas of Interest & Rationale Notes": "Transit hub: B & Q trains, Citi bike, bus through way, commercial area",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.96306, 40.64945] }
     },
@@ -191,10 +774,63 @@
         "Place": "Bedford Avenue & Glenwood Road",
         "Lat": 40.63274,
         "Lon": -73.95286,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Midwood High School (infrastructure), park",
-        "Yaw": 169.21033981105634
+        "Yaw": 169.2103398,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "With increasingly severe weather patterns and storm surges, Flatbush has experienced dangerous flash flood episodes. When heavy rainfall overwhelms stormwater drainage and sewer infrastructure, excess runoff floods communities, jeopardizing lives and property. During recent storms, Flatbush has seen an excess of emergency rescue calls from stranded vehicles and ailing basement apartments, as well as widespread livelihood disruptions via public transit suspension and extended business closures.",
+        "Nearby Impact": "Midwood High School (4,056 students), P.S. 152 School of Science & Technology (476 students), B6/B11 bus stops (27,326 daily riders)",
+        "Areas of Interest & Rationale Notes": "Midwood High School (infrastructure), park",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.95286, 40.63274] }
     },
@@ -207,10 +843,63 @@
         "Place": "Jamaica Avenue & 198th Place",
         "Lat": 40.71343,
         "Lon": -73.76201,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "arterial road, grocery store, residential aprtments",
-        "Yaw": 87.820605128870113
+        "Yaw": 87.82060513,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Despite former efforts to upgrade sewer systems in southeast Queens, Hollis was ravaged by Hurricane Ida, resulting in tragic losses of life and property. Residents drowned in basement apartments, and home foundations were severely compromised. In 2023, the state allocated $20 million to improve infrastructure in identified disadvantaged communities. However, Hollis did not receive the qualifying designation despite the community's high exposure to flash flooding and large immigrant populations.",
+        "Nearby Impact": "arterial road, Q110 bus stop, United States Postal Service, St. Gabriel's Hollis Episcopal Church",
+        "Areas of Interest & Rationale Notes": "arterial road, grocery store, residential aprtments",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.76201, 40.71343] }
     },
@@ -223,10 +912,63 @@
         "Place": "109th Avenue & 203rd Street",
         "Lat": 40.70804,
         "Lon": -73.75507,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "PS 134 Langston Hughes School (infrastructure), residential homes",
-        "Yaw": 76.548612134540321
+        "Yaw": 76.54861213,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Despite former efforts to upgrade sewer systems in southeast Queens, Hollis was ravaged by Hurricane Ida, resulting in tragic losses of life and property. Residents drowned in basement apartments, and home foundations were severely compromised. In 2023, the state allocated $20 million to improve infrastructure in identified disadvantaged communities. However, Hollis did not receive the qualifying designation despite the community's high exposure to flash flooding and large immigrant populations.",
+        "Nearby Impact": "P.S. 134 Langston Hughes School (280 students), P.S. Q233 (230 students), Queens Public Library at South Hollis",
+        "Areas of Interest & Rationale Notes": "PS 134 Langston Hughes School (infrastructure), residential homes",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.75507, 40.70804] }
     },
@@ -239,10 +981,63 @@
         "Place": "Farmers Boulevard & 99th Avenue",
         "Lat": 40.70886,
         "Lon": -73.76803,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "residential, adjacent to transit (LIRR, traffic throughway, bus route via https://new.mta.info/document/115926)",
-        "Yaw": 161.77198612893676
+        "Yaw": 161.7719861,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Despite former efforts to upgrade sewer systems in southeast Queens, Hollis was ravaged by Hurricane Ida, resulting in tragic losses of life and property. Residents drowned in basement apartments, and home foundations were severely compromised. In 2023, the state allocated $20 million to improve infrastructure in identified disadvantaged communities. However, Hollis did not receive the qualifying designation despite the community's high exposure to flash flooding and large immigrant populations.",
+        "Nearby Impact": "Q3 bus stop (6,278 daily riders), Long Island Railroad station; 20,269 vulnerable Hollis residents",
+        "Areas of Interest & Rationale Notes": "residential, adjacent to transit (LIRR, traffic throughway, bus route via https://new.mta.info/document/115926)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.76803, 40.70886] }
     },
@@ -255,10 +1050,63 @@
         "Place": "30th Avenue & 92nd Street",
         "Lat": 40.76162,
         "Lon": -73.87699,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "transit hub (bus, E, F, M, R trains), commercial hub",
-        "Yaw": 169.71141888854484
+        "Yaw": 169.7114189,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Sewer backups in Jackson Heights have caused dangerous basement floods, claiming lives and damaging countless homes. The Department of Environmental Protection has invested in rain gardens, maintenance hole covers, and an in-progress sewer infrastructure construction study. If the assessment is approved, the project timeline estimates completion in 2023. However, community members are frustrated by the need for action as they face life-threatening conditions with every new storm.",
+        "Nearby Impact": "82nd Street Business Improvement District, Q32 bus stop (6,420 daily riders), Queens Public Library at Jackson Heights",
+        "Areas of Interest & Rationale Notes": "transit hub (bus, E, F, M, R trains), commercial hub",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.87699, 40.76162] }
     },
@@ -271,10 +1119,63 @@
         "Place": "82nd Street & 37th Avenue",
         "Lat": 40.74949,
         "Lon": -73.88427,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "Business Improvement District and commercial corridor (https://www.nyc.gov/assets/sbs/downloads/pdf/neighborhoods/avenyc-cdna-jackson-heights.pdf)",
-        "Yaw": 169.95028336445287
+        "Yaw": 169.9502834,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Sewer backups in Jackson Heights have caused dangerous basement floods, claiming lives and damaging countless homes. The Department of Environmental Protection has invested in rain gardens, maintenance hole covers, and an in-progress sewer infrastructure construction study. If the assessment is approved, the project timeline estimates completion in 2023. However, community members are frustrated by the need for action as they face life-threatening conditions with every new storm.",
+        "Nearby Impact": "Monsignor McClancy Memorial High School, Q47 bus stop",
+        "Areas of Interest & Rationale Notes": "Business Improvement District and commercial corridor (https://www.nyc.gov/assets/sbs/downloads/pdf/neighborhoods/avenyc-cdna-jackson-heights.pdf)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.88427, 40.74949] }
     },
@@ -287,10 +1188,63 @@
         "Place": "31st Avenue & 72nd Street",
         "Lat": 40.75822,
         "Lon": -73.89554,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "residential (multi-family homes), busy intersection, Monsignor McClancy Memorial High School (infrastructure)",
-        "Yaw": 84.047208439773073
+        "Yaw": 84.04720844,
+        "Minor": -0.1,
+        "Moderate": 0.05,
+        "Major": 0.2,
+        "Description": "Sewer backups in Jackson Heights have caused dangerous basement floods, claiming lives and damaging countless homes. The Department of Environmental Protection has invested in rain gardens, maintenance hole covers, and an in-progress sewer infrastructure construction study. If the assessment is approved, the project timeline estimates completion in 2023. However, community members are frustrated by the need for action as they face life-threatening conditions with every new storm.",
+        "Nearby Impact": "Q49 bus stop; 108,152 vulnerable Jackson Heights residents",
+        "Areas of Interest & Rationale Notes": "residential (multi-family homes), busy intersection, Monsignor McClancy Memorial High School (infrastructure)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.89554, 40.75822] }
     },
@@ -303,10 +1257,63 @@
         "Place": "Bronx Charter School for the Arts",
         "Lat": 40.82167,
         "Lon": -73.88671,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "school infrastructure",
-        "Yaw": 321.82667330770744
+        "Yaw": 321.8266733,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Hunts Point is incredibly vulnerable to sea level rise and coastal storm surge as a peninsula surrounded by the Bronx River and the East River. A community-based Advisory Working Group supported by the NYC Economic Development Corporation and the Mayor's Office of Resiliency produced power and coastal protection recommendations to address flooding. However, while reinforcements to Hunts Point Food Market's electric grid were made, actions to protect the community fell by the wayside.",
+        "Nearby Impact": "Bronx Charter School for the Arts (611 students); 27,204 vulnerable Hunts Point residents",
+        "Areas of Interest & Rationale Notes": "school infrastructure",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.88671, 40.82167] }
     },
@@ -319,10 +1326,63 @@
         "Place": "Randall Avenue & Tiffany Street",
         "Lat": 40.81157,
         "Lon": -73.89016,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "restaurant (commercial), aerterial road and traffic, industrial",
-        "Yaw": 81.309838304215276
+        "Yaw": 81.3098383,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Hunts Point is incredibly vulnerable to sea level rise and coastal storm surge as a peninsula surrounded by the Bronx River and the East River. A community-based Advisory Working Group supported by the NYC Economic Development Corporation and the Mayor's Office of Resiliency produced power and coastal protection recommendations to address flooding. However, while reinforcements to Hunts Point Food Market's electric grid were made, actions to protect the community fell by the wayside.",
+        "Nearby Impact": "arterial road, Bx46 bus stop (367 daily riders), commercial area",
+        "Areas of Interest & Rationale Notes": "restaurant (commercial), aerterial road and traffic, industrial",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.89016, 40.81157] }
     },
@@ -335,10 +1395,63 @@
         "Place": "Hunts Point Avenue & Halleck Street",
         "Lat": 40.80969,
         "Lon": -73.88082,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "commercial area (coffee shop, restaurants), arterial road, bus stops",
-        "Yaw": 313.76172071190859
+        "Yaw": 313.7617207,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Hunts Point is incredibly vulnerable to sea level rise and coastal storm surge as a peninsula surrounded by the Bronx River and the East River. A community-based Advisory Working Group supported by the NYC Economic Development Corporation and the Mayor's Office of Resiliency produced power and coastal protection recommendations to address flooding. However, while reinforcements to Hunts Point Food Market's electric grid were made, actions to protect the community fell by the wayside.",
+        "Nearby Impact": "arterial road, Bx6 bus stop (10,490 daily riders), commercial area",
+        "Areas of Interest & Rationale Notes": "commercial area (coffee shop, restaurants), arterial road, bus stops",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.88082, 40.80969] }
     },
@@ -351,10 +1464,63 @@
         "Place": "Grand Concourse & East 149th Street",
         "Lat": 40.81827,
         "Lon": -73.92747,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "transit hub (2/4/5 trains), Hostos Community College, library, and arts center, USPS (infrastructure)",
-        "Yaw": 23.955202341437705
+        "Yaw": 23.95520234,
+        "Minor": -0.1,
+        "Moderate": 0.05,
+        "Major": 0.2,
+        "Description": "Although Port Morris and Mott Haven are not high flood-risk areas currently, advocates fear Army Corps flood resiliency projects in East Harlem will redirect excess water toward the South Bronx communities. Community members fighting to create equitable open green spaces are concerned these flood wall plans will further restrict the already limited waterfront access. As an identified Significant Maritime Industrial Area, this community is also at risk of hazardous pollution when flooding occurs.",
+        "Nearby Impact": "Hostos Community College, 2/4/5 train stations, Bx1/Bx19 bus stops (26,684 daily riders), United States Postal Service",
+        "Areas of Interest & Rationale Notes": "transit hub (2/4/5 trains), Hostos Community College, library, and arts center, USPS (infrastructure)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.92747, 40.81827] }
     },
@@ -367,10 +1533,63 @@
         "Place": "Alexander Avenue & East 137th Street",
         "Lat": 40.80938,
         "Lon": -73.92561,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "NYCHA, apartments, Brilla College Prep Charter Middle School",
-        "Yaw": 37.079759749817413
+        "Yaw": 37.07975975,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Although Port Morris and Mott Haven are not high flood-risk areas currently, advocates fear Army Corps flood resiliency projects in East Harlem will redirect excess water toward the South Bronx communities. Community members fighting to create equitable open green spaces are concerned these flood wall plans will further restrict the already limited waterfront access. As an identified Significant Maritime Industrial Area, this community is also at risk of hazardous pollution when flooding occurs.",
+        "Nearby Impact": "NYCHA Mitchel Houses (3,740 residents), Brilla College Prep Charter Middle School (792 students), St. Jerome Roman Catholic Church",
+        "Areas of Interest & Rationale Notes": "NYCHA, apartments, Brilla College Prep Charter Middle School",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.92561, 40.80938] }
     },
@@ -383,10 +1602,63 @@
         "Place": "East 142nd Street & Jackson Avenue",
         "Lat": 40.80818,
         "Lon": -73.91155,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "residential, NYC homeless shelter, location exposed to extreme stormwater flood with 2080 sea levels",
-        "Yaw": 106.64529028692255
+        "Yaw": 106.6452903,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Although Port Morris and Mott Haven are not high flood-risk areas currently, advocates fear Army Corps flood resiliency projects in East Harlem will redirect excess water toward the South Bronx communities. Community members fighting to create equitable open green spaces are concerned these flood wall plans will further restrict the already limited waterfront access. As an identified Significant Maritime Industrial Area, this community is also at risk of hazardous pollution when flooding occurs.",
+        "Nearby Impact": "NYC Homeless Shelter, Academic Leadership Charter School Elementary School (596 students); 52,413 vulnerable Mott Haven residents",
+        "Areas of Interest & Rationale Notes": "residential, NYC homeless shelter, location exposed to extreme stormwater flood with 2080 sea levels",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.91155, 40.80818] }
     },
@@ -399,10 +1671,63 @@
         "Place": "Castle Hill Avenue & Barrett Avenue",
         "Lat": 40.81258,
         "Lon": -73.84649,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "YMCA, PS X721 (infrastructure), single family homes",
-        "Yaw": 346.89693938066114
+        "Yaw": 346.8969394,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Castle Hill borders Westchester Creek, a waterway plagued by Combined Sewer Overflow. When heavy rainfall occurs, sewers often overflow, causing raw sewage and polluted stormwater to flow into the Creek. The NYC Department of Environmental Protection published a Long Term Control Plan for the Creek in 2014. However, community members have noted delays in the project timeline and expressed concerns that current plans will not reduce pollution enough nor make the waterways safe for recreation.",
+        "Nearby Impact": "Castle Hill YMCA, P.S. X721 Stephen McSweeney School (520 students), Bx22 bus stop (6,260 daily riders)",
+        "Areas of Interest & Rationale Notes": "YMCA, PS X721 (infrastructure), single family homes",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.84649, 40.81258] }
     },
@@ -415,10 +1740,63 @@
         "Place": "Randall Avenue & Olmstead Avenue",
         "Lat": 40.81881,
         "Lon": -73.84954,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "arterial road, NYCHA, playground",
-        "Yaw": 82.504974922119615
+        "Yaw": 82.50497492,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Castle Hill borders Westchester Creek, a waterway plagued by Combined Sewer Overflow. When heavy rainfall occurs, sewers often overflow, causing raw sewage and polluted stormwater to flow into the Creek. The NYC Department of Environmental Protection published a Long Term Control Plan for the Creek in 2014. However, community members have noted delays in the project timeline and expressed concerns that current plans will not reduce pollution enough nor make the waterways safe for recreation.",
+        "Nearby Impact": "arterial road, NYCHA Castle Hill Houses (4,551 residents), Bx36 stop (11,158 daily riders)",
+        "Areas of Interest & Rationale Notes": "arterial road, NYCHA, playground",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.84954, 40.81881] }
     },
@@ -431,10 +1809,63 @@
         "Place": "Castle Hill Avenue & Bruckner Boulevard",
         "Lat": 40.82656,
         "Lon": -73.84979,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "transit hub (expressway and bus stop), library, residential, commercial",
-        "Yaw": 346.94857067986476
+        "Yaw": 346.9485707,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Castle Hill borders Westchester Creek, a waterway plagued by Combined Sewer Overflow. When heavy rainfall occurs, sewers often overflow, causing raw sewage and polluted stormwater to flow into the Creek. The NYC Department of Environmental Protection published a Long Term Control Plan for the Creek in 2014. However, community members have noted delays in the project timeline and expressed concerns that current plans will not reduce pollution enough nor make the waterways safe for recreation.",
+        "Nearby Impact": "Castle Hill Library, Bx5/Bx22 bus stops (10,515 daily riders), Bruckner Expressway; 53,686 vulnerable Castle Hill residents",
+        "Areas of Interest & Rationale Notes": "transit hub (expressway and bus stop), library, residential, commercial",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-73.84979, 40.82656] }
     },
@@ -447,10 +1878,63 @@
         "Place": "Cedar Street & Broad Street",
         "Lat": 40.6243,
         "Lon": -74.08056,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "commercial, arterial road; pharmacy and grocery store (infrastructure)",
-        "Yaw": 252.33206268750899
+        "Yaw": 252.3320627,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Initially, when Staten Island's East Shore received an NYC Planning Resilient Neighborhood initiative after Hurricane Sandy, the similarly vulnerable North Shore did not. However, in 2023, the NYC Economic Development Corporation prioritized the North Shore Action Plan, a $400 million public waterfront investment, including flood resiliency, housing, and commercial development. Additionally, the borough is building a $615 million sea wall designed to withstand a 300-year flood event.",
+        "Nearby Impact": "arterial road, S74 bus stop (2,450 daily riders), commercial area",
+        "Areas of Interest & Rationale Notes": "commercial, arterial road; pharmacy and grocery store (infrastructure)",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-74.08056, 40.6243] }
     },
@@ -463,10 +1947,63 @@
         "Place": "Broadway & Henderson Avenue",
         "Lat": 40.63667,
         "Lon": -74.11755,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "P.S. 018 John G. Whittier, NYCHA, bus stops, arterial road",
-        "Yaw": 175.69441213095678
+        "Yaw": 175.6944121,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Initially, when Staten Island's East Shore received an NYC Planning Resilient Neighborhood initiative after Hurricane Sandy, the similarly vulnerable North Shore did not. However, in 2023, the NYC Economic Development Corporation prioritized the North Shore Action Plan, a $400 million public waterfront investment, including flood resiliency, housing, and commercial development. Additionally, the borough is building a $615 million sea wall designed to withstand a 300-year flood event.",
+        "Nearby Impact": "S54 bus stop (512 daily riders), P.S. 018 John G. Whittier (375 students), NYCHA West Brighton Houses (1,367 residents)",
+        "Areas of Interest & Rationale Notes": "P.S. 018 John G. Whittier, NYCHA, bus stops, arterial road",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-74.11755, 40.63667] }
     },
@@ -479,10 +2016,63 @@
         "Place": "Harbor Road & Richmond Terrace",
         "Lat": 40.63529,
         "Lon": -74.16026,
-        "Area Case": null,
-        "Location D": null,
-        "Areas of I": "FDNY, residential",
-        "Yaw": 182.52018697086876
+        "Yaw": 182.520187,
+        "Minor": "",
+        "Moderate": "",
+        "Major": "",
+        "Description": "Initially, when Staten Island's East Shore received an NYC Planning Resilient Neighborhood initiative after Hurricane Sandy, the similarly vulnerable North Shore did not. However, in 2023, the NYC Economic Development Corporation prioritized the North Shore Action Plan, a $400 million public waterfront investment, including flood resiliency, housing, and commercial development. Additionally, the borough is building a $615 million sea wall designed to withstand a 300-year flood event.",
+        "Nearby Impact": "FDNY Engine 158; 185,150 vulnerable North Shore residents",
+        "Areas of Interest & Rationale Notes": "FDNY, residential",
+        "images": {
+          "1": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "2": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "3": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "4": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "5": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "6": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "7": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          },
+          "8": {
+            "street": "",
+            "minor":"",
+            "moderate": "",
+            "major": ""
+          }
+        }
       },
       "geometry": { "type": "Point", "coordinates": [-74.16026, 40.63529] }
     }

@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useContext } from 'react'
-import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
+import React, { useEffect, useContext, useState } from 'react'
+import mapboxgl, { MapMouseEvent, EventData } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
@@ -16,9 +16,13 @@ const useOnClickSites = () => {
   const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
   const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
+  const [id, setId] = useState(0)
+
   useEffect(() => {
 
-    map?.on("click", 'sites', (e: MapMouseEvent) => {
+    map?.on("click", 'sites', (e: MapMouseEvent & EventData) => {
+      console.log(e.features[0].properties.ID)
+      setId(18)
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
@@ -51,6 +55,9 @@ const useOnClickSites = () => {
 
 
   }, [map, openStreetView]);
+
+
+  return {id}
 
 }
 
