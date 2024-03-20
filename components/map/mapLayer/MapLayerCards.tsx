@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, Dispatch, SetStateAction, } from 'react'
 
 import Image from 'next/image'
 
@@ -13,6 +13,7 @@ import { XMarkIcon } from '@heroicons/react/16/solid'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
+    setLayerName: Dispatch<SetStateAction<floodingTypes>>
 }
 
 const layers: {
@@ -48,11 +49,11 @@ const layers: {
     ]
 
 
-const MapLayerCards = ({ buttonClickHandler }: Props) => {
+const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
 
     const { map } = useContext(MapContext) as MapContextType
 
-    const [clicked, setClicked] = useState(layers.map(l => false))
+    const [clicked, setClicked] = useState(layers.map((l, i) => i === 0 ? true : false))
 
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(layers)
 
@@ -63,6 +64,7 @@ const MapLayerCards = ({ buttonClickHandler }: Props) => {
         setClicked(newClicked)
 
         const titleID = title.toLowerCase().replaceAll(" ", "_")
+        setLayerName(title)
 
         layers.forEach((l, i) => {
             const layerID = l.title.toLowerCase().replaceAll(" ", "_")

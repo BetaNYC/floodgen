@@ -11,6 +11,7 @@ export type btnsType = 'Layers' | 'Legend' | 'Close'
 const MapLayer = () => {
 
     const [clicked, setClicked] = useState<btnsType>('Legend')
+    const [layerName, setLayerName] = useState<floodingTypes>('Coastal Flooding')
     const buttonClickHandler = (title: btnsType) => setClicked(title)
 
 
@@ -19,7 +20,7 @@ const MapLayer = () => {
     return (
         <>
             <MapLayerBtns clicked={clicked} buttonClickHandler={buttonClickHandler} />
-            {clicked === 'Layers' ? <MapLayerCards buttonClickHandler={buttonClickHandler} /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} /> : null}
+            {clicked === 'Layers' ? <MapLayerCards buttonClickHandler={buttonClickHandler} setLayerName={setLayerName} /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} layerName={layerName} /> : null}
         </>
     )
 }

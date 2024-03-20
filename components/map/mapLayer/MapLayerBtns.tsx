@@ -3,7 +3,11 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 
 import Button from '@/shared/Button'
 import { btnsType } from './MapLayer'
+
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
+import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
+
+import { ChevronLeftIcon } from '@heroicons/react/20/solid'
 
 
 type Props = {
@@ -13,7 +17,8 @@ type Props = {
 
 const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
-    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { marker, direction, directionDegree, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
     const btnsData: { src: string, src_white: string, title: btnsType }[] = [
         {
@@ -31,6 +36,13 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(btnsData)
 
 
+    const closeStreetViewClickHandler = () => {
+        setOpenStreetView(false)
+        setDirectionDegree(0)
+        marker?.remove()
+        direction?.remove()
+    }
+
 
     return (
         <>
@@ -39,6 +51,12 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                 {/* {
                     openStreetView && <Previous />
                 } */}
+                {
+                    openStreetView && (<div className=' flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={closeStreetViewClickHandler}>
+                        <ChevronLeftIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
+                    </div>)
+                }
+
                 <Button key={btnsData[0].title} title={btnsData[0].title} src={clicked === 'Layers' || hovered[0] ? btnsData[0].src_white : btnsData[0].src} clicked={clicked === 'Layers'} hovered={hovered[0]} buttonClickHandler={() => buttonClickHandler('Layers')} mouseEnterHandler={() => mouseEnterHandler(0)} mouseLeaveHandler={mouseLeaveHandler} />
                 <Button key={btnsData[1].title} title={btnsData[1].title} src={clicked === 'Legend' || hovered[1] ? btnsData[1].src_white : btnsData[1].src} clicked={clicked === 'Legend'} hovered={hovered[1]} buttonClickHandler={() => buttonClickHandler('Legend')} mouseEnterHandler={() => mouseEnterHandler(1)} mouseLeaveHandler={mouseLeaveHandler} />
             </div>

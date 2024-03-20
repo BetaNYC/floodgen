@@ -21,8 +21,7 @@ const useOnClickSites = () => {
   useEffect(() => {
 
     map?.on("click", 'sites', (e: MapMouseEvent & EventData) => {
-      console.log(e.features[0].properties.ID)
-      setId(18)
+      setId(e.features[0].properties.ID)
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {

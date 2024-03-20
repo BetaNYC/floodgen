@@ -84,12 +84,8 @@ const StreetView = () => {
         }
     }
 
-    const closeStreetViewClickHandler = () => {
-        setOpenStreetView(false)
-        setDirectionDegree(0)
-        marker?.remove()
-        direction?.remove()
-
+    const fullScreenStreetViewClickHandler = () => {
+        console.log('success')
     }
 
     return (
@@ -108,7 +104,7 @@ const StreetView = () => {
                     <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
                 </div>
                 <StreetInfo openStreetView={openStreetView} />
-                <div className='absolute right-4 lg:right-8 bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={closeStreetViewClickHandler}>
+                <div className='absolute right-4 lg:right-8 bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={fullScreenStreetViewClickHandler}>
                     <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                 </div>
 
