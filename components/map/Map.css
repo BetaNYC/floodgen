@@ -1,0 +1,44 @@
+.mapboxgl-popup-content{
+    padding: 0 !important; 
+    margin: 0 !important;
+    border-radius: 20px !important;
+    width: 210px !important;
+    height: 120px !important;
+}
+
+.content {
+    padding: 0 !important; 
+    margin: 0 !important;
+    width: 210px !important;
+    height: 120px !important;
+    border-radius: 20px  !important
+}
+
+.cf_zone {
+    padding: 13px;
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    border-radius: 20px 20px  0 0 ;
+
+}
+
+.description {
+    padding: 13px;
+    background: #fff;
+    color: black;
+    border-radius: 0 0  20px 20px !important;
+
+}
+
+
+
+
+  .tooltip {
+    position: absolute;
+    color: white;
+    visibility: hidden;
+    cursor: pointer;
+    z-index: 2500 !important;
+
+  }

@@ -14,6 +14,7 @@
     "@types/geojson": "^7946.0.14",
     "@types/react-scroll": "^1.8.10",
     "axios": "^1.6.7",
+    "d3": "^7.9.0",
     "dotenv": "^16.4.3",
     "img-comparison-slider": "^8.0.6",
     "mapbox-gl": "^3.1.0",
@@ -24,6 +25,7 @@
     "react-scrollama": "^2.3.3"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/mapbox-gl": "^2.7.19",
     "@types/node": "^20",
     "@types/react": "^18",

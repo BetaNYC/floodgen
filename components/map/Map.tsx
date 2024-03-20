@@ -9,6 +9,7 @@ import useOnClickSites from '@/hooks/useOnClickSites'
 import MapLayer from './mapLayer/MapLayer'
 
 import useFetchMapLayerData from '@/hooks/useFetchMapLayerData'
+import useTooltips from '@/hooks/useTooltips'
 
 
 
@@ -19,6 +20,7 @@ const Map = () => {
     const { openStreetView } = useContext(StreetViewContext) as StreetViewType
     const { mapLayerData } = useFetchMapLayerData()
     useOnClickSites()
+    useTooltips()
 
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
@@ -67,6 +69,7 @@ const Map = () => {
                     data: mapLayerData.stormwaterFlooding! as GeoJSON.FeatureCollection
                 })
 
+
                 m.addSource('neighborhood', {
                     type: 'geojson',
                     data: mapLayerData.neighborhood! as GeoJSON.FeatureCollection
@@ -82,6 +85,9 @@ const Map = () => {
                     id: 'coastal_flooding',
                     type: 'fill',
                     source: 'coastal_flooding',
+                    layout: {
+                        visibility:"visible"
+                    },
                     paint: {
                         "fill-color": [
                             'case',
@@ -99,6 +105,9 @@ const Map = () => {
                     id: 'environmental_justice_areas',
                     type: 'fill',
                     source: 'environmental_justice_areas',
+                    layout: {
+                        visibility:"none"
+                    },
                     paint: {
                         "fill-color": [
                             'case',
@@ -108,7 +117,7 @@ const Map = () => {
                             "#FBD4A3",
                             'transparent'
                         ],
-                        'fill-opacity': 0
+                        'fill-opacity': 1
                     }
                 })
 
@@ -116,6 +125,9 @@ const Map = () => {
                     id: 'hurricane_evacuation_zones',
                     type: 'fill',
                     source: 'hurricane_evacuation_zones',
+                    layout: {
+                        visibility:"none"
+                    },
                     paint: {
                         "fill-color": [
                             'case',
@@ -130,10 +142,10 @@ const Map = () => {
                             ['all', ['==', ['get', "hurricane_"], "5"]],
                             "#B9D7DA",
                             ['all', ['==', ['get', "hurricane_"], "6"]],
-                            "#D9E8EA",
+                        "#D9E8EA",
                             'transparent'
                         ],
-                        'fill-opacity': 0
+                        'fill-opacity': 1
                     }
                 })
 
@@ -142,23 +154,34 @@ const Map = () => {
                     id: 'stormwater_flooding',
                     type: 'fill',
                     source: 'stormwater_flooding',
+                    layout: {
+                        visibility:"none"
+                    },
                     paint: {
-                        "fill-color": "#0100FF",
-                        "fill-opacity": 0
+                        "fill-color": [
+                            'case',
+                            ['all', ['==', ['get', "Flooding_Category"], 1]],
+                            "#0100FF",
+                            ['all', ['==', ['get', "Flooding_Category"], 2]],
+                            "#6766FF",
+                            "#CCCCFF"
+
+                        ],
+                        "fill-opacity": 1
                     }
                 })
 
-                m.addLayer({
-                    'id': 'neighborhood_outline',
-                    'type': 'line',
-                    'source': 'neighborhood',
-                    'layout': {},
-                    'paint': {
-                        'line-color': 'black',
-                        'line-width': .5,
-                        'line-opacity': .3
-                    }
-                });
+                // m.addLayer({
+                //     'id': 'neighborhood_outline',
+                //     'type': 'line',
+                //     'source': 'neighborhood',
+                //     'layout': {},
+                //     'paint': {
+                //         'line-color': 'black',
+                //         'line-width': .5,
+                //         'line-opacity': .3
+                //     }
+                // });
 
                 m.addLayer({
                     'id': 'sites',

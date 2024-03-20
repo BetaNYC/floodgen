@@ -68,7 +68,7 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
 
         layers.forEach((l, i) => {
             const layerID = l.title.toLowerCase().replaceAll(" ", "_")
-            layerID === titleID ? map?.setPaintProperty(layerID, "fill-opacity", 1) : map?.setPaintProperty(layerID, "fill-opacity", 0)
+            layerID === titleID ? map?.setLayoutProperty(layerID, "visibility", "visible") : map?.setLayoutProperty(layerID, "visibility", "none")
         })
     }
 
