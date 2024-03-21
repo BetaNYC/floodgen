@@ -64,7 +64,6 @@ const useOnClickSites = () => {
 
   }, [map, openStreetView]);
 
-  console.log(id)
 
   return { id }
 

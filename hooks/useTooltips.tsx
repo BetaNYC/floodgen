@@ -16,6 +16,11 @@ const useTooltips = () => {
 
     useEffect(() => {
         const tooltip = d3.select("body").append("div").attr("class", "tooltip")
+        const popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+
 
         const tooltipShowHandler = (content: string, e: MapMouseEvent & EventData) => {
 
@@ -27,9 +32,8 @@ const useTooltips = () => {
                 .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
         }
 
-        map?.on("mouseenter", "coastal_flooding", (e: MapMouseEvent & EventData) => {
-
-            const hoveredCoordinates = [e.lngLat.lng, e.lngLat.lat] as LngLatLike
+        map?.on("mousemove", "coastal_flooding", (e: MapMouseEvent & EventData) => {
+            const hoveredCoordinates = e.features[0].geometry.coordinates[0][0] as LngLatLike
             const content = `<div class="content">
             ${e.features[0].properties.FLD_ZONE === "VE" ? "<div class='cf_zone' style='background:#3C9CD9'>VE</div>" :
                     e.features[0].properties.FLD_ZONE === "AE" ? "<div class='cf_zone' style='background:#7FBEE6'>AE</div>" :
@@ -38,16 +42,12 @@ const useTooltips = () => {
                 <div class="description">Coastal Flooding Level</div>
             </div>`
 
-            tooltip.html(content).style("visibility", "visible");
-            tooltip
-                /* @ts-ignore */
-                .style("top", e.point.y - (tooltip.node().clientHeight + 5) + "px")
-                /* @ts-ignore */
-                .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
+            popup.setLngLat(hoveredCoordinates).setHTML(content).addTo(map);
 
         })
 
-        map?.on("mouseenter", "stormwater_flooding", (e: MapMouseEvent & EventData) => {
+        map?.on("mousemove", "stormwater_flooding", (e: MapMouseEvent & EventData) => {
+            const hoveredCoordinates = e.features[0].geometry.coordinates[0][0] as LngLatLike
             const content = `<div class="content">
             ${e.features[0].properties.Flooding_Category === 1 ? "<div class='cf_zone' style='background:#0100FF'>Deep & continuous flooding (1ft. and greater)</div>" :
                     e.features[0].properties.Flooding_Category === 2 ? "<div class='cf_zone' style='background:#6766FF'>Nuisance Flooding (greater or equal to 4 in. and less than 1ft)</div>" :
@@ -55,21 +55,24 @@ const useTooltips = () => {
                 }
                 <div class="description">Stormwater Moderate Flood with 2050 Sea level Rise</div>
             </div>`
-            tooltipShowHandler(content, e)
+
+            popup.setLngLat(hoveredCoordinates).setHTML(content).addTo(map);
         })
 
 
-        map?.on("mouseenter", "environmental_justice_areas", (e: MapMouseEvent & EventData) => {
+        map?.on("mousemove", "environmental_justice_areas", (e: MapMouseEvent & EventData) => {
+            const hoveredCoordinates = e.features[0].geometry.coordinates[0][0] as LngLatLike
             const content = `<div class="content">
             ${e.features[0].properties.ejdesignat === "EJ Area" ? "<div class='cf_zone' style='background:#F7A848'>Environmental Justice Areas</div>" :
                     "<div class='cf_zone' style='background:#FBD4A3'>Potential Environmental Justice Areas</div>"
                 }
                 <div class="description">Stormwater Moderate Flood with 2050 Sea level Rise</div>
             </div>`
-            tooltipShowHandler(content, e)
+            popup.setLngLat(hoveredCoordinates).setHTML(content).addTo(map);
         })
 
-        map?.on("mouseenter", "hurricane_evacuation_zones", (e: MapMouseEvent & EventData) => {
+        map?.on("mousemove", "hurricane_evacuation_zones", (e: MapMouseEvent & EventData) => {
+            const hoveredCoordinates = e.features[0].geometry.coordinates[0][0] as LngLatLike
             const content = `<div class="content">
             ${e.features[0].properties.hurricane_ === "1" ? "<div class='cf_zone' style='background:#2F8890'>Zone 1</div>" :
                     e.features[0].properties.hurricane_ === "2" ? "<div class='cf_zone' style='background:#529CA4'>Zone 2</div>" :
@@ -80,13 +83,13 @@ const useTooltips = () => {
                 }
                 <div class="description">Stormwater Moderate Flood with 2050 Sea level Rise</div>
             </div>`
-            tooltipShowHandler(content, e)
+            popup.setLngLat(hoveredCoordinates).setHTML(content).addTo(map);
         })
 
-        map?.on("mouseleave", "hurricane_evacuation_zones", () => tooltip.style("visibility", "hidden"))
-        map?.on("mouseleave", "environmental_justice_areas", () => tooltip.style("visibility", "hidden"))
-        map?.on("mouseleave", "stormwater_flooding", () => tooltip.style("visibility", "hidden"))
-        map?.on("mouseleave", "coastal_flooding", () => tooltip.style("visibility", "hidden"))
+        map?.on("mouseleave", "hurricane_evacuation_zones", () => popup.remove())
+        map?.on("mouseleave", "environmental_justice_areas", () => popup.remove())
+        map?.on("mouseleave", "stormwater_flooding", () => popup.remove())
+        map?.on("mouseleave", "coastal_flooding", () => popup.remove())
     }, [map])
 
 }
