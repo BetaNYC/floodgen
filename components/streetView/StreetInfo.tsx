@@ -22,7 +22,7 @@ const StreetInfo = ({ openStreetView }: Props) => {
   return (
     <>
       {
-        openStreetView && <div className={`absolute bottom-[-100%] lg:left-4 lg:top-6 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[100%] lg:h-[calc(100%_-_3.5rem)]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-20 overflow-scroll`}>
+        openStreetView && <div className={`absolute bottom-[-100%] flex flex-col lg:left-4 lg:top-6 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[100%] lg:h-[calc(100%_-_3.5rem)]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-20`}>
           <div className='flex justify-between items-center w-full'>
             <h2 className='font-bold text-heading text-content_black'>{selectedSitesFeatures.properties['Place']}</h2>
 
@@ -36,9 +36,11 @@ const StreetInfo = ({ openStreetView }: Props) => {
             {/* <Image width={24} height={24} src="./icons/info.svg" alt='info' /> */}
             <img src="/icons/info.svg" alt="" className='w-6 h-6' />
           </div>
-          <p className={`${expanded ? "visible" : "hidden"} text-medium text-black leading-normal`}>
-            {selectedSitesFeatures.properties.Description}
-          </p>
+          <div className='flex-1 overflow-scroll'>
+            <p className={`${expanded ? "visible" : "hidden"} text-medium text-black leading-normal`}>
+              {selectedSitesFeatures.properties.Description}
+            </p>
+          </div>
         </div>
       }
     </>

@@ -29,11 +29,11 @@ const config: Config = {
         button: "#FFFFFF"
       },
       fontSize: {
-        title: "30px",
-        heading: "18px",
-        medium: "14px",
-        small:"12px",
-        xsmall:"10px",
+        title: "1.875rem",
+        heading: "1.125rem",
+        medium: "0.875rem",
+        small:"0.75rem",
+        xsmall:"0.625rem",
       }
     },
   },

@@ -25,6 +25,8 @@ const Map = () => {
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
 
+
+
         const lng = -73.913;
         const lat = 40.763;
         const zoom = 11;
@@ -86,7 +88,7 @@ const Map = () => {
                     type: 'fill',
                     source: 'coastal_flooding',
                     layout: {
-                        visibility:"visible"
+                        visibility: "visible"
                     },
                     paint: {
                         "fill-color": [
@@ -106,7 +108,7 @@ const Map = () => {
                     type: 'fill',
                     source: 'environmental_justice_areas',
                     layout: {
-                        visibility:"none"
+                        visibility: "none"
                     },
                     paint: {
                         "fill-color": [
@@ -126,7 +128,7 @@ const Map = () => {
                     type: 'fill',
                     source: 'hurricane_evacuation_zones',
                     layout: {
-                        visibility:"none"
+                        visibility: "none"
                     },
                     paint: {
                         "fill-color": [
@@ -142,7 +144,7 @@ const Map = () => {
                             ['all', ['==', ['get', "hurricane_"], "5"]],
                             "#B9D7DA",
                             ['all', ['==', ['get', "hurricane_"], "6"]],
-                        "#D9E8EA",
+                            "#D9E8EA",
                             'transparent'
                         ],
                         'fill-opacity': 1
@@ -155,7 +157,7 @@ const Map = () => {
                     type: 'fill',
                     source: 'stormwater_flooding',
                     layout: {
-                        visibility:"none"
+                        visibility: "none"
                     },
                     paint: {
                         "fill-color": [
@@ -200,7 +202,7 @@ const Map = () => {
 
 
     return (
-        <div className='relative w-full h-full'>
+        <div className='map relative w-full h-full'>
             <div className={`absolute left-0 w-full z-10 transition-all duration-[1500ms] ease-in-out  ${openStreetView ? "top-[50%] h-[50vh]" : "top-[0%] h-[100vh]"}`} ref={mapContainer}></div>
             <MapLayer />
         </div>

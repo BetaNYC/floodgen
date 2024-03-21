@@ -6,6 +6,10 @@ import "../components/map/Map.css"
 
 import * as d3 from "d3"
 
+type Props = {
+    node: HTMLInputElement
+}
+
 const useTooltips = () => {
     const { map } = useContext(MapContext) as MapContextType
 
