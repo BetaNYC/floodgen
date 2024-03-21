@@ -13,7 +13,7 @@ import { markerCreator } from '@/utils/markerCreator'
 const useOnClickSites = () => {
 
   const { map } = useContext(MapContext) as MapContextType
-  const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+  const { openStreetView, setOpenStreetView, setStreetViewImgAngle, setStreetViewImgFloodHeight, setClicked } = useContext(StreetViewContext) as StreetViewType
   const { setDirection, setMarker, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
   const [id, setId] = useState(0)
@@ -37,16 +37,25 @@ const useOnClickSites = () => {
       }
 
 
+      const yaw = Math.round(e.features[0].properties.Yaw)
 
       const { direction, marker } = markerCreator(e, map)
-      setDirectionDegree(0)
+      setDirectionDegree(yaw)
       setDirection(prevdirection => {
         prevdirection?.remove()
-        return direction
+        return direction.setRotation(yaw)
       })
       setMarker(prevmarker => {
         prevmarker?.remove()
         return marker
+      })
+      setStreetViewImgAngle(1)
+      setStreetViewImgFloodHeight(1)
+      setClicked({
+        "Street View": false,
+        "Minor Flooding": true,
+        "Moderate Flooding": false,
+        "Major Flooding": false,
       })
     });
 
@@ -57,7 +66,7 @@ const useOnClickSites = () => {
 
   console.log(id)
 
-  return {id}
+  return { id }
 
 }
 
