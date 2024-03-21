@@ -4,12 +4,14 @@ import FloodingButton from './FloodingButton'
 import Order from '@/shared/Order'
 
 import useHoverStatus from '@/hooks/useHoverStatus'
+import useOnClickSites from '@/hooks/useOnClickSites'
 
 import StreetInfo from './StreetInfo'
 
 
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
+
 
 import { ArrowsPointingOutIcon } from '@heroicons/react/20/solid'
 
@@ -46,6 +48,9 @@ const floodingBtnsData: {
 const StreetView = () => {
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
     const { marker, direction, directionDegree, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
+    const { id } = useOnClickSites()
+
+    const urlID = id < 10 ? `0${id}`: `${id}`
 
     const [clicked, setClicked] = useState({
         "Street View": false,
@@ -53,6 +58,9 @@ const StreetView = () => {
         "Moderate Flooding": false,
         "Major Flooding": false,
     })
+
+    const [streetViewImgFloodHeight, setStreetViewImgFloodHeight] = useState(0)
+    const [streetViewImgAngle, setStreetViewImgAngle] = useState(1)
 
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(floodingBtnsData)
 
@@ -68,6 +76,22 @@ const StreetView = () => {
 
         (Object.keys(newClicked) as floodingTypes[]).forEach((c: floodingTypes) => c === title ? newClicked[c] = true : newClicked[c] = false)
         setClicked(newClicked)
+
+        switch(title) {
+            case "Street View":
+                setStreetViewImgFloodHeight(0)
+                break
+            case "Minor Flooding":
+                setStreetViewImgFloodHeight(1)
+                break
+            case "Moderate Flooding":
+                setStreetViewImgFloodHeight(2)
+                break
+            case "Major Flooding":
+                setStreetViewImgFloodHeight(3)
+                break
+
+        }
     }
 
     const changeStreetViewClickHandler = (o: 'previous' | 'next') => {
@@ -76,12 +100,25 @@ const StreetView = () => {
             case 'previous':
                 direction!.setRotation(directionDegree - degree)
                 setDirectionDegree(curr => curr - degree)
+                if(streetViewImgAngle === 1) {
+                    setStreetViewImgAngle(8)
+                } else {
+                    setStreetViewImgAngle(prev => prev-1)
+                }
                 break
             case 'next':
                 direction!.setRotation(directionDegree + degree)
                 setDirectionDegree(curr => curr + degree)
+                if (streetViewImgAngle === 8) {
+                    setStreetViewImgAngle(1)
+                } else {
+                    setStreetViewImgAngle(prev => prev + 1)
+                }
                 break
         }
+
+
+
     }
 
     const fullScreenStreetViewClickHandler = () => {
@@ -90,9 +127,9 @@ const StreetView = () => {
 
     return (
         <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-full h-[50%] z-20 transition-all duration-[1500ms] ease-in-out`}>
-            {/* <img src="https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/01_F0_V2.png?token=GHSAT0AAAAAACED3PLELYEM7BONTPFDFV4UZP2JJVA" alt="" className='w-full h-full object-cover' /> */}
+            <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className='w-full h-full object-cover' />
             <div className={`pt-[1.75rem] lg:pl-8`}>
-                <div className='flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
+                <div className='absolute top-6 left-8 flex gap-[1rem] ml-[4.5rem] lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
                     {
                         floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
                     }

@@ -41,7 +41,6 @@ const useTooltips = () => {
                 /* @ts-ignore */
                 .style("left", e.point.x - tooltip.node().clientWidth / 2.0 + "px")
 
-            console.log(tooltip)
         })
 
         map?.on("mouseenter", "stormwater_flooding", (e: MapMouseEvent & EventData) => {
