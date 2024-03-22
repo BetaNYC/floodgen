@@ -9,7 +9,7 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 
 import { btnsType } from './MapLayer'
 
-import { XMarkIcon } from '@heroicons/react/16/solid'
+import { XMarkIcon, InformationCircleIcon } from '@heroicons/react/16/solid'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
@@ -26,13 +26,13 @@ const layers: {
             image: "./icons/coastal.svg",
             image_white: "./icons/coastal_white.svg",
             title: "Coastal Flooding",
-            content: "Dry and low-lying land is submerged by seawater"
+            content: "Coastal Flooding shows areas vulnerable to coastal flood from 1% annual chance storms and the 0.2% annual chance floodplain."
         },
         {
             image: "./icons/storm.svg",
             image_white: "./icons/storm_white.svg",
             title: "Stormwater Flooding",
-            content: "Caused by heavy rain and meltwater from hail and snow."
+            content: "Stormwater Flooding areas show scenarios of moderate stormwater flooding with 2050 sea level rise (+2.5 ft high estimate)."
         },
         {
             image: "./icons/justice.svg",
@@ -74,11 +74,17 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
 
 
     return (
-        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[20rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
+        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[11rem] w-full lg:w-[51.5rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
                 <div className='flex justify-between items-center mb-5 w-full'>
-                    <div className='font-bold text-heading text-black'>Choose Map Layer</div>
+                    <div className='font-bold text-heading text-black'>Flood Risk Map Layers</div>
+                    <div className='flex gap-2 w-[28rem]'>
+                        <InformationCircleIcon width={16} height={16} className='text-black' />
+                        <div className='text-[0.75rem] text-black'>
+                            {layers[clicked.findIndex(c => c === true)].content}
+                        </div>
+                    </div>
                     <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')} />
                 </div>
 

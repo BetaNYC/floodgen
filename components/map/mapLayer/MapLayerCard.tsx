@@ -1,7 +1,8 @@
 "use client"
 import React, { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
-import Image from 'next/image'
+
 
 
 type props = {
@@ -16,17 +17,25 @@ type props = {
 
 
 const MapLayerCard = ({ clicked, image, title, content, clickHandler, mouseEnterHandler, mouseLeaveHandler }: props) => {
+
+    const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
+
     return (
-        <div className={`p-4 rounded-[16px] border-[1px] border-primary_blue cursor-pointer ${clicked ? "bg-primary_blue text-white" : " bg-secondary_blue text-black hover:bg-primary_blue hover:text-white"} `} onClick={clickHandler} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
+        <div className={`p-4 lg:p-3 rounded-[16px] border-[1px] border-primary_blue cursor-pointer ${clicked ? "bg-primary_blue text-white" : " bg-secondary_blue text-black hover:bg-primary_blue hover:text-white"} `} onClick={clickHandler} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
             {/* <Image
                 src={image}
                 width={30}
                 height={30}
                 alt={title}
             /> */}
-            <img src={image} className='w-[1.875rem] h-[1.875rem]' alt={title} />
-            <div className={`mt-4 w-[6.08rem] font-semibold text-small lg:text-medium `}>{title}</div>
-            <div className={`mt-1 font-regular text-[0.625rem] `}>{content}</div>
+            <div className='lg:flex lg:gap-2 lg:items-center'>
+                <img src={image} className='w-[1.875rem] h-[1.875rem]' alt={title} />
+                <div className={`mt-4 lg:m-0 font-semibold text-small lg:text-medium `}>{title}</div>
+            </div>
+            {
+                !isDesktop && <div className={`mt-1 font-regular text-[0.625rem]`}>{content}</div>
+            }
+
         </div>
     )
 }

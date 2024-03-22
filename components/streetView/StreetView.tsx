@@ -150,7 +150,7 @@ const StreetView = () => {
                     <div className='absolute right-4  bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={() => fullScreenStreetViewClickHandler("open")}>
                         <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                     </div>
-                    <div className='absolute left-[calc(50%_-_105px)] bottom-10 px-4 py-2 bg-black bg-opacity-20'>Image {streetViewImgAngle}/8</div>
+                    <div className='absolute left-[calc(50%_-_105px)] bottom-10 px-4 py-2 font-bold text-[0.75rem] bg-black bg-opacity-20'>Image {streetViewImgAngle}/8</div>
                     {
                         streetViewImgFloodHeight === 0 ?
                             <img src="/logos/fg_logo.png" className='absolute right-2 bottom-2 w-[15px] h-[17.54px]' alt="" /> :
