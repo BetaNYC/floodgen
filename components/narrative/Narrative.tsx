@@ -20,18 +20,19 @@ const Narrative = () => {
         <>
             {
                 openNarrative && (
-                    <div className="absolute top-0 left-0  z-50 w-full h-[100vh] overflow-y-auto">
-                        <img src="/logos/floodgen_logo_white.png" className="absolute left-8 top-6 w-[155px] h-[38.75px] z-50" alt="logos_white" />
-                        <div className="absolute right-4 top-6 flex items-center justify-center w-[35px] h-[35px] bg-[#E7E7E7] bg-opacity-60 rounded-full z-50 cursor-pointer">
-                            <XMarkIcon width={24} height={24} className=" text-black font-thin " onClick={clickHandler}/>
+                    <>
+                        <img src="/logos/floodgen_logo_white.png" className="absolute left-8 top-6 w-[155px] h-[38.75px] z-[999]" alt="logos_white" />
+                        <div className="absolute right-8 top-6 flex items-center justify-center w-[35px] h-[35px] bg-[#E7E7E7] bg-opacity-60 rounded-full z-[999] cursor-pointer">
+                            <XMarkIcon width={24} height={24} className=" text-black font-thin " onClick={clickHandler} />
                         </div>
-
-                        <Introduction />
-                        <Satellite />
-                        <StreetView />
-                        <Slider />
-                        <Ending />
-                    </div>
+                        <div className="absolute top-0 left-0 z-50 w-full h-full overflow-y-auto">
+                            <Introduction />
+                            <Satellite />
+                            <StreetView />
+                            <Slider />
+                            <Ending clickHandler={clickHandler}/>
+                        </div>
+                    </>
                 )
             }
         </>
