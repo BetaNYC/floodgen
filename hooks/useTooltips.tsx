@@ -112,6 +112,7 @@ const useTooltips = () => {
         map?.on("mouseleave", "disadvantaged_communities", () => popup.remove())
         map?.on("mouseleave", "stormwater_flooding", () => popup.remove())
         map?.on("mouseleave", "coastal_flooding", () => popup.remove())
+        map?.on("mouseleave", "sites", () => popup.remove())
     }, [map])
 
 }
