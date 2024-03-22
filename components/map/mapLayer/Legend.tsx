@@ -31,7 +31,7 @@ function Legend({ buttonClickHandler, layerName}: Props) {
                     <div className='text-small lg:text-medium text-black'>Flood prone neighborhood</div>
                 </div>
                 <div className='flex items-center gap-3'>
-                    <div className={`w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem] ${layerName === "Coastal Flooding" ? "bg-secondary_blue" : layerName === "Stormwater Flooding" ? "bg-[#0100FF]" : layerName === "Environmental Justice Areas" ? "bg-[#F7A848]" : "bg-[#2F8890]" }`}></div>
+                    <div className={`w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem] ${layerName === "Coastal Flooding" ? "bg-secondary_blue" : layerName === "Stormwater Flooding" ? "bg-[#0100FF]" : layerName === "Disadvantaged Communities" ? "bg-[#F7A848]" : "bg-[#2F8890]" }`}></div>
                     <div className='text-small lg:text-medium text-black'>{layerName}</div>
                 </div>
             </div>
