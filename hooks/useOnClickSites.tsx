@@ -21,13 +21,14 @@ const useOnClickSites = () => {
   useEffect(() => {
 
     map?.on("click", 'sites', (e: MapMouseEvent & EventData) => {
+      
       setId(e.features[0].properties.ID)
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
             setTimeout(() => {
               map?.flyTo({
-                center: [-73.913, 40.733],
+                center: [e.lngLat.lng, e.lngLat.lat-0.02],
                 duration: 1500,
               });
             }, 1500);
