@@ -17,7 +17,7 @@ const StreetInfo = ({ openStreetView }: Props) => {
 
   const selectedSitesFeatures = sites.features.filter(site => site.properties.ID === id)[0]
 
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(false)
 
   return (
     <>

@@ -10,6 +10,7 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 import { btnsType } from './MapLayer'
 
 import { XMarkIcon, InformationCircleIcon } from '@heroicons/react/16/solid'
+import { useMediaQuery } from 'react-responsive'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
@@ -57,6 +58,8 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
 
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(layers)
 
+    const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
+
 
     const clickHandler = (title: floodingTypes, index: number) => {
         const newClicked = [...clicked]
@@ -79,12 +82,14 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
             <div>
                 <div className='flex justify-between items-center mb-5 w-full'>
                     <div className='font-bold text-heading text-black'>Flood Risk Map Layers</div>
-                    <div className='flex gap-2 w-[28rem]'>
-                        <InformationCircleIcon width={16} height={16} className='text-black' />
-                        <div className='text-[0.75rem] text-black'>
-                            {layers[clicked.findIndex(c => c === true)].content}
+                    {
+                        isDesktop && <div className='flex gap-2 w-[28rem]'>
+                            <InformationCircleIcon width={16} height={16} className='text-black' />
+                            <div className='text-[0.75rem] text-black'>
+                                {layers[clicked.findIndex(c => c === true)].content}
+                            </div>
                         </div>
-                    </div>
+                    }
                     <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')} />
                 </div>
 

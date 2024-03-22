@@ -34,13 +34,13 @@ const floodingBtnsData: {
         },
         {
             title: 'Moderate Flooding',
-            src: './icons/minor.svg',
-            src_white: './icons/minor_white.svg'
+            src: './icons/moderate.svg',
+            src_white: './icons/moderate_white.svg'
         },
         {
             title: 'Major Flooding',
-            src: './icons/minor.svg',
-            src_white: './icons/minor_white.svg'
+            src: './icons/extreme.svg',
+            src_white: './icons/extreme_white.svg'
         }
     ]
 
