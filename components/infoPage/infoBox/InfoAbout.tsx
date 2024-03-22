@@ -8,29 +8,31 @@ type Props = {
 const InfoAbout = ({ clickHandler }: Props) => {
     return (
         <>
-            <div className='flex flex-col gap-5 lg:m-0'>
-                <div className='lg:flex gap-14'>
+            <div className='flex flex-col gap-5 lg:gap-0'>
+                <div className='flex flex-col gap-3 max-w-[60rem]'>
+                    <p className='font-regular text-medium text-black'>Today, 1.3 million New York City residents live within or directly adjacent to the floodplain.1 Flood damage is expensive, extensive, and oftentimes predictable. Maps of predicted flooding are helpful planning tools, but aerial views distance viewers from its potential impact. If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
+                    <p className='font-regular text-medium text-black'>FloodGen is an advocacy tool that uses generative artificial intelligence (GenAI) to create photorealistic images of predicted flooding. Projected flood imagery from FloodGen can be integrated within community engagement strategies to:</p>
+                    <ol className='font-regular text-medium text-black'>
+                        <li>1. raise awareness for communities who have not yet experienced flooding,</li>
+                        <li>2. create evidence for communities seeking resilience funding and projects</li>
+                        <li>3. respond to resilience advocacy efforts by municipal government agents and decision makers</li>
+                    </ol>
+                    <p className='font-regular text-medium text-black'>This website demonstrates the potential to position FloodGen as an advocacy tool. FloodGen features an interactive web map that contextualizes flood risk and AI generated imagery of predicted flooding for ten case study sites in New York City. The case study sites were selected based on flood risk hazards of coastal and stormwater flooding, vulnerability of environmental justice areas and hurricane evacuation zones, and exposure to nearby points of interest, including nearby transit, public housing, hospitals, commercial areas, schools, and libraries.</p>
+                    <p className='font-regular text-medium text-black'>Explore flood prone neighborhoods in the map and AI generated imagery of street views with projected flooding.</p>
+                </div>
+                <div className='lg:flex gap-14 lg:'>
                     <div className='flex flex-col mb-5 lg:mb-0'>
                         <h2 className='lg:order-2 lg:w-[22rem] font-bold lg:font-medium text-heading lg:text-[1.75rem] text-title_black'>Explore flood prone neighborhoods in NYC</h2>
-                        <p className='lg:order-3 mt-2 mb-4 lg:max-w-[529px]  text-small lg:text-[1.375rem] text-content_black'>Explain why the project focuses on these areas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <div className='lg:order-1 lg:mb-8 w-full lg:w-[529px] h-[110px] lg:h-[281px] rounded-[0.75rem] bg-gray'></div>
                     </div>
                     <div className='flex flex-col'>
                         <h2 className='lg:order-2 lg:w-[30rem] font-bold lg:font-medium text-heading lg:text-[1.75rem] text-title_black'>Visualize flooding street view with AI generated flooding images </h2>
-                        <p className='lg:order-3 mt-2 mb-4 lg:max-w-[529px] text-small lg:text-[1.375rem] text-content_black'>Explain why the project focuses on these areas. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <div className='lg:order-1 lg:mb-8 w-full lg:w-[529px] h-[110px] lg:h-[281px] rounded-[0.75rem] bg-gray'></div>
                     </div>
                 </div>
-                {/* <div className='mt-[1rem] lg:hidden'>
-                <h2 className='font-bold text-heading text-title_black'>Area of research</h2>
-                <div className='mt-[0.75rem]'>
-                    <p className='text-medium text-content_black'>
-                        Explain why the project focuses on these areas.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                <button className='mt-2 lg:my-10 py-5 w-[15rem] font-semibold text-small lg:text-[1.5rem] text-white bg-primary_blue rounded-[2.5rem]' onClick={clickHandler}>Explore FloodGen</button>
+                <div className='text-xsmall text-black'>
+                    <div>References</div>
+                    <div>1. Rebuild by Design. “Who lives in the floodplain in the year 2100?”<a href='https://rebuildbydesign.org/who-lives-in-nycs-floodplain/'>https://rebuildbydesign.org/who-lives-in-nycs-floodplain/ </a></div>
                 </div>
-            </div> */}
-                <button className='mt-2 py-5 lg:w-[10.68rem] font-semibold text-small lg:text-[1.5rem] text-white bg-primary_blue rounded-[2.5rem]' onClick={clickHandler}>Get Started</button>
             </div>
         </>
     )

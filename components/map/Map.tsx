@@ -201,7 +201,7 @@ const Map = () => {
 
     return (
         <div className='map relative w-full h-full'>
-            <div className={`absolute left-0 w-full z-10 transition-all duration-[1500ms] ease-in-out  ${openStreetView ? "top-[50%] h-[50vh]" : "top-[0%] h-[100vh]"}`} ref={mapContainer}></div>
+            <div className={`absolute left-0 w-full z-10 transition-all duration-[1500ms] ease-in-out  ${openStreetView ? "top-[65%] h-[35vh]" : "top-[0%] h-[100vh]"}`} ref={mapContainer}></div>
             <MapLayer />
         </div>
     )

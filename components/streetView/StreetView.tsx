@@ -129,9 +129,9 @@ const StreetView = () => {
 
     return (
         <>
-            <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-full h-[50%] z-20 transition-all duration-[1500ms] ease-in-out`}>
+            <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-full h-[65%] z-20 transition-all duration-[1500ms] ease-in-out`}>
                 <div className='w-full h-full overflow-hidden'>
-                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[125%] aspect-[787/500] object-bottom`} />
+                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[135%] aspect-[787/750] `} />
                 </div>
 
                 <div className={`pt-[1.75rem] lg:pl-8`}>

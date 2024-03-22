@@ -67,7 +67,7 @@ const useTooltips = () => {
 
         map?.on("mousemove", "disadvantaged_communities", (e: MapMouseEvent & EventData) => {
             const content = `<div class="content">
-                ${e.features[0].properties.DAC_Desig === "Designated as DAC" && "<div class='zone' style='background:#F7A848'>Disadvantaged Communities (DAC)</div>"}
+                ${e.features[0].properties.DAC_Desig === "Designated as DAC" && "<div class='zone' style='background:#F7A848'>Disadvantaged Communities</div>"}
                     <div class="description">Communities that are associated with historical discrimination or disinvestment and vulnerable to potential climate change and pollution risks</div>
                 </div>`
 
