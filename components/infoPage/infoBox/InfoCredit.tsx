@@ -3,7 +3,7 @@ import React from 'react'
 const InfoCredit = () => {
   return (
     <div className='max-w-[60rem]'>
-      <div className='flex flex-col gap-[0.625rem]'>
+      <div className='flex flex-col gap-5'>
         <h2 className='font-semibold text-heading text-black'><a href="https://beta.nyc/" target="_blank" className='hover:underline'>BetaNYC</a></h2>
         <p className='font-regular text-medium text-black'>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. This project was created by the Civic Innovation Lab at BetaNYC, with the initial research into the flood image generator model led by Vaishali Talwar.</p>
         <p className='font-regular text-medium text-black'>If you are interested in working with BetaNYC, our team is happy to get in touch through a Research and Data Assistance Request (RADAR). Follow this link to <a href="https://beta.nyc/products/research-and-data-assistance-requests/" target="_blank" className='underline'>learn more about RADARs and how to submit a request!</a></p>
@@ -13,7 +13,7 @@ const InfoCredit = () => {
       </div>
       </div>
 
-      <div className='flex flex-col gap-[0.625rem] mt-6'>
+      <div className='flex flex-col gap-5 mt-6'>
         <h2 className='font-semibold text-heading text-black'>Data Source</h2>
         <div>
           <h2 className='font-semibold text-medium text-black'>LiDAR Point Cloud</h2>
@@ -44,7 +44,7 @@ const InfoCredit = () => {
           <p className='font-regular text-medium text-black'>NYC Emergency Management Department (NYCEM). 2024. Hurricane Evacuation Zones. Accessed January 31, 2024.</p>
         </div>
       </div>
-      <div className='flex flex-col gap-[0.625rem] mt-6'>
+      <div className='flex flex-col gap-5 mt-6'>
         <h3 className='font-semibold text-heading text-black'>Methodology & Limitations</h3>
         <p className='font-regular text-medium text-black'>The flood images featured on this website were generated using the open-source <a href="https://github.com/cc-ai/climategan" target="_blank" className='underl'>ClimateGAN</a> image generation models. The ClimateGAN model is licensed under GPL-3.0 and is open for public use, promoting transparency and collaboration. The model code, data, and pre-trained weights available in the original ClimateGAN repository were applied to Cylomedia street view images from the geocoder.nyc website to generate the photorealistic images of flooding. In order to generate images with mild, moderate, and major flooding levels, the threshold parameter of the model was set to 0.99, 0.9, and 0.8 respectively. Although these values do not correspond to exact measurements of flooding, we estimate that the mild, moderate, and major flooding levels correspond to the approximate ranges &lt; 0.4 inches, 0.4–12 inches, and 12–24 inches respectively. In a future iteration, we hope to improve the model performance by feeding an initial flood mask generated via the elevation tool on the geocoder.nyc website to the model. Stay tuned for further updates!</p>
       </div>
