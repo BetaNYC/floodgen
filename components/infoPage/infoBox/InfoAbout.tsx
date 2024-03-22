@@ -26,7 +26,7 @@ const InfoAbout = ({ clickHandler }: Props) => {
                         <h2 className='lg:order-2 lg:w-[277px] font-bold lg:font-medium text-medium text-title_black'>Explore flood prone neighborhoods in NYC</h2>
                     </div>
                     <div className='flex flex-col'>
-                        <img src="/imgs/flooding_before-after.gif" alt="" className='mb-2 w-[394.67px] h-[222px] rounded-lg' />
+                        <img src="https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flooding_before-after.gif" alt="" className='mb-2 w-[394.67px] h-[222px] rounded-lg' />
                         <h2 className='lg:order-2 lg:w-[400px] font-bold lg:font-medium text-medium text-title_black'>Visualize flooding street view with AI generated flooding images </h2>
                     </div>
                 </div>
