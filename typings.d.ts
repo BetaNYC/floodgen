@@ -1,5 +1,5 @@
 type floodingTypes =
   | "Coastal Flooding"
   | "Stormwater Flooding"
-  | "Environmental Justice Areas"
+  | "Disadvantaged Communities"
   | "Hurricane Evacuation Zones";

@@ -1,44 +1,57 @@
-.mapboxgl-popup-content{
-    padding: 0 !important; 
-    margin: 0 !important;
-    border-radius: 20px !important;
-    width: 210px !important;
-    height: 120px !important;
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 20px !important;
+  width: 270px !important;
+  height: 120px !important;
 }
 
-.content {
+/* .content {
     padding: 0 !important; 
     margin: 0 !important;
-    width: 210px !important;
+    width: 240px !important;
     height: 120px !important;
     border-radius: 20px  !important
+} */
+
+.zone {
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  border-radius: 20px 20px 0 0;
 }
 
-.cf_zone {
-    padding: 13px;
-    font-weight: 500;
-    font-size: 14px;
-    color: black;
-    border-radius: 20px 20px  0 0 ;
+.sites {
+  padding: 12px !important;
+}
 
+.line {
+    display: block;
+    margin: 12px 0 12px 0;
+    height: 1px;
+    width: 216px;
+    background-color: #c9c9c9;
+}
+
+.sites_cta {
+    color: #306DDD;
+    font-size:12px;
+    font-weight: 400;
 }
 
 .description {
-    padding: 13px;
-    background: #fff;
-    color: black;
-    border-radius: 0 0  20px 20px !important;
-
+  padding: 12px;
+  font-size: 12px;
+  background: #fff;
+  color: black;
+  border-radius: 0 0 20px 20px !important;
 }
 
-
-
-
-  .tooltip {
-    position: absolute;
-    color: white;
-    visibility: hidden;
-    cursor: pointer;
-    z-index: 2500 !important;
-
-  }
+.tooltip {
+  position: absolute;
+  color: white;
+  visibility: hidden;
+  cursor: pointer;
+  z-index: 2500 !important;
+}

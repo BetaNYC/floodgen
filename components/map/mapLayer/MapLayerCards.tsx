@@ -37,14 +37,14 @@ const layers: {
         {
             image: "./icons/justice.svg",
             image_white: "./icons/justice_white.svg",
-            title: "Environmental Justice Areas",
-            content: "Communities that are more vulnerable to flood risk due to being underserved historically"
+            title: "Disadvantaged Communities",
+            content: "Communities that are associated with historical discrimination or disinvestment and vulnerable to potential climate change and pollution risks"
         },
         {
             image: "./icons/zone.svg",
             image_white: "./icons/zone_white.svg",
             title: "Hurricane Evacuation Zones",
-            content: "Areas meant for evacuation purposes in case of a hurricane"
+            content: "Areas designated for evacuation depending on incoming hurricane tracks and projected coastal storm surges"
         }
     ]
 
@@ -74,7 +74,7 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
 
 
     return (
-        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[16.375rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
+        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[20rem] w-full lg:w-[48rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
                 <div className='flex justify-between items-center mb-5 w-full'>

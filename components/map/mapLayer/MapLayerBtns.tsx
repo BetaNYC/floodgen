@@ -7,7 +7,7 @@ import { btnsType } from './MapLayer'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 import { MarkerContext, MarkerContextType } from '@/contexts/MarkerContext'
 
-import { ChevronLeftIcon } from '@heroicons/react/20/solid'
+import { ChevronUpIcon } from '@heroicons/react/20/solid'
 
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
-    const { marker, direction, directionDegree, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
+    const { marker, direction, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
 
     const btnsData: { src: string, src_white: string, title: btnsType }[] = [
         {
@@ -53,7 +53,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                 } */}
                 {
                     openStreetView && (<div className=' flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={closeStreetViewClickHandler}>
-                        <ChevronLeftIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
+                        <ChevronUpIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                     </div>)
                 }
 

@@ -56,9 +56,9 @@ const Map = () => {
                     data: mapLayerData.coastalFlooding! as GeoJSON.FeatureCollection
                 })
 
-                m.addSource('environmental_justice_areas', {
+                m.addSource('disadvantaged_communities', {
                     type: 'geojson',
-                    data: mapLayerData.justiceArea! as GeoJSON.FeatureCollection
+                    data: mapLayerData.disadvantagedCommunities! as GeoJSON.FeatureCollection
                 })
 
                 m.addSource('hurricane_evacuation_zones', {
@@ -104,19 +104,17 @@ const Map = () => {
                 })
 
                 m.addLayer({
-                    id: 'environmental_justice_areas',
+                    id: 'disadvantaged_communities',
                     type: 'fill',
-                    source: 'environmental_justice_areas',
+                    source: 'disadvantaged_communities',
                     layout: {
                         visibility: "none"
                     },
                     paint: {
                         "fill-color": [
                             'case',
-                            ['all', ['==', ['get', "ejdesignat"], "EJ Area"]],
+                            ['all', ['==', ['get', "DAC_Desig"], "Designated as DAC"]],
                             "#F7A848",
-                            ['all', ['==', ['get', "ejdesignat"], "Potential EJ Area"]],
-                            "#FBD4A3",
                             'transparent'
                         ],
                         'fill-opacity': 1
