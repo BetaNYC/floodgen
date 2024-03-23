@@ -163,7 +163,7 @@ const StreetView = () => {
             {
                 streetViewImgFullscreen && (
                     <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-70 z-30 '>
-                        <div className='relative  lg:w-[1347px] h-full lg:h-[616px]'>
+                        <div className='relative  md:w-[1347px] h-full md:h-[616px]'>
                             <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className='w-full h-full object-cover' />
                             <div className='absolute right-4 bottom-10 lg:top-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl z-40' onClick={() => fullScreenStreetViewClickHandler("close")}>
                                 <ArrowsPointingInIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />

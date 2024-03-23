@@ -21,7 +21,6 @@ const FloodingButton = ({ clicked, hovered, title, src, clickHandler, mouseEnter
             {/* <Image width={24} height={24} src={src} alt={title} className='' /> */}
             <img src={src} alt={title} className='w-6 h-6' />
             {isDesktop && <p className=''>{title}</p>}
-
         </div>
     )
 }
