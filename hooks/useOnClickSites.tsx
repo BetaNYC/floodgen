@@ -21,16 +21,20 @@ const useOnClickSites = () => {
   useEffect(() => {
 
     map?.on("click", 'sites', (e: MapMouseEvent & EventData) => {
-      
+
       setId(e.features[0].properties.ID)
       if (!openStreetView) {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
             setTimeout(() => {
               map?.flyTo({
-                center: [e.lngLat.lng, e.lngLat.lat-0.08],
+                center: [e.lngLat.lng, e.lngLat.lat-0.05],
                 duration: 1500,
+                zoom:12
               });
+              // map?.zoomIn({
+              //   duration:1500
+              // })
             }, 1500);
           }
           return true;
