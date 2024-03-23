@@ -131,7 +131,7 @@ const StreetView = () => {
         <>
             <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-full h-[65%] z-20 transition-all duration-[1500ms] ease-in-out`}>
                 <div className='w-full h-full overflow-hidden'>
-                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[135%] aspect-[787/750] `} />
+                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[100%] lg:h-[135%] aspect-[787/750] `} />
                 </div>
 
                 <div className={`pt-[1.75rem] lg:pl-8`}>
@@ -151,15 +151,11 @@ const StreetView = () => {
                         <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                     </div>
                     <div className='absolute left-[calc(50%_-_105px)] bottom-10 px-4 py-2 font-bold text-[0.75rem] bg-black bg-opacity-20'>Image {streetViewImgAngle}/8</div>
-                    {
-                        streetViewImgFloodHeight === 0 ?
-                            <img src="/logos/fg_logo.png" className='absolute right-2 bottom-2 w-[15px] h-[17.54px]' alt="" /> :
-                            <div className='absolute left-0 bottom-0 px-2 py-2 flex justify-center gap-2 bg-black bg-opacity-20'>
+                    <img src="/logos/fg_logo.png" className='absolute right-2 bottom-2 w-[15px] h-[17.54px]' alt="" />
+                    {/* <div className='absolute left-0 bottom-0 px-2 py-2 flex justify-center gap-2 bg-black bg-opacity-20'>
                                 <img src="/logos/fg_logo.png" className='w-[15px] h-[17.54px]' alt="" />
                                 <p>Disclaimer: AI generated photos</p>
-                            </div>
-
-                    }
+                            </div> */}
 
                     {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
                 </div>
@@ -167,9 +163,9 @@ const StreetView = () => {
             {
                 streetViewImgFullscreen && (
                     <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-70 z-30'>
-                        <div className='relative w-[1347px] h-[616px]'>
+                        <div className='relative  lg:w-[1347px] h-full lg:h-[616px]'>
                             <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className='w-full h-full object-cover' />
-                            <div className='absolute right-4 top-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl z-40' onClick={() => fullScreenStreetViewClickHandler("close")}>
+                            <div className='absolute right-4 bottom-10 lg:top-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl z-40' onClick={() => fullScreenStreetViewClickHandler("close")}>
                                 <ArrowsPointingInIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                             </div>
                         </div>

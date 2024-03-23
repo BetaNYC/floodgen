@@ -20,7 +20,7 @@ function Legend({ buttonClickHandler, layerName }: Props) {
 
 
     return (
-        <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_10.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3  bg-background_white rounded-[1rem] z-20 shadow-2xl`}>
+        <div className={`absolute ${openStreetView ? "left-[10.971rem] bottom-[calc(50%_-_17.375rem)] lg:bottom-[1.875rem]" : "left-4 bottom-4"} lg:left-[1.875rem] lg:bottom-[1.875rem]  p-3  bg-background_white rounded-[1rem] z-20 shadow-2xl`}>
             <div className='flex justify-between items-start mb-4 w-full'>
                 <div className='font-bold text-small lg:text-heading text-black'>Legend</div>
                 <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')} />

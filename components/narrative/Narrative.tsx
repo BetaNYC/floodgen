@@ -28,7 +28,7 @@ const Narrative = () => {
                         <div className="absolute top-0 left-0 z-50 w-full h-full overflow-y-auto">
                             <Introduction />
                             <Satellite />
-                            {/* <StreetView /> */}
+                            <StreetView />
                             <Slider />
                             <Ending clickHandler={clickHandler}/>
                         </div>
