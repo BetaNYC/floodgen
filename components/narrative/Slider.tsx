@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 
 const Slider = () => {
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
+
+    const ref = useRef()
 
     const handleMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (!isDragging) return;
@@ -26,8 +28,9 @@ const Slider = () => {
         setIsDragging(false);
     };
 
+
     return (
-        <div className="w-full h-[100vh] bg-white relative" onMouseUp={handleMouseUp}>
+        <div className="w-full h-[100vh] bg-white relative" onMouseUp={handleMouseUp}  >
             <div
                 className="relative w-full h-full overflow-hidden select-none"
                 onMouseMove={handleMove}
