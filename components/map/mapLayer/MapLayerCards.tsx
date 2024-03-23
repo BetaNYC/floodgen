@@ -14,6 +14,7 @@ import { useMediaQuery } from 'react-responsive'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
+    layerName: floodingTypes
     setLayerName: Dispatch<SetStateAction<floodingTypes>>
 }
 
@@ -50,11 +51,11 @@ const layers: {
     ]
 
 
-const MapLayerCards = ({ buttonClickHandler, setLayerName }: Props) => {
+const MapLayerCards = ({ buttonClickHandler, setLayerName, layerName }: Props) => {
 
     const { map } = useContext(MapContext) as MapContextType
 
-    const [clicked, setClicked] = useState(layers.map((l, i) => i === 0 ? true : false))
+    const [clicked, setClicked] = useState(layers.map((l, i) => l.title === layerName ? true : false))
 
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(layers)
 

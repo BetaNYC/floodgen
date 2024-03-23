@@ -20,7 +20,7 @@ const MapLayer = () => {
     return (
         <>
             <MapLayerBtns clicked={clicked} buttonClickHandler={buttonClickHandler} />
-            {clicked === 'Layers' ? <MapLayerCards buttonClickHandler={buttonClickHandler} setLayerName={setLayerName} /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} layerName={layerName} /> : null}
+            {clicked === 'Layers' ? <MapLayerCards buttonClickHandler={buttonClickHandler} setLayerName={setLayerName} layerName={layerName} /> : clicked === 'Legend' ? <Legend buttonClickHandler={buttonClickHandler} layerName={layerName} /> : null}
         </>
     )
 }
