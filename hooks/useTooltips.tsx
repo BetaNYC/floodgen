@@ -66,13 +66,16 @@ const useTooltips = () => {
 
 
         map?.on("mousemove", "disadvantaged_communities", (e: MapMouseEvent & EventData) => {
-            const content = `<div class="content">
-                ${e.features[0].properties.DAC_Desig === "Designated as DAC" && "<div class='zone' style='background:#F7A848'>Disadvantaged Communities</div>"}
+
+            if (e.features[0].properties.DAC_Desig === "Designated as DAC") {
+                const content = `<div class="content">
+                <div class='zone' style='background:#F7A848'>Disadvantaged Communities</div>
                     <div class="description">Communities that are associated with historical discrimination or disinvestment and vulnerable to potential climate change and pollution risks</div>
                 </div>`
 
-            popup.setLngLat([e.lngLat.lng, e.lngLat.lat]).setHTML(content).addTo(map);
 
+                popup.setLngLat([e.lngLat.lng, e.lngLat.lat]).setHTML(content).addTo(map);
+            }
         })
 
         map?.on("mousemove", "hurricane_evacuation_zones", (e: MapMouseEvent & EventData) => {
@@ -85,12 +88,12 @@ const useTooltips = () => {
                                     "<div class='zone' style='background:#D9E8EA'>Hurricane Evacuation Zone 6</div>"
                 }
                 ${e.features[0].properties.hurricane_ === "1" ? "<div class='description'>Areas with <span style='font-weight:bold'>high</span> threat of coastal flooding resulting from a storm surge</div>" :
-                e.features[0].properties.hurricane_ === "2" ? "<div class='description'>Areas with <span style='font-weight:bold'>high</span> threat of coastal flooding resulting from a storm surge</div>" :
-                    e.features[0].properties.hurricane_ === "3" ? "<div class='description'>Areas with <span style='font-weight:bold'>moderate</span> threat of coastal flooding resulting from a storm surge</div>":
-                        e.features[0].properties.hurricane_ === "4" ? "<div class='description'>Areas with <span style='font-weight:bold'>moderate</span> threat of coastal flooding resulting from a storm surge</div>" :
-                            e.features[0].properties.hurricane_ === "5" ? "<div class='description'>Areas with <span style='font-weight:bold'>mild</span> threat of coastal flooding resulting from a storm surge</div>" :
-                            "<div class='description'>Areas with <span style='font-weight:bold'>high</span> threat of coastal flooding resulting from a storm surge</div>"
-            }
+                    e.features[0].properties.hurricane_ === "2" ? "<div class='description'>Areas with <span style='font-weight:bold'>high</span> threat of coastal flooding resulting from a storm surge</div>" :
+                        e.features[0].properties.hurricane_ === "3" ? "<div class='description'>Areas with <span style='font-weight:bold'>moderate</span> threat of coastal flooding resulting from a storm surge</div>" :
+                            e.features[0].properties.hurricane_ === "4" ? "<div class='description'>Areas with <span style='font-weight:bold'>moderate</span> threat of coastal flooding resulting from a storm surge</div>" :
+                                e.features[0].properties.hurricane_ === "5" ? "<div class='description'>Areas with <span style='font-weight:bold'>mild</span> threat of coastal flooding resulting from a storm surge</div>" :
+                                    "<div class='description'>Areas with <span style='font-weight:bold'>high</span> threat of coastal flooding resulting from a storm surge</div>"
+                }
             </div>`
             if (+e.features[0].properties.hurricane_ <= 5) {
                 popup.setLngLat([e.lngLat.lng, e.lngLat.lat]).setHTML(content).addTo(map);

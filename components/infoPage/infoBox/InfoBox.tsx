@@ -48,8 +48,8 @@ const InfoBox = () => {
                 <div className=' px-5 lg:px-16 pt-8 lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
                     {/* <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' className='mb-2' /> */}
                     {
-                        isDesktop ? <img src="/logos/floodgen.svg" alt="" className='mb-2 w-[203px] h-[38.17px]' /> :
-                        <img src="/logos/floodgen.svg" alt="" className='mb-4 w-[80px] h-[15.4px]' /> 
+                        isDesktop ? <img src="/logos/floodgen_logo.png" alt="" className='mb-2 w-[203px] ' /> :
+                        <img src="/logos/floodgen_logo.png" alt="" className='mb-4 w-[80px] ' /> 
                     }
 
                     {/* <InfoTitle /> */}

@@ -4,6 +4,7 @@
   border-radius: 20px !important;
   width: 270px !important;
   height: 120px !important;
+  z-index: 100000;
 }
 
 /* .content {
@@ -13,6 +14,11 @@
     height: 120px !important;
     border-radius: 20px  !important
 } */
+
+#map canvas {
+  cursor: auto;
+}
+
 
 .zone {
   padding: 12px;
