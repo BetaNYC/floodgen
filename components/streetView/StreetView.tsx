@@ -135,7 +135,7 @@ const StreetView = () => {
                 </div>
 
                 <div className={`pt-[1.75rem] lg:pl-8`}>
-                    <div className='absolute top-6 left-0 lg:left-8 flex gap-4 ml-24 lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
+                    <div className='absolute top-6 left-0 lg:left-8 flex gap-4 ml-20 lg:ml-[18.56rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
                         {
                             floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
                         }
