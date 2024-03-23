@@ -8,7 +8,7 @@ type Props = {
 const InfoAbout = ({ clickHandler }: Props) => {
     return (
         <>
-            <div className='flex flex-col gap-5 lg:gap-0'>
+            <div className='flex flex-col gap-5 lg:gap-0 mt-5'>
                 <div className='flex flex-col gap-3 mb-5 max-w-[60rem]'>
                     <p className='font-regular text-medium text-black'>Today, 1.3 million New York City residents live within or directly adjacent to the floodplain.1 Flood damage is expensive, extensive, and oftentimes predictable. Maps of predicted flooding are helpful planning tools, but aerial views distance viewers from its potential impact. If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
                     <p className='font-regular text-medium text-black'>FloodGen is an advocacy tool that uses generative artificial intelligence (GenAI) to create photorealistic images of predicted flooding. Projected flood imagery from FloodGen can be integrated within community engagement strategies to:</p>

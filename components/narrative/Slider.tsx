@@ -30,19 +30,19 @@ const Slider = () => {
 
 
     return (
-        <div className="w-full h-[100vh] bg-white relative" onMouseUp={handleMouseUp}  >
+        <div className="w-full h-[50vh] md:h-[100vh] bg-white relative" onMouseUp={handleMouseUp}  >
             <div
                 className="relative w-full h-full overflow-hidden select-none"
                 onMouseMove={handleMove}
                 onMouseDown={handleMouseDown}
             >
                 <img src="/imgs/narrative_six.png" className="w-full h-full" alt="" />
-                <div className="absolute right-8 bottom-24 p-5 font-semibold text-[1.125rem] bg-black bg-opacity-70 rounded-lg text-white">AI generated</div>
+                <div className="absolute right-8 bottom-10 md:bottom-24 p-5 font-semibold text-[14px] md:text-[1.125rem] bg-black bg-opacity-70 rounded-lg text-white">AI generated</div>
                 <div
                     className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden select-none z-30"
                     style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
-                    <div className="absolute left-8 bottom-24 p-5 font-semibold text-[1.125rem] bg-black bg-opacity-70 rounded-lg text-white">Street view</div>
+                    <div className="absolute left-8 bottom-10 md:bottom-24 p-5 font-semibold text-[14px] md:text-[1.125rem] bg-black bg-opacity-70 rounded-lg text-white">Street view</div>
                     <img src="/imgs/narrative_four.png" className="w-full h-full" alt="" />
                 </div>
                 <div

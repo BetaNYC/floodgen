@@ -2,7 +2,7 @@ import React from 'react'
 
 const InfoCredit = () => {
   return (
-    <div className='max-w-[60rem]'>
+    <div className='max-w-[60rem] mt-5'>
       <div className='flex flex-col gap-5'>
         <h2 className='font-semibold text-heading text-black'><a href="https://beta.nyc/" target="_blank" className='hover:underline'>BetaNYC</a></h2>
         <p className='font-regular text-medium text-black'>BetaNYC is a civic organization dedicated to improving lives in New York through civic design, technology, and data. With an aim to improve access to public interest technology, the Civic Innovation Lab at BetaNYC provides assistance with research, data analysis, and data visualization. This project was created by the Civic Innovation Lab at BetaNYC, with the initial research into the flood image generator model led by Vaishali Talwar.</p>

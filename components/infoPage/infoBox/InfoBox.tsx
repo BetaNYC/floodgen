@@ -12,7 +12,7 @@ import InfoAbout from './InfoAbout'
 import InfoCredit from './InfoCredit'
 import InfoAI from './InfoAI'
 
-import Image from 'next/image'
+
 
 
 const InfoBox = () => {
@@ -25,7 +25,7 @@ const InfoBox = () => {
     const { setOpenStreetView, openStreetView } = useContext(StreetViewContext) as StreetViewType
 
 
-
+    const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
 
 
     const selectedClickHandler = (s: 'About' | "Credit" | "Introduction" | "AI") => {
@@ -47,19 +47,23 @@ const InfoBox = () => {
             <div className={`absolute top-[36%] lg:top-0 w-full h-[64%] lg:h-full bg-white lg:bg-secondary_blue rounded-t-[1rem] lg:rounded-none z-30 overflow-y-auto ${boxShown ? "translate-y-0 duration-700" : "translate-y-full duration-700"}`}>
                 <div className=' px-5 lg:px-16 pt-8 lg:pt-[5rem] pb-8 w-full rounded-t-[1rem]'>
                     {/* <Image width={isDesktop ? 203 : 80} height={isDesktop ? 38.17 : 15.4} src="./logos/floodgen.svg" alt='floodgen' className='mb-2' /> */}
-                    <img src="/logos/floodgen.svg" alt="" className='mb-2 w-[203px] h-[38.17px]' />
+                    {
+                        isDesktop ? <img src="/logos/floodgen.svg" alt="" className='mb-2 w-[203px] h-[38.17px]' /> :
+                        <img src="/logos/floodgen.svg" alt="" className='mb-4 w-[80px] h-[15.4px]' /> 
+                    }
+
                     {/* <InfoTitle /> */}
                     <div className='lg:flex lg:mt-8'>
-                        <div className='flex lg:flex-col gap-3 lg:gap-5  text-[#9C9C9C] '>
-                            <div className={`w-[50%] font-bold text-heading lg:text-[1.5rem]  cursor-pointer ${selected === "About" && "pb-[0.05rem] text-title_black border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("About")}>About</div>
-                            <div className={`w-[50%] font-bold text-heading lg:text-[1.5rem]  cursor-pointer ${selected === "Introduction" && "pb-[0.05rem]  text-title_black border-b-[3px] border-primary_blue"}`} onClick={narrativeClickHandler}>Introduction</div>
-                            <div className={`w-[60%] font-bold text-heading lg:text-[1.5rem]  cursor-pointer ${selected === "AI" && "pb-[0.05rem] text-title_black border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("AI")}>How to identify an AI generated image</div>
-                            <div className={`w-[50%] font-bold text-heading lg:text-[1.5rem]  cursor-pointer ${selected === "Credit" && "pb-[0.05rem] text-title_black border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Credit")}>Credits</div>
+                        <div className='grid grid-cols-2 gap-2 lg:flex lg:flex-col lg:gap-5  text-[#9C9C9C] '>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "About" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("About")}>About</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "Introduction" && "pb-[0.05rem]  text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={narrativeClickHandler}>Introduction</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "AI" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("AI")}>How to identify an AI generated image</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "Credit" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Credit")}>Credits</div>
                         </div>
                         {
                             selected === "About" ? <InfoAbout clickHandler={() => boxShownClickHandler(false)} /> :
-                            selected === "AI" ? <InfoAI /> :
-                            <InfoCredit />
+                                selected === "AI" ? <InfoAI /> :
+                                    <InfoCredit />
                         }
                     </div>
                 </div>
