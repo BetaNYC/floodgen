@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+import Script from 'next/script'
+
 
 const roboto = Inter({subsets:['latin']})
 
@@ -19,6 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-CCN79CWRX0" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-CCN79CWRX0');
+          `}
+        </Script>
       <link
           href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
           rel="stylesheet"
@@ -28,3 +39,4 @@ export default function RootLayout({
     </html>
   )
 }
+
