@@ -28,7 +28,7 @@ const useOnClickSites = () => {
           if (!prevOpenStreetView) {
             setTimeout(() => {
               map?.flyTo({
-                center: [e.lngLat.lng, e.lngLat.lat-0.05],
+                center: [e.lngLat.lng, e.lngLat.lat-0.04],
                 duration: 1500,
                 zoom:12
               });

@@ -22,7 +22,7 @@ const StreetInfo = ({ openStreetView }: Props) => {
   return (
     <>
       {
-        openStreetView && <div className={`absolute bottom-[-65%] flex flex-col lg:left-4 lg:top-6 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[65%] lg:h-[calc(100%_-_3.5rem)]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-40`}>
+        openStreetView && <div className={`absolute bottom-[-65%] flex flex-col lg:left-[13rem] lg:top-6 px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[65%] lg:h-[calc(100%_-_3.5rem)]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-40`}>
           <div className='flex justify-between items-center w-full'>
             <h2 className='font-bold text-heading text-content_black'>{selectedSitesFeatures.properties['Place']}</h2>
 

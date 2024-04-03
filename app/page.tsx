@@ -15,11 +15,12 @@ import Narrative from '@/components/narrative/Narrative'
 export default function Home() {
   return (
     <main className="relative w-[100vw] h-[100vh] overflow-y-hidden">
+      <img src="/logos/floodgen_logo_white.png" className="absolute left-4 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" />
       <MapProvider>
         <NarrativeProvider>
           <StreetViewProvider>
             <MarkerProvider>
-            <Narrative />
+              <Narrative />
               <Map />
               <InfoPage />
               <StreetView />

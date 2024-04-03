@@ -21,7 +21,6 @@ const Narrative = () => {
             {
                 openNarrative && (
                     <>
-                        <img src="/logos/floodgen_logo_white.png" className="absolute left-8 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" onScroll={() => console.log('aa')}/>
                         <div className="absolute right-8 top-6 flex items-center justify-center w-[35px] h-[35px] bg-[#E7E7E7] bg-opacity-60 rounded-full z-[999] cursor-pointer">
                             <XMarkIcon width={24} height={24} className=" text-black font-thin " onClick={clickHandler} />
                         </div>

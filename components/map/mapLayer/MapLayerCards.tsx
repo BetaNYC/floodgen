@@ -81,11 +81,11 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName, layerName }: Props) =
         <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[11rem] w-full lg:w-[51.5rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
             {/* <div className='m-auto w-[5.5rem] h-[0.375rem] bg-[#D9D9D9] rounded-[23.62px]'></div> */}
             <div>
-                <div className='flex justify-between items-center mb-5 w-full'>
+                <div className='flex justify-between items-center mb-5 w-full '>
                     <div className='font-bold text-heading text-black'>Flood Risk Map Layers</div>
                     {
                         isDesktop && <div className='flex gap-2 w-[28rem]'>
-                            <InformationCircleIcon width={16} height={16} className='text-black' />
+                            <InformationCircleIcon width={24} height={24} className='text-black' />
                             <div className='text-[0.75rem] text-black'>
                                 {layers[clicked.findIndex(c => c === true)].content}
                             </div>

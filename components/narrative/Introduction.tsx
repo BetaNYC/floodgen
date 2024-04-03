@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { ChevronDoubleDownIcon } from '@heroicons/react/20/solid'
+
 const Introduction = () => {
     return (
         <div className="relative w-full h-[50%] md:h-full">
@@ -9,6 +11,7 @@ const Introduction = () => {
                 <p className="mb-[1rem] font-semibold text-[14px] md:text-heading text-white">New York City residents live within or directly adjacent to the floodplain. Flood damage is extensive, expensive, and often times predictable</p>
                 <p className="font-semibold text-[10px] md:text-[0.875rem] text-white">Source: Info, Photo</p>
             </div>
+            <ChevronDoubleDownIcon width={48} height={48}  className='absolute right-[50%] bottom-8'/>
         </div>
     )
 }

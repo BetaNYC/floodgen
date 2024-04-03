@@ -68,7 +68,7 @@ const InfoBox = () => {
                     </div>
                 </div>
             </div>
-            <div className={`absolute top-6 ${openStreetView ? "left-4 lg:left-[calc(100%_-_3.5rem)]" : "left-[calc(100%_-_3.5rem)]"}  flex items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-40 shadow-2xl`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
+            <div className={`absolute top-6 ${openStreetView ? "left-[calc(100%_-_3.5rem)]" : "left-[calc(100%_-_3.5rem)]"}  flex items-center justify-center w-10 h-10 bg-[rgba(255,255,255,.65)] z-40 shadow-2xl`} onClick={() => boxShown ? boxShownClickHandler(false) : boxShownClickHandler(true)}>
                 {
                     boxShown ? <XMarkIcon className='w-6 h-6 text-black' /> : <Bars3Icon className='w-5 h-5 text-black' />
                 }
