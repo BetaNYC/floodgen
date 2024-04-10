@@ -33,8 +33,9 @@ const useTooltips = () => {
         // }
 
         map?.on("mousemove", "coastal_flooding", (e: MapMouseEvent & EventData) => {
+            console.log(e.features[0].properties.FLD_ZONE === "VE" ? 'aaa' : "failed")
             const content = `<div class="content">
-            ${e.features[0].properties.FLD_ZONE === "VE" ? "<div class='zone' style='background:#3C9CD9'>1% annual chance flood event (coastal)</div>" :
+            ${e.features[0].properties.FLD_ZONE === "VE" ? "<div class='zone' style='background:#3B9CD9'>1% annual chance flood event (coastal)</div>" :
                     e.features[0].properties.FLD_ZONE === "AE" ? "<div class='zone' style='background:#7FBEE6'>1% annual chance flood event</div>" :
                         "<div class='zone' style='background:#C1DFF3'>0.2% annual chance of flood hazard</div>"
                 }

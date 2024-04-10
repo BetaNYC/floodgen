@@ -4,7 +4,7 @@
   border-radius: 20px !important;
   width: 270px !important;
   height: 120px !important;
-  z-index: 100000;
+  z-index: 100000 !important;
 }
 
 /* .content {

@@ -97,7 +97,7 @@ const Map = () => {
                             "#3B9CD9",
                             ['all', ['==', ['get', "FLD_ZONE"], "AE"]],
                             "#7FBEE6",
-                            "#3C9CD9",
+                            "#C1DFF3",
                         ],
                         'fill-opacity': 1
                     }
