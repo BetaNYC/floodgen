@@ -46,7 +46,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
 
     return (
         <>
-            <div className={`absolute   flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(50%_+_10rem)] left-4" : "top-[1.5rem] left-[14rem]"}`}>
+            <div className={`absolute   flex items-center gap-4 transition-all duration-[1500ms] ease-in-out z-20 ${openStreetView ? " top-[calc(65%_+_1rem)] left-4" : "top-[1.5rem] left-[14rem]"}`}>
                 {/* <Image width={80} height={80} src="./icons/previous.svg" alt='previous' className='border-2 border-black' /> */}
                 {/* {
                     openStreetView && <Previous />

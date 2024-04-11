@@ -26,7 +26,7 @@ const Satellite = () => {
             <div className='relative w-full h-[50%] md:h-full'>
                 <img src="/imgs/narrative_three.png" className='w-full h-full' alt="" />
                 {/* <div className="absolute left-0 top-0 w-full h-full bg-black bg-opacity-40"></div> */}
-                <div className="absolute left-8 bottom-[5%] flex flex-col items-center p-5 w-[50%] bg-black bg-opacity-[.65] rounded-lg">
+                <div className="absolute left-11 bottom-[5%] flex flex-col items-center p-5 w-[50%] bg-black bg-opacity-[.65] rounded-lg">
                     <img src="/imgs/narrative_six.png" className='w-full h-[20%]' alt="" />
                     <p className="mt-2 font-semibold text-[14px] md:text-[1.125rem] text-white">If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
                 </div>

@@ -57,7 +57,7 @@ const useTooltips = () => {
                 }
                 ${e.features[0].properties.Flooding_Category === 1 ? "<div class='description'>Moderate stormwater flood scenario of <span style='font-weight:bold'>1 ft. and greater flooding,</span> with the projected 2050 sea level rise (+2.5 ft)</div>" :
                     e.features[0].properties.Flooding_Category === 2 ? "<div class='description'>Moderate stormwater flood scenario of<span style='font-weight:bold'> greater than or equal to 4 in. and less than 1 ft. flooding,</span> with the projected 2050 sea level rise (+2.5 ft)</div>" :
-                        "<div class='description'>scenario of the <span style='font-weight:bold'>future high tides</span>, with the projected 2050 sea level rise (+2.5 ft)</div>"
+                        "<div class='description'>Moderate stormwater flood scenario of the<span style='font-weight:bold'>future high tides</span>, with the projected 2050 sea level rise (+2.5 ft)</div>"
                 }
                 
             </div>`

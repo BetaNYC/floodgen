@@ -37,8 +37,8 @@ const Map = () => {
                 style: "mapbox://styles/betanyc/clrrs5fv200h101o87qwn1sw1",
                 center: [lng, lat],
                 zoom: zoom,
-                minZoom: 8,
-                maxZoom: 14,
+                minZoom: 10,
+                maxZoom: 15,
                 interactive: true,
                 doubleClickZoom: false,
             })
