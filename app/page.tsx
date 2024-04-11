@@ -1,5 +1,6 @@
 "use client"
-import Image from 'next/image'
+
+
 
 import { MapProvider } from '@/contexts/MapContext'
 import { StreetViewProvider } from '@/contexts/StreetViewContext'
@@ -12,8 +13,10 @@ import StreetView from '@/components/streetView/StreetView'
 import Narrative from '@/components/narrative/Narrative'
 
 
-
 export default function Home() {
+
+
+
   return (
     <main className="relative w-[100vw] h-[100vh] overflow-y-hidden">
       <MapProvider>
@@ -21,7 +24,6 @@ export default function Home() {
           <StreetViewProvider>
             <MarkerProvider>
               <Narrative />
-
               <Map />
               <InfoPage />
               <StreetView />

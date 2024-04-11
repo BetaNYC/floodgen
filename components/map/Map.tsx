@@ -37,8 +37,8 @@ const Map = () => {
                 style: "mapbox://styles/betanyc/clrrs5fv200h101o87qwn1sw1",
                 center: [lng, lat],
                 zoom: zoom,
-                minZoom: 6,
-                maxZoom: 12,
+                minZoom: 8,
+                maxZoom: 14,
                 interactive: true,
                 doubleClickZoom: false,
             })
@@ -200,6 +200,7 @@ const Map = () => {
 
     return (
         <div className=' relative w-full h-full'>
+            <img src="/logos/floodgen_logo_white.png" className="absolute left-4 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" />
             <div className={`absolute left-0 w-full z-10 transition-all duration-[1500ms] ease-in-out  ${openStreetView ? "top-[65%] h-[35vh]" : "top-[0%] h-[100vh]"}`} ref={mapContainer} id='map'></div>
             <MapLayer />
         </div>

@@ -37,7 +37,7 @@ const useTooltips = () => {
             const content = `<div class="content">
             ${e.features[0].properties.FLD_ZONE === "VE" ? "<div class='zone' style='background:#3B9CD9'>1% annual chance flood event (coastal)</div>" :
                     e.features[0].properties.FLD_ZONE === "AE" ? "<div class='zone' style='background:#7FBEE6'>1% annual chance flood event</div>" :
-                        "<div class='zone' style='background:#C1DFF3'>0.2% annual chance of flood hazard</div>"
+                        "<div class='zone' style='background:#C1DFF3'>0.2% annual chance flood event</div>"
                 }
                 ${e.features[0].properties.FLD_ZONE === "VE" ? "<div class='description'>Areas along coasts that are subject to inundation by a 100-year flood event (1% annual chance)</div>" :
                     e.features[0].properties.FLD_ZONE === "AE" ? "<div class='description'>Areas that are subject to inundation by a 100-year flood event (1% annual chance)</div>" :
