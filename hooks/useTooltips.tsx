@@ -107,7 +107,7 @@ const useTooltips = () => {
                 <div style='font-weight:500;font-size:14px;color:black'>${e.features[0].properties.Place}</div>
                 <div style='font-weight:300;font-size:12px;color:black'>${e.features[0].properties["Case Study"]}</div>
                 <div class='line'></div>
-                <div class='sites_cta'>Click point to view predicted flood scenarios</div>
+                <div class='sites_cta'>Click to view projected flood scenarios</div>
             </div>`
             popup.setLngLat([e.lngLat.lng, e.lngLat.lat]).setHTML(content).addTo(map);
         })

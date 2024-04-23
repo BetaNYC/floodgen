@@ -8,7 +8,7 @@ type Props = {
 const InfoAbout = ({ clickHandler }: Props) => {
     return (
         <>
-            <div className='flex flex-col gap-5 lg:gap-0 mt-5'>
+            <div className='flex flex-col gap-5 lg:gap-0 w-[75%] lg:w-[725px] '>
                 <div className='flex flex-col gap-3 mb-5 max-w-[60rem]'>
                     <p className='font-regular text-medium text-black'>Today, 1.3 million New York City residents live within or directly adjacent to the floodplain.1 Flood damage is expensive, extensive, and oftentimes predictable. Maps of predicted flooding are helpful planning tools, but aerial views distance viewers from its potential impact. If we show the reality of predicted flooding through photorealistic imagery, could people be more prepared?</p>
                     <p className='font-regular text-medium text-black'>FloodGen is an advocacy tool that uses generative artificial intelligence (GenAI) to create photorealistic images of predicted flooding. Projected flood imagery from FloodGen can be integrated within community engagement strategies to:</p>
@@ -26,7 +26,7 @@ const InfoAbout = ({ clickHandler }: Props) => {
                         <h2 className='lg:order-2 lg:w-[277px] font-bold lg:font-medium text-medium text-title_black'>Explore flood prone neighborhoods in NYC</h2>
                     </div>
                     <div className='flex flex-col'>
-                        <img src="https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flooding_before-after.gif" alt="" className='mb-2 w-[394.67px] h-[222px] rounded-lg' />
+                        <img src="https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flooding_before-after_NEW_sm.gif" alt="" className='mb-2 w-[394.67px] h-[222px] rounded-lg' />
                         <h2 className='lg:order-2 lg:w-[400px] font-bold lg:font-medium text-medium text-title_black'>Visualize flooding street view with AI generated flooding images </h2>
                     </div>
                 </div>

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 
-import Image from 'next/image'
 import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 
 import sites from "../../public/data/floodgen_sites.geo.json"
@@ -22,12 +21,10 @@ const StreetInfo = ({ openStreetView }: Props) => {
   return (
     <>
       {
-        openStreetView && <div className={`absolute bottom-[-65%] flex flex-col lg:left-4 lg:top-[6rem] px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[65%] lg:h-[calc(100%_-_6rem)]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-40`}>
+        openStreetView && <div className={`absolute bottom-[-65%] flex flex-col lg:left-4 lg:top-[6rem] px-4 pt-[1.56rem] lg:pt-4 w-full lg:w-[17.56rem] ${expanded ? "h-[50%] lg:h-[75%]" : "h-[9.375rem] lg:h-[9.5rem]"}  bg-white rounded-[1rem] z-40`}>
           <div className='flex justify-between items-center w-full'>
             <h2 className='font-bold text-heading text-content_black'>{selectedSitesFeatures.properties['Place']}</h2>
-
             {expanded ? <ChevronUpIcon className='w-6  h-6 text-black' onClick={() => setExpanded(false)} /> : <ChevronDownIcon className='w-6  h-6 text-black' onClick={() => setExpanded(true)} />}
-
           </div>
           <h3 className='text-medium text-[#727272]'>{selectedSitesFeatures.properties['Case Study']}, {selectedSitesFeatures.properties['Borough']}</h3>
           <div className='my-[0.6875rem] w-full h-[1px] bg-[#C9C9C9]'></div>

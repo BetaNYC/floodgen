@@ -3,6 +3,7 @@ import mapboxgl, { MapMouseEvent } from 'mapbox-gl'
 
 import { MapContext, MapContextType } from '@/contexts/MapContext'
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
+import { NarrativeContext, NarrativeType } from '@/contexts/NarrativeContext'
 
 import useOnClickSites from '@/hooks/useOnClickSites'
 
@@ -18,14 +19,13 @@ const Map = () => {
     const mapContainer = useRef<HTMLInputElement>(null)
     const { setMap } = useContext(MapContext) as MapContextType
     const { openStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openNarrative } = useContext(NarrativeContext) as NarrativeType
     const { mapLayerData } = useFetchMapLayerData()
     useOnClickSites()
     useTooltips()
 
     useEffect(() => {
         mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN as string
-
-
 
         const lng = -73.913;
         const lat = 40.763;
@@ -200,7 +200,11 @@ const Map = () => {
 
     return (
         <div className=' relative w-full h-full'>
-            <img src="/logos/floodgen_logo_white.png" className="absolute left-4 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" />
+            {
+                openNarrative || openStreetView ? <img src="/logos/floodgen_logo_white.png" className="absolute left-4 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" /> :
+                    <img src="/logos/floodgen_logo.png" className="absolute left-4 top-6 w-[155px] h-[38.75px] z-[999] " alt="logos_white" />
+            }
+
             <div className={`absolute left-0 w-full z-10 transition-all duration-[1500ms] ease-in-out  ${openStreetView ? "top-[65%] h-[35vh]" : "top-[0%] h-[100vh]"}`} ref={mapContainer} id='map'></div>
             <MapLayer />
         </div>

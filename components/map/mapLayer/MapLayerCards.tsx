@@ -61,7 +61,6 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName, layerName }: Props) =
 
     const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
 
-
     const clickHandler = (title: floodingTypes, index: number) => {
         const newClicked = [...clicked]
         newClicked.forEach((c, i) => i === index ? newClicked[i] = true : newClicked[i] = false)
@@ -84,8 +83,8 @@ const MapLayerCards = ({ buttonClickHandler, setLayerName, layerName }: Props) =
                 <div className='flex justify-between items-center mb-5 w-full '>
                     <div className='font-bold text-heading text-black'>Flood Risk Map Layers</div>
                     {
-                        isDesktop && <div className='flex gap-2 w-[28rem]'>
-                            <InformationCircleIcon width={24} height={24} className='text-black' />
+                        isDesktop && <div className='flex gap-2 w-[30rem]'>
+                            <img src="/icons/info.svg" alt="" className='w-6 h-6' />
                             <div className='text-[0.75rem] text-black'>
                                 {layers[clicked.findIndex(c => c === true)].content}
                             </div>

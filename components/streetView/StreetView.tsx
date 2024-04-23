@@ -131,7 +131,7 @@ const StreetView = () => {
         <>
             <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-[100vw] h-[65%] z-20 transition-all duration-[1500ms] ease-in-out`}>
                 <div className='w-full h-full overflow-hidden'>
-                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[100%] lg:h-[135%] aspect-[787/750] `} />
+                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[100%]   `} />
                 </div>
 
                 <div className={`pt-[1.75rem] lg:pl-8`}>
@@ -140,10 +140,10 @@ const StreetView = () => {
                             floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
                         }
                     </div>
-                    <div className='absolute top-[calc(50%_-_2.5rem)] left-4 opacity-75'>
+                    <div className='absolute  bottom-10 left-[calc(50%_-_100px)] lg:left-[calc(50%_-_160px)] opacity-75'>
                         <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
                     </div>
-                    <div className='absolute top-[calc(50%_-_2.5rem)] right-4 opacity-75'>
+                    <div className='absolute  bottom-10 left-[calc(50%_+_60px)] lg:left-[calc(50%)] opacity-75'>
                         <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
                     </div>
                     <StreetInfo openStreetView={openStreetView} />

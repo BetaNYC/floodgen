@@ -56,18 +56,21 @@ const InfoBox = () => {
                     {/* <InfoTitle /> */}
                     <div className='lg:flex lg:mt-8'>
                         <div className='grid grid-cols-2 gap-2 lg:flex lg:flex-col lg:gap-5  text-[#9C9C9C] '>
-                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "About" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("About")}>About</div>
-                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "Introduction" && "pb-[0.05rem]  text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={narrativeClickHandler}>Introduction</div>
-                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "AI" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("AI")}>How to identify an AI generated image</div>
-                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "Credit" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Credit")}>Credits</div>
-                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1.5rem]  cursor-pointer ${selected === "Contact" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Contact")}>Contact</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1rem]  cursor-pointer ${selected === "About" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("About")}>About</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1rem]  cursor-pointer ${selected === "Introduction" && "pb-[0.05rem]  text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={narrativeClickHandler}>Introduction</div>
+                            <div className={`lg:w-[55%] font-bold text-4 lg:text-[1rem]  cursor-pointer ${selected === "AI" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("AI")}>How to identify an AI generated image</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1rem]  cursor-pointer ${selected === "Credit" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Credit")}>Credits</div>
+                            <div className={`lg:w-[50%] font-bold text-4 lg:text-[1rem]  cursor-pointer ${selected === "Contact" && "pb-[0.05rem] text-title_black lg:border-b-[3px] border-primary_blue"}`} onClick={() => selectedClickHandler("Contact")}>Contact</div>
                         </div>
-                        {
-                            selected === "About" ? <InfoAbout clickHandler={() => boxShownClickHandler(false)} /> :
-                                selected === "AI" ? <InfoAI /> :
-                                    selected === "Contact" ? <InfoContact /> :
-                                        <InfoCredit />
-                        }
+                        <div className='flex-1'>
+                            {
+                                selected === "About" ? <InfoAbout clickHandler={() => boxShownClickHandler(false)} /> :
+                                    selected === "AI" ? <InfoAI /> :
+                                        selected === "Contact" ? <InfoContact /> :
+                                            <InfoCredit />
+                            }
+                        </div>
+
                     </div>
                 </div>
             </div>
