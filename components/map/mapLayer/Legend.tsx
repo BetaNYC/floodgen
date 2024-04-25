@@ -38,51 +38,76 @@ function Legend({ buttonClickHandler, layerName }: Props) {
                                 <div className='flex'>
                                     <div className='flex flex-col items-center'>
                                         <div className='w-20 h-6 bg-[#C1DFF3]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>0.2%</div>
+                                        <div className='font-regular text-[0.5rem] text-black'>0.2% annual chance <br /> flood event</div>
                                     </div>
                                     <div className='flex flex-col items-center'>
                                         <div className='w-20 h-6 bg-[#7FBEE6]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>1%</div>
+                                        <div className='font-regular text-[0.5rem] text-black'>1% annual chance <br /> flood event</div>
                                     </div>
                                     <div className='flex flex-col items-center'>
                                         <div className='w-20 h-6 bg-[#3B9CD9]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>1% (coastal)</div>
+                                        <div className='font-regular text-[0.5rem] text-black'>1% annual chance <br /> flood event (coastal)</div>
                                     </div>
                                 </div>
                             </div>
                         )
-                        :
-                        (
+                        : layerName === "Stormwater Flooding" ? (
                             <div className=''>
-                                <div className='mb-2 text-small lg:text-medium text-black'>Hurricane Evacuation Zones</div>
+                                <div className='mb-2 text-small lg:text-medium text-black'>{layerName}</div>
                                 <div className='flex'>
                                     <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#2F8890]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>1</div>
+                                        <div className='w-20 h-6 bg-[#CCCCFF]'></div>
+                                        <div className='font-regular text-[0.5rem] text-black'>Future High Tides</div>
                                     </div>
                                     <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#529CA4]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>2</div>
+                                        <div className='w-20 h-6 bg-[#6766FF]'></div>
+                                        <div className='font-regular text-[0.5rem] text-black'>Nuisance Flooding</div>
                                     </div>
                                     <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#74B0B5]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>3</div>
+                                        <div className='w-20 h-6 bg-[#0100FF]'></div>
+                                        <div className='font-regular text-[0.5rem] text-black'>Deep & continuous <br/>Flooding</div>
                                     </div>
-                                    <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#96C3C8]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>4</div>
-                                    </div>
-                                    <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#B9D7DA]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>5</div>
-                                    </div>
-                                    <div className='flex flex-col items-center'>
-                                        <div className='w-12 h-6 bg-[#D9E8EA]'></div>
-                                        <div className='font-regular text-[0.5rem] text-black'>6</div>
-                                    </div>
+
                                 </div>
                             </div>
-                        )
+                        ) : layerName === "Hurricane Evacuation Zones" ?
+                            (
+                                <div className=''>
+                                    <div className='mb-2 text-small lg:text-medium text-black'>Hurricane Evacuation Zones</div>
+                                    <div className='flex'>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#2F8890]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>1</div>
+                                        </div>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#529CA4]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>2</div>
+                                        </div>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#74B0B5]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>3</div>
+                                        </div>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#96C3C8]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>4</div>
+                                        </div>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#B9D7DA]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>5</div>
+                                        </div>
+                                        <div className='flex flex-col items-center'>
+                                            <div className='w-12 h-6 bg-[#D9E8EA]'></div>
+                                            <div className='font-regular text-[0.5rem] text-black'>6</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) :
+                            (
+                                <div className='flex items-center gap-3'>
+                                    <div className={`w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem]  bg-[#F7A848]`}></div>
+                                    <div className='text-small lg:text-medium text-black'>{layerName}</div>
+                                </div>
+                            )
                 }
 
             </div>
