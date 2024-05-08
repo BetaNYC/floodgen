@@ -1,7 +1,5 @@
 import { createContext, useState, Dispatch, SetStateAction, ReactNode } from "react";
 
-import directionSVG from "../public/icons/direction.svg"
-import markerSVG from "../public/icons/marker.svg"
 
 import mapboxgl from 'mapbox-gl';
 
@@ -11,7 +9,7 @@ export type MapContextType = {
     setMap: Dispatch<SetStateAction<mapboxgl.Map | null>>
 }
 
-const aa = []
+
 
 type Props = {
     children: ReactNode
