@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -20,6 +18,27 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Deploy on GitHub Pages
+
+Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/.github/workflows/nextjs.yml) in the .github/ workflows doc path
+
+comment out these codes:
+  # with:
+    # Automatically inject basePath in your Next.js configuration file and disable
+          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
+          #
+          # You may remove this line if you want to manage the configuration yourself.
+          # static_site_generator: nextÏ
+  #- name: Static HTML export with Next.js
+    # run: ${{ steps.detect-packagmanager.outputs.runner }} next export
+
+in the next config.js file please add:
+
+const nextConfig = {
+  output: "export",
+  basePath: "",
+};
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -29,8 +48,5 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
