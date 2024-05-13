@@ -39,7 +39,7 @@ Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/
       basePath: "",
     };
 
-push your changes from  the local file and the GitHub Action will automatically run the deployment
+Push your changes from  the local file and the GitHub Action will automatically run the deployment
 
 ## Learn More
 
