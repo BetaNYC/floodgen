@@ -22,14 +22,14 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/.github/workflows/nextjs.yml) in the .github/ workflows doc path
 
-comment out these codes:
-  # with:
+# comment out these codes in the nextjs.yml file:
+    # with:
     # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
           #
           # You may remove this line if you want to manage the configuration yourself.
           # static_site_generator: nextÏ
-  #- name: Static HTML export with Next.js
+    #- name: Static HTML export with Next.js
     # run: ${{ steps.detect-packagmanager.outputs.runner }} next export
 
 in the next config.js file please add:
