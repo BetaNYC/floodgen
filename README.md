@@ -34,10 +34,10 @@ Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/
 
 in the next config.js file please add:
 
-const nextConfig = {
-  output: "export",
-  basePath: "",
-};
+    const nextConfig = {
+      output: "export",
+      basePath: "",
+    };
 
 ## Learn More
 
