@@ -1,4 +1,4 @@
-#Floodgen
+# Floodgen
 
 FloodGen is a flood advocacy tool that uses generative AI to visualize photorealistic images of potential flood scenarios. Positioned as an advocacy tool that reaches beyond the limits of traditional aerial maps, FloodGen is designed to raise awareness, support community preparedness, and support local government’s resilience strategies.
 
