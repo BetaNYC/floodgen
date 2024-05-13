@@ -39,6 +39,8 @@ in the next config.js file please add:
       basePath: "",
     };
 
+push your changes from  the local file and the GitHub Action will automatically run the deployment
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
