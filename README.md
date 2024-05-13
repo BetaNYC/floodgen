@@ -32,7 +32,7 @@ Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/
     #- name: Static HTML export with Next.js
     # run: ${{ steps.detect-packagmanager.outputs.runner }} next export
 
-in the next config.js file please add:
+### In the next config.js file please add:
 
     const nextConfig = {
       output: "export",
