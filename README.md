@@ -22,7 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 Make sure to add the [nextjs.yml](https://github.com/BetaNYC/floodgen/blob/main/.github/workflows/nextjs.yml) in the .github/ workflows doc path
 
-## comment out these codes in the nextjs.yml file:
+### comment out these codes in the nextjs.yml file:
     # with:
     # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
