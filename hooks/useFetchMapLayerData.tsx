@@ -15,7 +15,7 @@ const useFetchMapLayerData = () => {
     useEffect(() => {
         const fetchMapLayerData = async () => {
             const resCoastalFlooding = await axios.get("./data/CoastalFlood.geo.json")
-            const resDisadvantagedCommunities = await axios.get("./data/DisadvantagedCommunities.geo.json")
+            const resDisadvantagedCommunities = await axios.get("./data/DisadvantagedCommunities_union.geo.json")
             const resEvacuationZone = await axios.get("./data/HurricaneEvacuationZones.geo.json")
             const resNeighborhood = await axios.get("./data/2020_nys_neigborhood.geo.json")
             const resStormwaterFlooding = await axios.get("./data/StormwaterFlooding_Moderate2050.geo.json")

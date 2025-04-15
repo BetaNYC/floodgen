@@ -54,6 +54,8 @@
   border-radius: 0 0 20px 20px !important;
 }
 
+/* Remove this entire block */
+/*
 .tooltip {
   position: absolute;
   color: white;
@@ -61,3 +63,63 @@
   cursor: pointer;
   z-index: 2500 !important;
 }
+*/
+
+/* Remove this entire block */
+/*
+.mapboxgl-popup.tooltip-no-pointer .mapboxgl-popup-tip {
+    display: none;
+}
+*/
+
+/* Remove this entire block */
+/*
+.content {
+    
+}
+*/
+
+/* Remove this entire block */
+/*
+.zone {
+    font-weight: 700;
+    color: black;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.25rem; 
+    border-radius: 3px; 
+}
+*/
+
+/* Remove this entire block */
+/*
+.description {
+    font-size: 11px; 
+    line-height: 1.4;
+    color: #333; 
+}
+*/
+
+/* Remove this entire block */
+/*
+.sites {
+    padding: 5px; 
+}
+*/
+
+/* Remove this entire block */
+/*
+.line {
+    border-bottom: 1px solid #ccc; 
+    margin: 4px 0; 
+}
+*/
+
+/* Remove this entire block */
+/*
+.sites_cta {
+    font-size: 11px;
+    font-weight: 500;
+    color: #007cbf; 
+    margin-top: 4px;
+}
+*/

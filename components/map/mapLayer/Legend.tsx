@@ -4,18 +4,18 @@ import Image from 'next/image'
 
 import { StreetViewContext, StreetViewType } from '@/contexts/StreetViewContext'
 
-import { btnsType } from './MapLayer'
+import { btnsType, LayerId } from './MapLayer'
 
 import { XMarkIcon } from '@heroicons/react/16/solid'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
-    layerName: floodingTypes
+    visibleLayers: Record<LayerId, boolean>;
 }
 
-function Legend({ buttonClickHandler, layerName }: Props) {
+function Legend({ buttonClickHandler, visibleLayers }: Props) {
 
-    const { openStreetView, setOpenStreetView } = useContext(StreetViewContext) as StreetViewType
+    const { openStreetView } = useContext(StreetViewContext) as StreetViewType
 
 
 
@@ -31,10 +31,10 @@ function Legend({ buttonClickHandler, layerName }: Props) {
                     <div className='text-small lg:text-medium text-black'>Flood prone neighborhood</div>
                 </div>
                 {
-                    layerName === "Coastal Flooding" ?
+                    visibleLayers.coastal_flooding &&
                         (
                             <div className=''>
-                                <div className='mb-2 text-small lg:text-medium text-black'>{layerName}</div>
+                                <div className='mb-2 text-small lg:text-medium text-black'>Coastal Flooding</div>
                                 <div className='flex'>
                                     <div className='flex flex-col items-center'>
                                         <div className='w-20 h-6 bg-[#C1DFF3]'></div>
@@ -51,9 +51,11 @@ function Legend({ buttonClickHandler, layerName }: Props) {
                                 </div>
                             </div>
                         )
-                        : layerName === "Stormwater Flooding" ? (
+                }
+                {
+                     visibleLayers.stormwater_flooding && (
                             <div className=''>
-                                <div className='mb-2 text-small lg:text-medium text-black'>{layerName}</div>
+                                <div className='mb-2 text-small lg:text-medium text-black'>Stormwater Flooding</div>
                                 <div className='flex'>
                                     <div className='flex flex-col items-center'>
                                         <div className='w-20 h-6 bg-[#CCCCFF]'></div>
@@ -70,7 +72,10 @@ function Legend({ buttonClickHandler, layerName }: Props) {
 
                                 </div>
                             </div>
-                        ) : layerName === "Hurricane Evacuation Zones" ?
+                        )
+                }
+                {
+                    visibleLayers.hurricane_evacuation_zones &&
                             (
                                 <div className=''>
                                     <div className='mb-2 text-small lg:text-medium text-black'>Hurricane Evacuation Zones</div>
@@ -101,11 +106,14 @@ function Legend({ buttonClickHandler, layerName }: Props) {
                                         </div>
                                     </div>
                                 </div>
-                            ) :
+                            )
+                }
+                {
+                    (visibleLayers.disadvantaged_communities_fill || visibleLayers.disadvantaged_communities_outline) &&
                             (
                                 <div className='flex items-center gap-3'>
-                                    <div className={`w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem]  bg-[#F7A848]`}></div>
-                                    <div className='text-small lg:text-medium text-black'>{layerName}</div>
+                                    <div className={`w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem] border border-[#F7A848] bg-[#F7A848] bg-opacity-50`}></div>
+                                    <div className='text-small lg:text-medium text-black'>Disadvantaged Communities</div>
                                 </div>
                             )
                 }

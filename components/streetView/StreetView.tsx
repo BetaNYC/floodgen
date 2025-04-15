@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 import FloodingButton from './FloodingButton'
 import Order from '@/shared/Order'
@@ -58,6 +58,12 @@ const StreetView = () => {
     const { direction, directionDegree, setDirectionDegree } = useContext(MarkerContext) as MarkerContextType
     const { id } = useOnClickSites()
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(floodingBtnsData)
+
+    const [hasMounted, setHasMounted] = useState(false);
+
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
 
     const urlID = id < 10 ? `0${id}` : `${id}`
 
@@ -127,41 +133,42 @@ const StreetView = () => {
 
     }
 
+    const streetViewDivClass = `absolute top-0 left-0 ${hasMounted && openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-[100vw] h-[65%] z-20 transition-all duration-[1500ms] ease-in-out`;
+    const showFullscreen = hasMounted && streetViewImgFullscreen;
+
     return (
         <>
-            <div className={`absolute top-0 left-0  ${openStreetView ? "translate-y-0" : "translate-y-[-100%]"} w-[100vw] h-[65%] z-20 transition-all duration-[1500ms] ease-in-out`}>
-                <div className='w-full h-full overflow-hidden'>
-                    <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[100%]   `} />
-                </div>
+            <div className={streetViewDivClass}>
+                {hasMounted && (
+                    <>
+                        <div className='w-full h-full overflow-hidden'>
+                            <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className={`w-full h-[100%]   `} />
+                        </div>
 
-                <div className={`pt-[1.75rem] lg:pl-8`}>
-                    <div className='absolute top-6 left-[8rem] lg:left-[13rem] flex gap-4 ml-20 lg:ml-[0rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
-                        {
-                            floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
-                        }
-                    </div>
-                    <div className='absolute  bottom-10 left-[calc(50%_-_100px)] lg:left-[calc(50%_-_160px)] opacity-75'>
-                        <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
-                    </div>
-                    <div className='absolute  bottom-10 left-[calc(50%_+_60px)] lg:left-[calc(50%)] opacity-75'>
-                        <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
-                    </div>
-                    <StreetInfo openStreetView={openStreetView} />
-                    <div className='absolute right-4  bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={() => fullScreenStreetViewClickHandler("open")}>
-                        <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
-                    </div>
-                    <div className='absolute left-[calc(50%_-_45px)] lg:left-[calc(50%_-_105px)] bottom-10 px-4 py-2 font-bold text-[0.75rem] text-white bg-black bg-opacity-20'>Image {streetViewImgAngle}/8</div>
-                    <img src="/logos/fg_logo.png" className='absolute right-2 bottom-2 w-[15px] h-[17.54px]' alt="" />
-                    {/* <div className='absolute left-0 bottom-0 px-2 py-2 flex justify-center gap-2 bg-black bg-opacity-20'>
-                                <img src="/logos/fg_logo.png" className='w-[15px] h-[17.54px]' alt="" />
-                                <p>Disclaimer: AI generated photos</p>
-                            </div> */}
-
-                    {/* <Image width={80} height={80} src="./icons/fullscreen.svg" alt="fullscreen" className='absolute right-4 bottom-0 opacity-75 cursor-pointer' /> */}
-                </div>
+                        <div className={`pt-[1.75rem] lg:pl-8`}>
+                            <div className='absolute top-6 left-[8rem] lg:left-[13rem] flex gap-4 ml-20 lg:ml-[0rem] overflow-x-scroll [&::-webkit-scrollbar]:hidden'>
+                                {
+                                    floodingBtnsData.map((f, i) => <FloodingButton key={f.title} clicked={clicked[f.title]} hovered={hovered[i]} title={f.title} src={clicked[f.title] || hovered[i] ? f.src_white : f.src} clickHandler={() => floodingButtonClickHandler(f.title)} mouseEnterHandler={() => mouseEnterHandler(i)} mouseLeaveHandler={mouseLeaveHandler} />)
+                                }
+                            </div>
+                            <div className='absolute  bottom-10 left-[calc(50%_-_100px)] lg:left-[calc(50%_-_160px)] opacity-75'>
+                                <Order order='previous' clickHandler={() => changeStreetViewClickHandler('previous')} />
+                            </div>
+                            <div className='absolute  bottom-10 left-[calc(50%_+_60px)] lg:left-[calc(50%)] opacity-75'>
+                                <Order order='next' clickHandler={() => changeStreetViewClickHandler('next')} />
+                            </div>
+                            <StreetInfo openStreetView={openStreetView} />
+                            <div className='absolute right-4  bottom-10 flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={() => fullScreenStreetViewClickHandler("open")}>
+                                <ArrowsPointingOutIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
+                            </div>
+                            <div className='absolute left-[calc(50%_-_45px)] lg:left-[calc(50%_-_105px)] bottom-10 px-4 py-2 font-bold text-[0.75rem] text-white bg-black bg-opacity-20'>Image {streetViewImgAngle}/8</div>
+                            <img src="/logos/fg_logo.png" className='absolute right-2 bottom-2 w-[15px] h-[17.54px]' alt="" />
+                        </div>
+                    </>
+                 )}
             </div>
             {
-                streetViewImgFullscreen && (
+                showFullscreen && (
                     <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full bg-black bg-opacity-70 z-30 '>
                         <div className='relative  md:w-[1347px] h-full md:h-[616px]'>
                             <img src={`https://raw.githubusercontent.com/BetaNYC/floodgen-images/main/flood_image_output/${urlID}_F${streetViewImgFloodHeight}_V${streetViewImgAngle}.png`} alt="" className='w-full h-full object-cover' />

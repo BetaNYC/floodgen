@@ -52,7 +52,7 @@ const MapLayerBtns = ({ clicked, buttonClickHandler }: Props) => {
                     openStreetView && <Previous />
                 } */}
                 {
-                    openStreetView && (<div className=' flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl' onClick={closeStreetViewClickHandler}>
+                    openStreetView && (<div className=' flex justify-center items-center w-[2.5rem] h-[2.5rem] bg-[rgba(255,255,255,0.65)] rounded-full cursor-pointer shadow-2xl border border-[#306ddd]' onClick={closeStreetViewClickHandler}>
                         <ChevronUpIcon className=' w-5 h-5 text-black opacity-75 cursor-pointer' />
                     </div>)
                 }

@@ -27,11 +27,12 @@ const useOnClickSites = () => {
         setOpenStreetView(prevOpenStreetView => {
           if (!prevOpenStreetView) {
             setTimeout(() => {
-              map?.flyTo({
-                center: [e.lngLat.lng, e.lngLat.lat-0.04],
-                duration: 1500,
-                zoom:12
-              });
+              // Comment out flyTo to prevent automatic zoom/pan on click
+              // map?.flyTo({
+              //   center: [e.lngLat.lng, e.lngLat.lat-0.06],
+              //   duration: 1500,
+              //   zoom:12
+              // });
               // map?.zoomIn({
               //   duration:1500
               // })
