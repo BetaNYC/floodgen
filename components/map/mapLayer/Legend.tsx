@@ -117,6 +117,18 @@ function Legend({ buttonClickHandler, visibleLayers }: Props) {
                                 </div>
                             )
                 }
+                {/* Add Council Districts Legend Entry */}
+                {
+                    visibleLayers.council_districts_outline &&
+                            (
+                                <div className='flex items-start gap-3'>
+                                    {/* Swatch with updated outline color */}
+                                    <div className={`flex-shrink-0 w-5 lg:w-[1.63rem] h-5 lg:h-[1.63rem] border-2 border-[#3C4DD9] bg-transparent mt-1`}></div>
+                                    {/* Description Text */}
+                                    <div className='text-small lg:text-medium text-black'>City Council Districts</div>
+                                </div>
+                            )
+                }
 
             </div>
         </div>

@@ -9,7 +9,8 @@ const useFetchMapLayerData = () => {
         disadvantagedCommunities: null,
         neighborhood: null,
         stormwaterFlooding: null,
-        sites: null
+        sites: null,
+        councilDistricts: null
     })
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const useFetchMapLayerData = () => {
             const resNeighborhood = await axios.get("./data/2020_nys_neigborhood.geo.json")
             const resStormwaterFlooding = await axios.get("./data/StormwaterFlooding_Moderate2050.geo.json")
             const resSites = await axios.get("./data/floodgen_sites.geo.json")
+            const resCouncil = await axios.get("/data/CouncilDistricts.geo.json")
 
             setMapLayerData({
                 ...mapLayerData,
@@ -28,7 +30,8 @@ const useFetchMapLayerData = () => {
                 evacuationZone: resEvacuationZone.data,
                 neighborhood: resNeighborhood.data,
                 stormwaterFlooding: resStormwaterFlooding.data,
-                sites: resSites.data
+                sites: resSites.data,
+                councilDistricts: resCouncil.data
             })
         }
         fetchMapLayerData()

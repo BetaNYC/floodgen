@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { LayerTitle } from './MapLayer' // Use LayerTitle type which includes Community Districts
 
 
 
@@ -8,7 +10,7 @@ import { useMediaQuery } from 'react-responsive'
 type props = {
     clicked: boolean
     image: string
-    title: floodingTypes
+    title: LayerTitle
     content: string
     clickHandler: () => void
     mouseEnterHandler: () => void

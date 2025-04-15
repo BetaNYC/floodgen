@@ -106,6 +106,10 @@ const Map = () => {
             if (!mapRef.current.getSource("stormwater_flooding") && mapLayerData.stormwaterFlooding) mapRef.current.addSource('stormwater_flooding', { type: 'geojson', data: mapLayerData.stormwaterFlooding })
             if (!mapRef.current.getSource("neighborhood") && mapLayerData.neighborhood) mapRef.current.addSource('neighborhood', { type: 'geojson', data: mapLayerData.neighborhood })
             if (!mapRef.current.getSource("sites") && mapLayerData.sites) mapRef.current.addSource('sites', { type: 'geojson', data: mapLayerData.sites })
+            // --- Add Council Districts Source ---
+            if (!mapRef.current.getSource('council_districts') && mapLayerData.councilDistricts) {
+                mapRef.current.addSource('council_districts', { type: 'geojson', data: mapLayerData.councilDistricts });
+            }
 
             // --- Add DAC Fill Layer (Temporarily add at top) ---
             if (!mapRef.current.getLayer('disadvantaged_communities_fill') && mapRef.current.getSource('disadvantaged_communities')) {
@@ -212,7 +216,21 @@ const Map = () => {
                 })
             }
 
-            // --- Sites Layer ---
+            // --- Add Council Districts Layer ---
+            if (!mapRef.current.getLayer('council_districts_outline') && mapRef.current.getSource('council_districts')) {
+                mapRef.current.addLayer({
+                    id: 'council_districts_outline',
+                    type: 'line',
+                    source: 'council_districts',
+                    layout: { visibility: 'none' }, // Initially hidden
+                    paint: {
+                        'line-color': '#3C4DD9', // Updated color
+                        'line-width': 1.5
+                    }
+                });
+            }
+
+            // --- Add Sites Layer ---
             if (!mapRef.current.getLayer('sites') && mapRef.current.getSource('sites')) {
                 mapRef.current.addLayer({
                     'id': 'sites',
@@ -220,9 +238,31 @@ const Map = () => {
                     'type': 'circle',
                     'paint': {
                         'circle-color': "#306DDD",
-                        'circle-radius': 7,
+                        'circle-radius': 8,
                     }
                 })
+            }
+
+            // --- Add Council Districts Labels Layer (Moved after Sites) ---
+            if (!mapRef.current.getLayer('council_districts_labels') && mapRef.current.getSource('council_districts')) {
+                mapRef.current.addLayer({
+                    id: 'council_districts_labels',
+                    type: 'symbol',
+                    source: 'council_districts',
+                    layout: {
+                        'visibility': 'none',
+                        'text-field': ['to-string', ['get', 'CounDist']],
+                        'text-size': 14,
+                        'text-allow-overlap': false,
+                        'text-ignore-placement': false,
+                    },
+                    paint: {
+                        'text-color': '#3C4DD9',
+                        'text-halo-color': '#FFFFFF',
+                        'text-halo-width': 1.5,
+                        'text-halo-blur': 0
+                    }
+                });
             }
 
             console.log("[Map.tsx] Map loaded, sources/layers added.");
