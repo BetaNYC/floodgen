@@ -34,9 +34,6 @@ const MapLayerCard = ({ clicked, image, title, content, clickHandler, mouseEnter
                 <img src={image} className='w-[1.875rem] h-[1.875rem]' alt={title} />
                 <div className={`mt-4 lg:m-0 font-semibold text-small lg:text-medium `}>{title}</div>
             </div>
-            {
-                !isDesktop && <div className={`mt-1 font-regular text-[0.625rem]`}>{content}</div>
-            }
 
         </div>
     )

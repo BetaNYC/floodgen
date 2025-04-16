@@ -9,11 +9,13 @@ import useHoverStatus from '@/hooks/useHoverStatus'
 
 import { btnsType, LayerId, LayerTitle } from './MapLayer'
 
-import { XMarkIcon, InformationCircleIcon } from '@heroicons/react/16/solid'
+import { XMarkIcon } from '@heroicons/react/16/solid'
 import { useMediaQuery } from 'react-responsive'
 
 type Props = {
     buttonClickHandler: (btn: btnsType) => void
+    visibleLayers: Record<LayerId, boolean>;
+    titleForDescription: LayerTitle | null;
 }
 
 const layers: {
@@ -55,65 +57,63 @@ const layers: {
     ]
 
 
-const MapLayerCards = ({ buttonClickHandler }: Props) => {
+const MapLayerCards = ({ buttonClickHandler, visibleLayers, titleForDescription }: Props) => {
 
     const { map, layersLoaded } = useContext(MapContext) as MapContextType
-
     const { hovered, mouseEnterHandler, mouseLeaveHandler } = useHoverStatus(layers)
 
     const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" })
 
-    // Simplify clickHandler: Just call the parent's handler
+    const selectedLayerContent = layers.find(layer => layer.title === titleForDescription)?.content;
+
     const clickHandler = (title: LayerTitle) => {
         buttonClickHandler(title);
     }
 
-    // Comment out this useEffect as the parent MapLayer component handles layer visibility updates
-    // useEffect(() => {
-    //     if (!map || !layersLoaded) {
-    //         // console.log(`[MapLayerCards] useEffect - Skipping layer update (Map ready: ${!!map}, Layers Loaded: ${layersLoaded})`);
-    //         return;
-    //     }
-    //     // console.log("[MapLayerCards] useEffect - Running layer update...");
-    //
-    //     Object.keys(visibleLayers).forEach(id => {
-    //         const currentLayerId = id as LayerId;
-    //         const visibility = visibleLayers[currentLayerId] ? 'visible' : 'none';
-    //         // Remove console log added previously
-    //         // if (currentLayerId === 'disadvantaged_communities_fill' || currentLayerId === 'disadvantaged_communities_outline') {
-    //         //     console.log(`[MapLayerCards] useEffect - Checking layer: ${currentLayerId}, Exists: ${!!map.getLayer(currentLayerId)}, Setting visibility to: ${visibility}`);
-    //         // }
-    //         if (map.getLayer(currentLayerId)) {
-    //             map.setLayoutProperty(currentLayerId, 'visibility', visibility);
-    //         } else {
-    //             // Remove console warn added previously
-    //             // if (visibleLayers[currentLayerId]) {
-    //             //      console.warn(`[MapLayerCards] useEffect - Layer ${currentLayerId} not found on map.`);
-    //             // }
-    //         }
-    //     });
-    //
-    //     // Enforce Layer Order
-    //     // ... (Layer ordering logic removed for clarity, might need review if layer order becomes an issue)
-    //
-    // }, [visibleLayers, map, layersLoaded, setLastActiveLayerId]);
-
+    const isLayerActive = (title: LayerTitle): boolean => {
+        switch (title) {
+            case 'Coastal Flooding':
+                return visibleLayers.coastal_flooding;
+            case 'Stormwater Flooding':
+                return visibleLayers.stormwater_flooding;
+            case 'Hurricane Evacuation Zones':
+                return visibleLayers.hurricane_evacuation_zones;
+            case 'Disadvantaged Communities':
+                return visibleLayers.disadvantaged_communities_outline || visibleLayers.disadvantaged_communities_fill;
+            case 'Council Districts':
+                return visibleLayers.council_districts_outline || visibleLayers.council_districts_labels;
+            default:
+                return false;
+        }
+    };
 
     return (
-        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-8 h-[50%] lg:h-[11rem] w-full lg:w-[58rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
+        <div className={`absolute lg:left-[1.875rem] bottom-0 lg:bottom-[1.875rem] flex flex-col justify-center px-[1rem] py-6 h-[50%] lg:h-[13rem] w-full lg:w-[58rem] bg-background_white rounded-[1rem] z-30 shadow-2xl`}>
             <div>
-                <div className='flex justify-between items-center mb-5 w-full '>
+                <div className='flex justify-between items-center mb-3 w-full '>
                     <div className='font-bold text-heading text-black'>Flood Risk Map Layers</div>
-                    <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => buttonClickHandler('Close')} />
+                    <XMarkIcon className='w-6 h-6 text-black cursor-pointer' onClick={() => { buttonClickHandler('Close'); }} />
+                </div>
+
+                <div className='flex items-center gap-2 mb-3 h-8'>
+                    {selectedLayerContent ? (
+                        <>
+                            <img src="./icons/info.svg" alt="info icon" className="w-5 h-5" />
+                            <p className="text-medium text-text_grey">{selectedLayerContent}</p>
+                        </>
+                    ) : (
+                        <p className="text-medium text-text_grey italic">Click on a layer card to learn more.</p>
+                    )}
                 </div>
 
                 <div className='grid grid-cols-2 lg:grid-cols-5 gap-4'>
                     {layers.map((layer, i) => {
                         const isHovered = hovered[i];
+                        const isActive = isLayerActive(layer.title);
                         return (
                             <MapLayerCard
-                                clicked={false}
-                                image={isHovered ? layer.image_white : layer.image}
+                                clicked={isActive}
+                                image={isHovered || isActive ? layer.image_white : layer.image}
                                 title={layer.title}
                                 content={layer.content}
                                 key={layer.title}

@@ -14,6 +14,15 @@ export type LayerId = 'coastal_flooding' | 'hurricane_evacuation_zones' | 'storm
 // Define the titles used in the UI, mapping potentially needed later
 export type LayerTitle = 'Coastal Flooding' | 'Stormwater Flooding' | 'Disadvantaged Communities' | 'Hurricane Evacuation Zones' | 'Council Districts'
 
+// Mapping from Title to relevant Layer IDs
+const titleToLayerIds: Record<LayerTitle, LayerId[]> = {
+    'Coastal Flooding': ['coastal_flooding'],
+    'Stormwater Flooding': ['stormwater_flooding'],
+    'Hurricane Evacuation Zones': ['hurricane_evacuation_zones'],
+    'Disadvantaged Communities': ['disadvantaged_communities_outline', 'disadvantaged_communities_fill'], // Check both
+    'Council Districts': ['council_districts_outline', 'council_districts_labels'], // Check both
+};
+
 
 const MapLayer = () => {
     const { map } = useContext(MapContext) as MapContextType
@@ -22,15 +31,17 @@ const MapLayer = () => {
         coastal_flooding: true,
         hurricane_evacuation_zones: false,
         stormwater_flooding: false,
-        disadvantaged_communities_fill: false,
+        disadvantaged_communities_fill: false, // DAC fill initially off
         disadvantaged_communities_outline: false,
         sites: true,
         council_districts_outline: false,
         council_districts_labels: false
     });
     const [visibleLayers, setVisibleLayers] = useState(initialVisibleLayers);
-    // Revert lastActiveLayerId type
-    const [lastActiveLayerId, setLastActiveLayerId] = useState<LayerId | null>('coastal_flooding');
+    // State to track activation order for description logic
+    const [activationOrder, setActivationOrder] = useState<LayerTitle[]>(['Coastal Flooding']); // Start with CF active
+    // State to hold the title whose description should be shown
+    const [titleForDescription, setTitleForDescription] = useState<LayerTitle | null>('Coastal Flooding');
 
     const btnsData: { title: btnsType, src: string, src_white: string }[] = [
         { title: 'Coastal Flooding', src: './icons/coastal.svg', src_white: './icons/coastal_white.svg' },
@@ -44,65 +55,83 @@ const MapLayer = () => {
         // Handle panel switching
         if (btn === 'Layers' || btn === 'Legend' || btn === 'Close') {
             setClicked(btn);
+             // Optionally reset description focus when switching panels or closing
+             // setTitleForDescription(activationOrder.length > 0 ? activationOrder[activationOrder.length - 1] : null);
         } else {
-            // Handle layer toggling (existing logic)
-            let newVisibleLayers = { ...visibleLayers };
+            // Handle layer toggling and description update
+            const clickedTitle = btn as LayerTitle;
+            const prevVisibleLayers = { ...visibleLayers };
+            let newVisibleLayers = { ...visibleLayers }; // Start with current state
 
-            switch (btn) {
-                case 'Coastal Flooding':
-                    const isCFVisible = !visibleLayers.coastal_flooding;
+            // --- Apply visibility logic (existing switch statement) ---
+            switch (clickedTitle) {
+                 case 'Coastal Flooding':
+                    const isCFVisible = !prevVisibleLayers.coastal_flooding;
                     newVisibleLayers.coastal_flooding = isCFVisible;
-                    if (isCFVisible) { // If turning CF ON
-                        newVisibleLayers.hurricane_evacuation_zones = false; // Turn HEZ OFF
-                    }
+                    if (isCFVisible) { newVisibleLayers.hurricane_evacuation_zones = false; }
                     break;
                 case 'Hurricane Evacuation Zones':
-                    const isHEZVisible = !visibleLayers.hurricane_evacuation_zones;
+                    const isHEZVisible = !prevVisibleLayers.hurricane_evacuation_zones;
                     newVisibleLayers.hurricane_evacuation_zones = isHEZVisible;
-                    if (isHEZVisible) { // If turning HEZ ON
-                        newVisibleLayers.coastal_flooding = false; // Turn CF OFF
-                        newVisibleLayers.stormwater_flooding = false; // Turn SF OFF
-                    }
+                    if (isHEZVisible) { newVisibleLayers.coastal_flooding = false; newVisibleLayers.stormwater_flooding = false; }
                     break;
                 case 'Stormwater Flooding':
-                    const isSFVisible = !visibleLayers.stormwater_flooding;
+                    const isSFVisible = !prevVisibleLayers.stormwater_flooding;
                     newVisibleLayers.stormwater_flooding = isSFVisible;
-                     if (isSFVisible) { // If turning SF ON
-                        newVisibleLayers.hurricane_evacuation_zones = false; // Turn HEZ OFF
-                    }
+                     if (isSFVisible) { newVisibleLayers.hurricane_evacuation_zones = false; }
                    break;
                 case 'Disadvantaged Communities':
-                    const isDACOutlineVisible = !visibleLayers.disadvantaged_communities_outline; // Toggle outline
+                    const isDACOutlineVisible = !prevVisibleLayers.disadvantaged_communities_outline;
                     newVisibleLayers.disadvantaged_communities_outline = isDACOutlineVisible;
-                    // Fill visibility depends on outline AND other layers
-                    // (Calculated below)
-                    if (isDACOutlineVisible) { // If turning DAC ON
-                        newVisibleLayers.council_districts_outline = false; // Turn CD OFF
-                        newVisibleLayers.council_districts_labels = false;
-                    }
+                    if (isDACOutlineVisible) { newVisibleLayers.council_districts_outline = false; newVisibleLayers.council_districts_labels = false; }
                     break;
                 case 'Council Districts':
-                    const isCDVisible = !visibleLayers.council_districts_outline;
+                    const isCDVisible = !prevVisibleLayers.council_districts_outline;
                     newVisibleLayers.council_districts_outline = isCDVisible;
                     newVisibleLayers.council_districts_labels = isCDVisible;
-                    if (isCDVisible) { // If turning CD ON
-                        newVisibleLayers.disadvantaged_communities_fill = false; // Turn DAC Fill OFF
-                        newVisibleLayers.disadvantaged_communities_outline = false; // Turn DAC Outline OFF
-                    }
+                    if (isCDVisible) { newVisibleLayers.disadvantaged_communities_fill = false; newVisibleLayers.disadvantaged_communities_outline = false; }
                     break;
             }
-
-            // --- Recalculate DAC Fill based on the latest state of other layers ---
-            newVisibleLayers.disadvantaged_communities_fill = 
-                newVisibleLayers.disadvantaged_communities_outline && 
-                !newVisibleLayers.hurricane_evacuation_zones && 
+            // --- Recalculate DAC Fill ---
+             newVisibleLayers.disadvantaged_communities_fill =
+                newVisibleLayers.disadvantaged_communities_outline &&
+                !newVisibleLayers.hurricane_evacuation_zones &&
                 !newVisibleLayers.council_districts_outline;
 
-            console.log("[MapLayer.tsx] Final State to be set:", newVisibleLayers);
-            setVisibleLayers(newVisibleLayers);
 
-            // The useEffect hook below will handle applying this state to the map layers.
-            // Removed redundant map.setLayoutProperty calls from here.
+            // --- Update Activation Order ---
+            let newActivationOrder = [...activationOrder];
+            const titlesTurnedOff: LayerTitle[] = [];
+
+            // Check each layer group based on titleToLayerIds
+            Object.entries(titleToLayerIds).forEach(([titleStr, ids]) => {
+                const title = titleStr as LayerTitle;
+                const wasGroupActive = ids.some(id => prevVisibleLayers[id]);
+                const isGroupNowActive = ids.some(id => newVisibleLayers[id]); // Check the *final* calculated state
+
+                if (wasGroupActive && !isGroupNowActive) { // Group turned OFF
+                    titlesTurnedOff.push(title);
+                    newActivationOrder = newActivationOrder.filter(t => t !== title);
+                } else if (!wasGroupActive && isGroupNowActive) { // Group turned ON
+                     // Remove previous instance if any, and add to end
+                    newActivationOrder = newActivationOrder.filter(t => t !== title);
+                    newActivationOrder.push(title);
+                }
+            });
+
+            // --- Determine new title for description ---
+            // The last item in the updated order is the one whose description we show
+            const newTitleDesc = newActivationOrder.length > 0 ? newActivationOrder[newActivationOrder.length - 1] : null;
+
+            // --- Update States ---
+            setVisibleLayers(newVisibleLayers); // Update visibility state
+            setActivationOrder(newActivationOrder); // Update activation order
+            setTitleForDescription(newTitleDesc); // Update description title
+
+             console.log("[MapLayer.tsx] Updated Activation Order:", newActivationOrder);
+             console.log("[MapLayer.tsx] Title for Description:", newTitleDesc);
+             console.log("[MapLayer.tsx] Final State to be set:", newVisibleLayers);
+
         }
     }
 
@@ -136,11 +165,8 @@ const MapLayer = () => {
             {clicked === 'Layers' ?
                  <MapLayerCards
                      buttonClickHandler={buttonClickHandler}
-                     // Remove unused props
-                     // setVisibleLayers={setVisibleLayers}
-                     // visibleLayers={visibleLayers}
-                     // lastActiveLayerId={lastActiveLayerId}
-                     // setLastActiveLayerId={setLastActiveLayerId}
+                     visibleLayers={visibleLayers}
+                     titleForDescription={titleForDescription} // Pass new state down
                  />
                  : clicked === 'Legend' ?
                  <Legend buttonClickHandler={buttonClickHandler} visibleLayers={visibleLayers} />

@@ -111,7 +111,7 @@ const Map = () => {
                 mapRef.current.addSource('council_districts', { type: 'geojson', data: mapLayerData.councilDistricts });
             }
 
-            // --- Add DAC Fill Layer (Temporarily add at top) ---
+            // --- Add DAC Fill Layer (Restored original position) ---
             if (!mapRef.current.getLayer('disadvantaged_communities_fill') && mapRef.current.getSource('disadvantaged_communities')) {
                 mapRef.current.addLayer({
                     id: 'disadvantaged_communities_fill',
@@ -145,10 +145,10 @@ const Map = () => {
                         ],
                         'fill-opacity': 1
                     }
-                })
+                }); // REMOVED beforeId
             }
 
-            // --- Disadvantaged Communities OUTLINE Layer (Temporarily add at top) ---
+            // --- Disadvantaged Communities OUTLINE Layer (Restored original position) ---
             if (!mapRef.current.getLayer('disadvantaged_communities_outline') && mapRef.current.getSource('disadvantaged_communities')) {
                 mapRef.current.addLayer({
                     id: 'disadvantaged_communities_outline',
@@ -159,7 +159,7 @@ const Map = () => {
                         "line-color": "#F7A848",
                         "line-width": 1.5
                     }
-                });
+                }); // REMOVED beforeId
             }
 
             // --- Hurricane Evacuation Zones Layer ---
@@ -190,7 +190,7 @@ const Map = () => {
                         ],
                         'fill-opacity': 1
                     }
-                })
+                }, 'disadvantaged_communities_outline'); // ADDED beforeId
             }
 
             // --- Stormwater Flooding Layer ---
@@ -213,7 +213,7 @@ const Map = () => {
                         ],
                         "fill-opacity": 1
                     }
-                })
+                }, 'disadvantaged_communities_outline'); // ADDED beforeId
             }
 
             // --- Add Council Districts Layer ---
